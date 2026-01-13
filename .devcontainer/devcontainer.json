@@ -1,0 +1,73 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "My hope",
+	"build": {
+		"dockerfile": "dockerfile"
+	},
+	"runArgs": [
+		// "--cap-add=SYS_PTRACE", // Allows the container to trace processes using ptrace system call
+		// "--security-opt=seccomp=unconfined", // Disables seccomp security profiles for the container
+		// "--ipc=host", // Shares the host's IPC namespace with the container
+		"--network=host", // Shares the host's network namespace with the container
+		// "--pid=host", // Shares the host's PID namespace with the container
+		"--privileged" // Gives the container full access to the host's devices and allows it to run with root privileges
+	],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/root/local/${localWorkspaceFolderBasename},type=bind",
+	"workspaceFolder": "/root/local/robocon",
+	"containerEnv": {
+		// Uncomment to allow the container to access the X server on the host e.g. to run Rviz and other GUI tools
+    	"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"mounts": [
+		// Uncomment to allow the container to access the X server on the host e.g. to run Rviz and other GUI tools
+		{
+			"source": "/tmp/.X11-unix",
+			"target": "/tmp/.X11-unix",
+			"type": "bind"
+		},
+		/*
+		{
+			"source": "${localEnv:HOME}/.Xauthority",
+			"target": "/root/.Xauthority",
+			"type": "bind"
+		}
+			*/
+		/* Uncomment to persist bash history between sessions
+		{
+			"source": "${localEnv:HOME}${localEnv:USERPROFILE}/.bash_history",
+			"target": "/root/.bash_history",
+			"type": "bind"
+		}
+		*/
+	],
+	// "features": {
+	// 	"ghcr.io/devcontainers/features/desktop-lite": {}
+	// },
+	// "forwardPorts": [
+	// 	6080,
+	// 	5901
+	// ],
+	// "portsAttributes": {
+	// 	"6080": {
+	// 		"label": "Desktop (Web)"
+	// 	},
+	// 	"5901": {
+	// 		"label": "Desktop (VNC)"
+	// 	}
+	// },
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				// "mhutchie.git-graph",
+				// "eamodio.gitlens",
+				// "donjayamanne.githistory",
+				// "ms-python.vscode-pylance",
+				// "ms-python.python"
+				// "ms-vscode.cpptools",
+				// "ms-vscode.cpptools-extension-pack"
+			]
+		}
+	}
+}

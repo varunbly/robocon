@@ -1,0 +1,6 @@
+robot_logic_node:
+  ros__parameters:
+    localization_mode: "amcl"
+    initial_pose_x: 0.0
+    initial_pose_y: 0.0
+    initial_pose_theta: 0.0

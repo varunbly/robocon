@@ -1,0 +1,26 @@
+# Colcon build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C++
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# IDEs
+.vscode/
+.idea/
+
+# Local configuration
+.DS_Store
+
+# Temporary files
+temp_ext/
