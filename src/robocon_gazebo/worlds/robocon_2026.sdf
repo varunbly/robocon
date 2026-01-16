@@ -1373,6 +1373,12 @@
 
 
 
+    <!-- MIT Cheetah Robot -->
+    <include>
+      <uri>model://mit_cheetah</uri>
+      <pose>2 3 0.3 0 0 0</pose>
+    </include>
+
   </world>
 
 </sdf>

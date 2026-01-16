@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="mit_cheetah">
+    <pose>0 0 0.2 0 0 0</pose>
+    
+    <link name="base_link">
+      <inertial>
+        <mass>45</mass>
+        <inertia>
+          <ixx>0.35</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>2.1</iyy><iyz>0</iyz>
+          <izz>2.1</izz>
+        </inertia>
+      </inertial>
+      <visual name="body">
+        <geometry>
+          <box><size>0.6 0.3 0.15</size></box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      <collision name="body_collision">
+        <geometry>
+          <box><size>0.6 0.3 0.15</size></box>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Front Right Leg -->
+    <link name="fr_leg">
+      <pose>0.25 -0.15 -0.125 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.01</iyy><iyz>0</iyz>
+          <izz>0.005</izz>
+        </inertia>
+      </inertial>
+      <visual name="leg">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+        <material>
+          <ambient>0.8 0.2 0.2 1</ambient>
+          <diffuse>0.8 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      <collision name="leg_collision">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Front Left Leg -->
+    <link name="fl_leg">
+      <pose>0.25 0.15 -0.125 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.01</iyy><iyz>0</iyz>
+          <izz>0.005</izz>
+        </inertia>
+      </inertial>
+      <visual name="leg">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+        <material>
+          <ambient>0.8 0.2 0.2 1</ambient>
+          <diffuse>0.8 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      <collision name="leg_collision">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Rear Right Leg -->
+    <link name="rr_leg">
+      <pose>-0.25 -0.15 -0.125 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.01</iyy><iyz>0</iyz>
+          <izz>0.005</izz>
+        </inertia>
+      </inertial>
+      <visual name="leg">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+        <material>
+          <ambient>0.8 0.2 0.2 1</ambient>
+          <diffuse>0.8 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      <collision name="leg_collision">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Rear Left Leg -->
+    <link name="rl_leg">
+      <pose>-0.25 0.15 -0.125 0 0 0</pose>
+      <inertial>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.01</iyy><iyz>0</iyz>
+          <izz>0.005</izz>
+        </inertia>
+      </inertial>
+      <visual name="leg">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+        <material>
+          <ambient>0.8 0.2 0.2 1</ambient>
+          <diffuse>0.8 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+      <collision name="leg_collision">
+        <geometry>
+          <cylinder><radius>0.025</radius><length>0.25</length></cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joints -->
+    <joint name="fr_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>fr_leg</child>
+      <axis><xyz>0 1 0</xyz><limit><lower>-0.5</lower><upper>0.5</upper></limit></axis>
+    </joint>
+
+    <joint name="fl_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>fl_leg</child>
+      <axis><xyz>0 1 0</xyz><limit><lower>-0.5</lower><upper>0.5</upper></limit></axis>
+    </joint>
+
+    <joint name="rr_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rr_leg</child>
+      <axis><xyz>0 1 0</xyz><limit><lower>-0.5</lower><upper>0.5</upper></limit></axis>
+    </joint>
+
+    <joint name="rl_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>rl_leg</child>
+      <axis><xyz>0 1 0</xyz><limit><lower>-0.5</lower><upper>0.5</upper></limit></axis>
+    </joint>
+
+    <!-- Control Plugin -->
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"/>
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>fr_joint</joint_name>
+      <joint_name>fl_joint</joint_name>
+      <joint_name>rr_joint</joint_name>
+      <joint_name>rl_joint</joint_name>
+    </plugin>
+
+  </model>
+</sdf>
