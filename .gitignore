@@ -24,3 +24,5 @@ __pycache__/
 
 # Temporary files
 temp_ext/
+
+.devcontainer/
