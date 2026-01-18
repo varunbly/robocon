@@ -1,47 +1,11 @@
-- ros_topic_name: "cheetah_cmd_vel"
-  gz_topic_name: "/model/mit_cheetah/cmd_vel"
-  ros_type_name: "geometry_msgs/msg/Twist"
-  gz_type_name: "gz.msgs.Twist"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/mit_cheetah/joint/fr_joint/cmd_pos"
-  gz_topic_name: "/model/mit_cheetah/joint/fr_joint/cmd_pos"
-  ros_type_name: "std_msgs/msg/Float64MultiArray"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/mit_cheetah/joint/fl_joint/cmd_pos"
-  gz_topic_name: "/model/mit_cheetah/joint/fl_joint/cmd_pos"
-  ros_type_name: "std_msgs/msg/Float64MultiArray"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/mit_cheetah/joint/rr_joint/cmd_pos"
-  gz_topic_name: "/model/mit_cheetah/joint/rr_joint/cmd_pos"
-  ros_type_name: "std_msgs/msg/Float64MultiArray"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/mit_cheetah/joint/rl_joint/cmd_pos"
-  gz_topic_name: "/model/mit_cheetah/joint/rl_joint/cmd_pos"
-  ros_type_name: "std_msgs/msg/Float64MultiArray"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
 - ros_topic_name: "clock"
   gz_topic_name: "clock"
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "cmd_vel"
-  gz_topic_name: "/model/robocon_robot/cmd_vel"
+- ros_topic_name: "car_cmd_vel"
+  gz_topic_name: "/model/simple_car/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
-
-- ros_topic_name: "odom"
-  gz_topic_name: "/model/robocon_robot/odometry"
-  ros_type_name: "nav_msgs/msg/Odometry"
-  gz_type_name: "gz.msgs.OdometryWithCovariance"
-  direction: GZ_TO_ROS

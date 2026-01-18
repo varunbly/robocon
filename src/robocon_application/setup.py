@@ -27,6 +27,7 @@ setup(
             'robot_logic_node = robocon_application.robot_logic_node:main',
             'cheetah_controller = robocon_application.cheetah_controller:main',
             'cheetah_teleop = robocon_application.cheetah_teleop:main',
+            'car_controller = robocon_application.car_controller:main',
         ],
     },
 )

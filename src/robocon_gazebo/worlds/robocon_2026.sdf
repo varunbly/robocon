@@ -1373,10 +1373,10 @@
 
 
 
-    <!-- MIT Cheetah Robot -->
+    <!-- Simple Car -->
     <include>
-      <uri>model://mit_cheetah</uri>
-      <pose>2 3 0.3 0 0 0</pose>
+      <uri>model://simple_car</uri>
+      <pose>0 4.6 1 0 0 0</pose>
     </include>
 
   </world>
