@@ -828,10 +828,10 @@
       
       <link name="link">
         <inertial>
-          <mass>0.5</mass> <inertia>
-            <ixx>0.042</ixx><ixy>0</ixy><ixz>0</ixz>
-            <iyy>0.042</iyy><iyz>0</iyz>
-            <izz>0.001</izz>
+          <mass>2.0</mass> <inertia>
+            <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.168</iyy><iyz>0</iyz>
+            <izz>0.004</izz>
           </inertia>
         </inertial>
 
@@ -916,10 +916,10 @@
       
       <link name="link">
         <inertial>
-          <mass>0.5</mass> <inertia>
-            <ixx>0.042</ixx><ixy>0</ixy><ixz>0</ixz>
-            <iyy>0.042</iyy><iyz>0</iyz>
-            <izz>0.001</izz>
+          <mass>2.0</mass> <inertia>
+            <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.168</iyy><iyz>0</iyz>
+            <izz>0.004</izz>
           </inertia>
         </inertial>
 
@@ -1005,10 +1005,10 @@
       
       <link name="link">
         <inertial>
-          <mass>0.5</mass> <inertia>
-            <ixx>0.042</ixx><ixy>0</ixy><ixz>0</ixz>
-            <iyy>0.042</iyy><iyz>0</iyz>
-            <izz>0.001</izz>
+          <mass>2.0</mass> <inertia>
+            <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.168</iyy><iyz>0</iyz>
+            <izz>0.004</izz>
           </inertia>
         </inertial>
 

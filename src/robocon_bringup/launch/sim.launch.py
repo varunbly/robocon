@@ -39,5 +39,4 @@ def generate_launch_description():
     return LaunchDescription([
         gz_sim,
         bridge,
-        car_controller,
     ])
