@@ -31,17 +31,22 @@ We use **Docker** and **VS Code Dev Containers** to ensure everyone has the same
 
 Once inside the VS Code terminal (you should see `root@...`):
 
-1.  **Build the workspace**:
+1.  **Install the dependencies**:
+    ```bash
+    apt-get update && rosdep update && rosdep install --from-paths src --ignore-src -r -y
+    ```
+
+2.  **Build the workspace**:
     ```bash
     colcon build
     ```
 
-2.  **Source the environment**:
+3.  **Source the environment**:
     ```bash
     source install/setup.bash
     ```
 
-3.  **Run the Simulation**:
+4.  **Run the Simulation**:
     ```bash
     ros2 launch robocon_bringup sim.launch.py
     ```
