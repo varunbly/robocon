@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rrr_robot">
 
-  <xacro:property name="link1_len" value="0.2"/>
-  <xacro:property name="link1b_len" value="2.7"/>
+  <xacro:property name="link0_len" value="0.2"/>
+  <xacro:property name="link1_len" value="2.7"/>
   <xacro:property name="link2_len" value="2.7"/>
   <xacro:property name="link3_len" value="3.5"/>
   <xacro:property name="link_rad" value="0.2"/>
@@ -19,12 +19,28 @@
     </visual>
   </link>
 
-  <joint name="joint1" type="revolute">
+  <joint name="joint0" type="revolute">
     <parent link="base_link"/>
-    <child link="link1"/>
+    <child link="link0"/>
     <origin xyz="0 0 0.05" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <link name="link0">
+    <visual>
+      <origin xyz="0 0 ${link0_len/2}" rpy="0 0 0"/>
+      <geometry><cylinder length="${link0_len}" radius="${link_rad}"/></geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <parent link="link0"/>
+    <child link="link1"/>
+    <origin xyz="0 0 ${link0_len}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="2.5" effort="10.0" velocity="1.0"/>
   </joint>
 
   <link name="link1">
@@ -35,26 +51,10 @@
     </visual>
   </link>
 
-  <joint name="joint_new" type="revolute">
-    <parent link="link1"/>
-    <child link="link1_b"/>
-    <origin xyz="0 0 ${link1_len}" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
-    <limit lower="-2.5" upper="2.5" effort="10.0" velocity="1.0"/>
-  </joint>
-
-  <link name="link1_b">
-    <visual>
-      <origin xyz="0 0 ${link1b_len/2}" rpy="0 0 0"/>
-      <geometry><cylinder length="${link1b_len}" radius="${link_rad}"/></geometry>
-      <material name="blue"/>
-    </visual>
-  </link>
-
   <joint name="joint2" type="revolute">
-    <parent link="link1_b"/>
+    <parent link="link1"/>
     <child link="link2"/>
-    <origin xyz="0 0 ${link1b_len}" rpy="0 0 0"/>
+    <origin xyz="0 0 ${link1_len}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <limit lower="-2.5" upper="2.5" effort="10.0" velocity="1.0"/>
   </joint>
