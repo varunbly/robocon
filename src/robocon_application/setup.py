@@ -28,6 +28,11 @@ setup(
             'cheetah_controller = robocon_application.cheetah_controller:main',
             'cheetah_teleop = robocon_application.cheetah_teleop:main',
             'car_controller = robocon_application.car_controller:main',
+            'localization_node = robocon_application.Localization_node:main',
+            'object_detection = robocon_application.ObjectDetection:main',
+            'planner_node = robocon_application.Planner_node:main',
+            'inverse_kinematics = robocon_application.InverseKinematics:main',
+            'mapping_node = robocon_application.Maping:main',
         ],
     },
 )
