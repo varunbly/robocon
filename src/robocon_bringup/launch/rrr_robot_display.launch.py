@@ -5,11 +5,12 @@ from launch_ros.substitutions import FindPackageShare
 from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
-    pkg_share = FindPackageShare('rrr_robot')
+    description_pkg_share = FindPackageShare('robocon_description')
+    bringup_pkg_share = FindPackageShare('robocon_bringup')
     
     # Paths to files
-    urdf_path = PathJoinSubstitution([pkg_share, 'urdf', 'rrr_robot.urdf.xacro'])
-    rviz_config_path = PathJoinSubstitution([pkg_share, 'rviz', 'rrr.rviz'])
+    urdf_path = PathJoinSubstitution([description_pkg_share, 'models', 'rrr_robot', 'rrr_robot.urdf.xacro'])
+    rviz_config_path = PathJoinSubstitution([bringup_pkg_share, 'config', 'rrr.rviz'])
 
     # Process URDF - "ParameterValue" is CRITICAL for Jazzy
     robot_description_content = ParameterValue(
