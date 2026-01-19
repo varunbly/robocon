@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'robot_logic_node = robocon_application.robot_logic_node:main',
+            'joint_publisher_node = robocon_application.joint_publisher_node:main',
         ],
     },
 )
