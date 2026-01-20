@@ -29,6 +29,13 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Car Controller
+    car_controller = Node(
+        package='robocon_application',
+        executable='car_controller',
+        output='screen'
+    )
+
     return LaunchDescription([
         gz_sim,
         bridge,
