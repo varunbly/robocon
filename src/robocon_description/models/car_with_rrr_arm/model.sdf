@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="car_with_arm">
+
+    <include>
+      <uri>model://simple_car</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rrr_robot</uri>
+      <pose>0 0 0.4 0 0 0</pose>
+    </include>
+
+    <joint name="arm_mount_joint" type="fixed">
+      <parent>simple_car::chassis</parent>
+      <child>rrr_robot::base_link</child>
+    </joint>
+
+  </model>
+</sdf>

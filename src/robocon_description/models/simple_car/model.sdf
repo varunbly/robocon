@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
   <model name="simple_car">
+    <self_collide>true</self_collide>
     <pose>0 0 1.4 0 0 0</pose>
     
     <link name="chassis">
+      <self_collide>true</self_collide>
       <inertial>
         <mass>20</mass>
         <inertia>
@@ -27,6 +29,33 @@
         </geometry>
       </collision>
     </link>
+
+  <link name="arm_mount_link">
+  <!-- Place exactly on top of chassis -->
+    <pose>0 0 0.4 0 0 0</pose>
+
+    <inertial>
+      <mass>0.1</mass>
+      <inertia>
+        <ixx>0.001</ixx><ixy>0</ixy><ixz>0</ixz>
+        <iyy>0.001</iyy><iyz>0</iyz>
+        <izz>0.001</izz>
+      </inertia>
+    </inertial>
+
+    <!-- Optional visual for debugging -->
+    <visual name="chassis_visual">
+      <geometry>
+        <box><size>0.05 0.05 0.05</size></box>
+      </geometry>
+    </visual>
+  </link>
+
+<joint name="arm_mount_joint" type="fixed">
+  <parent>chassis</parent>
+  <child>arm_mount_link</child>
+</joint>
+
 
     <link name="front_left_wheel">
       <pose>0.3 0.45 -0.4 1.5707 0 0</pose>
