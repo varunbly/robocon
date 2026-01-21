@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="custom_cube">
+    <static>false</static>
+    <pose>0 0 0 0 0 0</pose>
+    
+    <link name="link">
+      <pose>0 0 2 0 0 0</pose>
+      
+      <inertial>
+        <mass>0.63</mass>
+        <inertia>
+          <ixx>0.0128625</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0128625</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0128625</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.35 0.35 0.35</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual_main">
+        <geometry>
+          <box>
+            <size>0.35 0.35 0.35</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>fake_page_3_0_0_255_texture.png</albedo_map>
+              <roughness>0.6</roughness>
+              <metalness>0.0</metalness>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+
+      <visual name="visual_bottom">
+        <pose>0 0 -0.17495 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.35 0.35 0.0001</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.0 0.0 1.0 1</ambient>
+          <diffuse>0.0 0.0 1.0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+
+    </link>
+  </model>
+</sdf>

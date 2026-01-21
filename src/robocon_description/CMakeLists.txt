@@ -8,7 +8,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 install(
-  DIRECTORY models
+  DIRECTORY models fake real logo
   DESTINATION share/${PROJECT_NAME}
 )
 
