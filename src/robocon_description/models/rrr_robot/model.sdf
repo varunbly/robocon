@@ -1,6 +1,6 @@
 <sdf version='1.11'>
   <model name='rrr_robot'>
-    <self_collide>true</self_collide>
+  <self_collide>true</self_collide>
     <link name='base_link'>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
@@ -235,19 +235,19 @@
         </inertia>
       </inertial>
       <collision name='link3_collision'>
-        <pose>0 0 0.27500000000000002 0 0 0</pose>
+        <pose>0 0 0.17499999999999999 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.55000000000000004</length>
+            <length>0.34999999999999998</length>
             <radius>0.02</radius>
           </cylinder>
         </geometry>
       </collision>
       <visual name='link3_visual'>
-        <pose>0 0 0.27500000000000002 0 0 0</pose>
+        <pose>0 0 0.17499999999999999 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.55000000000000004</length>
+            <length>0.34999999999999998</length>
             <radius>0.02</radius>
           </cylinder>
         </geometry>
@@ -258,7 +258,7 @@
       </visual>
     </link>
     <joint name='joint4' type='revolute'>
-      <pose relative_to='link3'>0 0 0.55000000000000004 0 0 0</pose>
+      <pose relative_to='link3'>0 0 0.34999999999999998 0 0 0</pose>
       <parent>link3</parent>
       <child>gripper_base</child>
       <axis>
@@ -293,7 +293,7 @@
         <pose>0 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.29999999999999999 0.02</size>
+            <size>0.02 0.40000000000000002 0.02</size>
           </box>
         </geometry>
       </collision>
@@ -301,7 +301,7 @@
         <pose>0 0 0.01 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.02 0.29999999999999999 0.02</size>
+            <size>0.02 0.40000000000000002 0.02</size>
           </box>
         </geometry>
         <material>

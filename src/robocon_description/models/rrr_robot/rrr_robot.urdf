@@ -139,16 +139,16 @@
       <inertia ixx="0.025" ixy="0" ixz="0" iyy="0.025" iyz="0" izz="0.025"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.275"/>
+      <origin rpy="0 0 0" xyz="0 0 0.175"/>
       <geometry>
-        <cylinder length="0.55" radius="0.02"/>
+        <cylinder length="0.35" radius="0.02"/>
       </geometry>
       <material name="red"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.275"/>
+      <origin rpy="0 0 0" xyz="0 0 0.175"/>
       <geometry>
-        <cylinder length="0.55" radius="0.02"/>
+        <cylinder length="0.35" radius="0.02"/>
       </geometry>
       <self_collide>true</self_collide>
     </collision>
@@ -157,7 +157,7 @@
   <joint name="joint4" type="revolute">
     <parent link="link3"/>
     <child link="gripper_base"/>
-    <origin rpy="0 0 0" xyz="0 0 0.55"/>
+    <origin rpy="0 0 0" xyz="0 0 0.35"/>
     <axis xyz="0 0 1"/>
     <limit effort="10.0" lower="-3.14" upper="3.14" velocity="1.0"/>
   </joint>
@@ -170,14 +170,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.01"/>
       <geometry>
-        <box size="0.02 0.3 0.02"/>
+        <box size="0.02 0.4 0.02"/>
       </geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.01"/>
       <geometry>
-        <box size="0.02 0.3 0.02"/>
+        <box size="0.02 0.4 0.02"/>
       </geometry>
       <self_collide>true</self_collide>
     </collision>

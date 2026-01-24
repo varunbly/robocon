@@ -5,7 +5,7 @@
   <xacro:property name="link0_len" value="0.02"/>
   <xacro:property name="link1_len" value="0.27"/>
   <xacro:property name="link2_len" value="0.27"/>
-  <xacro:property name="link3_len" value="0.55"/>
+  <xacro:property name="link3_len" value="0.35"/>
   <xacro:property name="link_rad" value="0.02"/>
 
   <!--  MATERIALS -->
@@ -144,12 +144,12 @@
     <xacro:simple_inertial mass="1.5"/>
     <visual>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
-      <geometry><box size="0.02 0.3 0.02"/></geometry>
+      <geometry><box size="0.02 0.4 0.02"/></geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
-      <geometry><box size="0.02 0.3 0.02"/></geometry>
+      <geometry><box size="0.02 0.4 0.02"/></geometry>
       <self_collide>true</self_collide>
     </collision>
   </link>
