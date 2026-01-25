@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="R2">
+        <self_collide>true</self_collide>
+        <link name="base_link">
+            <inertial>
+                <pose>0.136 0.196 0.130 0 0 0</pose>
+                <mass>7.352</mass> <inertia>
+                    <ixx>0.272906</ixx>   <ixy>-0.011438</ixy>  <ixz>-0.001470</ixz>   
+                    <iyy>0.115179</iyy>   <iyz>-0.048676</iyz>   
+                    <izz>0.270581</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-body.dae</uri></mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-body.dae</uri></mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name="A_link">
+            <inertial>
+                <pose>0.124 0.456 -0.062 0 0 0</pose>
+                <mass>0.953</mass> <inertia>
+                    <ixx>0.008533</ixx> <ixy>0</ixy> <ixz>0</ixz>   
+                    <iyy>0.011742</iyy> <iyz>0</iyz>   
+                    <izz>0.016208</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-front-wheel-mount.dae</uri></mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-front-wheel-mount.dae</uri></mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="A_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>A_link</child>
+            
+            <pose>0.250 0.456 0.004 0 0 0</pose> 
+
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <lower>-1e16</lower>
+                    <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+    </model>
+</sdf>
