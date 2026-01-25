@@ -12,13 +12,15 @@
                 </inertia>
             </inertial>
             <collision name="collision">
+                <pose>0 0 0 1.5707 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-body.dae</uri></mesh>
+                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
             </collision>
             <visual name="visual">
+                <pose>0 0 0 1.5707 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-body.dae</uri></mesh>
+                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
             </visual>
         </link>
@@ -33,13 +35,15 @@
                 </inertia>
             </inertial>
             <collision name="collision">
+                <pose>0 0 0 1.5707 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-front-wheel-mount.dae</uri></mesh>
+                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
                 </geometry>
             </collision>
             <visual name="visual">
+                <pose>0 0 0 1.5707 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-front-wheel-mount.dae</uri></mesh>
+                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
                 </geometry>
             </visual>
         </link>

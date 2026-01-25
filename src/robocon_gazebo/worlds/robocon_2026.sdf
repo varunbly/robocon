@@ -1375,7 +1375,7 @@
 
     <!-- Simple Car -->
     <include>
-      <uri>model://car_with_rrr_arm</uri>
+      <uri>model://R2</uri>
       <pose>0 4.6 1 0 0 0</pose>
     </include>
 
