@@ -29,6 +29,9 @@ setup(
             'cheetah_teleop = robocon_application.cheetah_teleop:main',
             'car_controller = robocon_application.car_controller:main',
             'joint_publisher_node = robocon_application.joint_publisher_node:main',
+            'dual_teleop = robocon_application.dual_teleop:main',
+            'r1_teleop = robocon_application.r1_teleop:main',
+            'r2_teleop = robocon_application.r2_teleop:main',
         ],
     },
 )

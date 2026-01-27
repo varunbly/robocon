@@ -170,5 +170,19 @@
         </limit>
       </axis>
     </joint>
+
+    <!-- Diff Drive Plugin -->
+    <plugin
+      filename="ignition-gazebo-diff-drive-system"
+      name="ignition::gazebo::systems::DiffDrive">
+      <left_joint>back_left_wheel_joint</left_joint>
+      <left_joint>front_left_wheel_joint</left_joint>
+      <right_joint>back_right_wheel_joint</right_joint>
+      <right_joint>front_right_wheel_joint</right_joint>
+      <wheel_separation>0.39</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+      <odom_publish_frequency>20</odom_publish_frequency>
+      <topic>/model/R1/cmd_vel</topic>
+    </plugin>
   </model>
 </sdf>

@@ -145,6 +145,20 @@
       </link>
     </model> 
 
+    <!-- R1 Robot -->
+    <include>
+      <name>R1</name>
+      <uri>model://R1</uri>
+      <pose>-1.5 -2.5 0.5 0 0 0</pose>
+    </include>
+
+    <!-- R2 Robot -->
+    <include>
+      <name>R2</name>
+      <uri>model://R2</uri>
+      <pose>1 2 1.0 0 0 -1.57</pose>
+    </include>
+
 <!-- origin -->
     <model name="retry_zone_1">
       <static>true</static>
@@ -1373,11 +1387,7 @@
 
 
 
-    <!-- Simple Car -->
-    <include>
-      <uri>model://R2</uri>
-      <pose>0 4.6 1 0 0 0</pose>
-    </include>
+
 
   </world>
 
