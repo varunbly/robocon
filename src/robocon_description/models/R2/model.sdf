@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+    <model name="R2">
+        <self_collide>true</self_collide>
+        <link name="base_link">
+            <inertial>
+                <pose>0.136 0.203 0.125 0 0 0</pose>
+                <mass>10.157</mass> <inertia>
+                    <ixx>0.399</ixx>   <ixy>-0.014</ixy>  <ixz>-0.003</ixz>   
+                    <iyy>0.168</iyy>   <iyz>-0.064</iyz>   
+                    <izz>0.392</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <link name="A_link">
+            <inertial>
+                <pose>0.125 0.456 -0.073 0 0 0</pose>
+                <mass>1.502</mass> <inertia>
+                    <ixx>0.016</ixx> <ixy>-1.248e-8</ixy> <ixz>1.398e-7</ixz>   
+                    <iyy>0.017</iyy> <iyz>-1.527e-4</iyz>   
+                    <izz>0.025</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
+                </geometry>
+            </visual>
+        </link>
+
+        <joint name="A_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>A_link</child>
+            
+            <pose>0.250 0.456 0.004 0 0 0</pose> 
+
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <lower>-1e16</lower>
+                    <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="mid_left_wheel">
+            <pose>0.045 0.300 -0.180 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+                <surface>
+                <friction>
+                    <ode>
+                    <mu>1.0</mu>  <mu2>1.0</mu2>
+                    </ode>
+                </friction>
+                </surface>
+            </collision>    
+        </link>
+
+        <joint name="mid_left_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>mid_left_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="mid_right_wheel">
+            <pose>0.2 0.300 -0.180 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>  
+            <surface>
+            <friction>
+                <ode>
+                <mu>1.0</mu>  <mu2>1.0</mu2>
+                </ode>
+            </friction>
+            </surface>  
+        </link>
+
+        <joint name="mid_right_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>mid_right_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="front_left_wheel">
+            <pose>0.045 0.610 -0.180 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+                <surface>
+                <friction>
+                    <ode>
+                    <mu>1.0</mu>  <mu2>1.0</mu2>
+                    </ode>
+                </friction>
+                </surface>
+            </collision>    
+        </link>
+
+        <joint name="front_left_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>front_left_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="front_right_wheel">
+            <pose>0.2 0.610 -0.180 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+                <surface>
+                <friction>
+                    <ode>
+                    <mu>1.0</mu>  <mu2>1.0</mu2>
+                    </ode>
+                </friction>
+                </surface>
+            </collision>    
+        </link>
+
+        <joint name="front_right_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>front_right_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="back_left_wheel">
+            <pose>0.04 -0.045 -0.175 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+                <surface>
+                <friction>
+                    <ode>
+                    <mu>1.0</mu>  <mu2>1.0</mu2>
+                    </ode>
+                </friction>
+                </surface>
+            </collision>    
+        </link>
+
+        <joint name="back_left_wheel_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>back_left_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <link name="back_right_wheel">
+            <pose>0.2 -0.045 -0.175 0 0 0</pose>
+            <inertial>
+            <mass>0.0001</mass><inertia>
+                <ixx>0.0004077</ixx> <ixy>0</ixy> <ixz>0</ixz>
+                <iyy>0.0002499</iyy> <iyz>0</iyz>
+                <izz>0.0002499</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <geometry><mesh><uri>model://R2/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>
+            <surface>
+            <friction>
+                <ode>
+                <mu>1.0</mu>  <mu2>1.0</mu2>
+                </ode>
+            </friction>
+            </surface>    
+        </link>
+
+        <joint name="back_right_wheel_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>back_right_wheel</child> 
+
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+    </model>
+</sdf>
