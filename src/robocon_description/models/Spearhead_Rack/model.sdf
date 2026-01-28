@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="spearhead_rack">
+    <self_collide>true</self_collide>
+    <static>false</static>
+    <pose>0 0 0 0 0 0</pose>
+    
+    <link name="base_link">
+      <collision name="box_collision">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.3 0.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="box_visual">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.3 0.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.55 0.27 0.07 1</ambient>
+          <diffuse>0.55 0.27 0.07 1</diffuse>
+        </material>
+      </visual>
+
+      <visual name="pillar_1">
+        <pose>-0.4 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+      <collision name="pillar_1_col">
+        <pose>-0.4 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="pillar_2">
+        <pose>-0.2 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+      <collision name="pillar_2_col">
+        <pose>-0.2 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="pillar_3">
+        <pose>0 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+      <collision name="pillar_3_col">
+        <pose>0 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="pillar_4">
+        <pose>0.2 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+      <collision name="pillar_4_col">
+        <pose>0.2 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name="pillar_5">
+        <pose>0.4 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.7 0.7 0.7 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+        </material>
+      </visual>
+      <collision name="pillar_5_col">
+        <pose>0.4 0 0.514 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.003</radius>
+            <length>0.028</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name = "palm_link">
+      <pose>-0.005 0 0.600 -1.570796327 0 -1.570796327</pose>
+      <inertial>
+        <pose>-0.00144 0.01145 0.01957 0 0 0  </pose>
+        <mass>0.258</mass>
+        <inertia>
+          <ixx>2.843e-4</ixx><ixy>-7.171e-7</ixy><ixz>1.532e-5</ixz>
+          <iyy>3.809e-4</iyy><iyz>6.952e-6</iyz>
+          <izz>1.329e-4</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <collision name="palm_tip_col">
+        <geometry>
+          <mesh>
+            <uri>model://Palm_tip/Palm.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="palm_tip_visual">
+        <geometry>
+          <mesh>
+            <uri>model://Palm_tip/Palm.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <emissive>0.1 0.1 0.1 1</emissive> </material>
+      </visual>
+    </link>
+
+    <link name = "fist_link">
+      <pose> -0.225 0 0.570 0 3.1415926 -1.570796327</pose>
+      <inertial>
+        <pose>-0.002 0.025 0.001 0 0 0  </pose>
+        <mass>0.334</mass>
+        <inertia>
+          <ixx>2.187e-4</ixx><ixy>1.532e-7</ixy><ixz>-1.004e-5</ixz>
+          <iyy>2.986e-4</iyy><iyz>1.764e-6</iyz>
+          <izz>2.121e-4</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <collision name="fist_tip_col">
+        <geometry>
+          <mesh>
+            <uri>model://Fist_tip/Fist.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="fist_tip_visual">
+        <geometry>
+          <mesh>
+            <uri>model://Fist_tip/Fist.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <emissive>0.1 0.1 0.1 1</emissive> </material>
+      </visual>
+    </link>
+
+    <link name = "spear_link">
+      <pose>-0.4 0 0.600 1.570796327 0 0</pose>
+      <inertial>
+        <pose>-3.859e-8 0.123 1.144e-8 0 0 0  </pose>
+        <mass>0.303</mass>
+        <inertia>
+          <ixx>0.001</ixx><ixy>-1.501e-9</ixy><ixz>3.345e-11</ixz>
+          <iyy>6.990e-10</iyy><iyz>-3.511e-10</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <gravity>true</gravity>
+      <collision name="spear_tip_col">
+        <geometry>
+          <mesh>
+            <uri>model://Spear_tip/Spear.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="spear_tip_visual">
+        <geometry>
+          <mesh>
+            <uri>model://Spear_tip/Spear.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+          <emissive>0.1 0.1 0.1 1</emissive> </material>
+      </visual>
+    </link>
+
+    <!-- fixed joint removed so `palm_link` is free to fall -->
+  </model>
+</sdf>

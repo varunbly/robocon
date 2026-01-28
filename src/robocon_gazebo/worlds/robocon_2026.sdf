@@ -828,6 +828,7 @@
       
       <link name="link">
         <inertial>
+          <pose>0 0 0.5 0 0 0</pose>
           <mass>2.0</mass> <inertia>
             <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
             <iyy>0.168</iyy><iyz>0</iyz>
@@ -859,7 +860,7 @@
         </visual>
 
         <collision name="coupler_col">
-          <pose>0 0 1.0 0 0 0</pose>
+          <pose>0 0 1.03 0 1.5708 0</pose>
           <geometry>
             <mesh>
               <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
@@ -868,7 +869,7 @@
           </geometry>
         </collision>
         <visual name="coupler_visual">
-          <pose>0 0 1.0 0 -1.5708 0</pose>
+          <pose>0 0 1.03 0 1.5708 0</pose>
           <geometry>
             <mesh>
               <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
@@ -881,119 +882,72 @@
             <specular>0.1 0.1 0.1 1</specular>
           </material>
         </visual>
-
-        <collision name="palm_tip_col">
-          <pose>0 0 1.065 -1.570796327 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Palm_tip/Palm.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name="palm_tip_visual">
-          <!-- <pose>0 0 1.065 -1.570796327 0 0</pose> -->
-          <pose>-0.00125 -0.0045 1.065 -1.570796327 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Palm_tip/Palm.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>0.2 0.2 0.2 1</ambient>
-            <diffuse>0.2 0.2 0.2 1</diffuse>
-            <emissive>0.1 0.1 0.1 1</emissive> </material>
-        </visual>
       </link>
     </model>
-
 
 <!-- SPEAR -->
 <model name="spear_staff_assembly">
-      <static>false</static>
-      <pose>-0.4 5.450 0.1 0 0 0</pose> 
-      
-      <link name="link">
-        <inertial>
-          <mass>2.0</mass> <inertia>
-            <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
-            <iyy>0.168</iyy><iyz>0</iyz>
-            <izz>0.004</izz>
-          </inertia>
-        </inertial>
+    <static>false</static>
+    <pose>-0.4 5.450 0.1 0 0 0</pose> 
+    
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.5 0 0 0</pose>
+        <mass>2.0</mass> <inertia>
+          <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
+          <iyy>0.168</iyy><iyz>0</iyz>
+          <izz>0.004</izz>
+        </inertia>
+      </inertial>
 
-        <collision name="pipe_col">
-          <pose>0 0 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.01015</radius>
-              <length>1.0</length>
-            </cylinder>
-          </geometry>
-        </collision>
-        <visual name="pipe_visual">
-          <pose>0 0 0.5 0 0 0</pose>
-          <geometry>
-            <cylinder>
-              <radius>0.01015</radius>
-              <length>1.0</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-          </material>
-        </visual>
+      <collision name="pipe_col">
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01015</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="pipe_visual">
+        <pose>0 0 0.5 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.01015</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+      </visual>
 
-        <collision name="coupler_col">
-          <pose>0 0 1.0 0 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name="coupler_visual">
-          <pose>0 0 1.0 0 -1.5708 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>0.69 0.69 0.69 1</ambient>
-            <diffuse>0.69 0.69 0.69 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-          </material>
-        </visual>
-
-        <collision name="spear_tip_col">
-          <pose>0 0 1.0 1.570796327 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Spear_tip/Spear.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name="spear_tip_visual">
-          <pose>0 0 1.026 1.570796327 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Spear_tip/Spear.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>0.2 0.2 0.2 1</ambient>
-            <diffuse>0.2 0.2 0.2 1</diffuse>
-            <emissive>0.1 0.1 0.1 1</emissive> </material>
-        </visual>
-      </link>
-    </model>
+      <collision name="coupler_col">
+        <pose>0 0 1.03 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="coupler_visual">
+        <pose>0 0 1.03 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.69 0.69 0.69 1</ambient>
+          <diffuse>0.69 0.69 0.69 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
 
 
 
@@ -1005,6 +959,7 @@
       
       <link name="link">
         <inertial>
+          <pose>0 0 0.5 0 0 0</pose>
           <mass>2.0</mass> <inertia>
             <ixx>0.168</ixx><ixy>0</ixy><ixz>0</ixz>
             <iyy>0.168</iyy><iyz>0</iyz>
@@ -1036,7 +991,7 @@
         </visual>
 
         <collision name="coupler_col">
-          <pose>0 0 1.0 0 0 0</pose>
+          <pose>0 0 1.03 0 1.5708 0</pose>
           <geometry>
             <mesh>
               <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
@@ -1045,7 +1000,7 @@
           </geometry>
         </collision>
         <visual name="coupler_visual">
-          <pose>0 0 1.0 0 -1.5708 0</pose>
+          <pose>0 0 1.03 0 1.5708 0</pose>
           <geometry>
             <mesh>
               <uri>model://30PM_STEEL/meshes/coupler.dae</uri>
@@ -1058,36 +1013,8 @@
             <specular>0.1 0.1 0.1 1</specular>
           </material>
         </visual>
-
-        <collision name="fist_tip_col">
-          <pose>0 0 1 3.141592654 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Fist_tip/Fist.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-        </collision>
-        <visual name="fist_tip_visual">
-          <pose>0 0.021875 1.075 3.141592654 0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://Fist_tip/Fist.dae</uri>
-              <scale>1.0 1.0 1.0</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>0.2 0.2 0.2 1</ambient>
-            <diffuse>0.2 0.2 0.2 1</diffuse>
-            <emissive>0.1 0.1 0.1 1</emissive> </material>
-        </visual>
       </link>
     </model>
-
-
-
-
-
 
 
 <model name="staff_rack">
@@ -1226,150 +1153,10 @@
 
 
 <!-- SPEARHEAD RACK -->
-  <model name="spearhead_rack">
-    <static>true</static>
-    <pose>3.025 4.65 0.05 0 0 1.570796327</pose>
-    
-    <link name="base_link">
-      <collision name="box_collision">
-        <pose>0 0 0.25 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.2 0.3 0.5</size>
-          </box>
-        </geometry>
-      </collision>
-
-      <visual name="box_visual">
-        <pose>0 0 0.25 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>1.2 0.3 0.5</size>
-          </box>
-        </geometry>
-        <material>
-          <ambient>0.55 0.27 0.07 1</ambient>
-          <diffuse>0.55 0.27 0.07 1</diffuse>
-        </material>
-      </visual>
-
-      <visual name="pillar_1">
-        <pose>-0.4 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.7 0.7 0.7 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-        </material>
-      </visual>
-      <collision name="pillar_1_col">
-        <pose>-0.4 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-      <visual name="pillar_2">
-        <pose>-0.2 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.7 0.7 0.7 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-        </material>
-      </visual>
-      <collision name="pillar_2_col">
-        <pose>-0.2 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-      <visual name="pillar_3">
-        <pose>0 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.7 0.7 0.7 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-        </material>
-      </visual>
-      <collision name="pillar_3_col">
-        <pose>0 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-      <visual name="pillar_4">
-        <pose>0.2 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.7 0.7 0.7 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-        </material>
-      </visual>
-      <collision name="pillar_4_col">
-        <pose>0.2 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-      <visual name="pillar_5">
-        <pose>0.4 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>0.7 0.7 0.7 1</ambient>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-        </material>
-      </visual>
-      <collision name="pillar_5_col">
-        <pose>0.4 0 0.514 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.003</radius>
-            <length>0.028</length>
-          </cylinder>
-        </geometry>
-      </collision>
-
-    </link>
-  </model>
+    <include>
+      <uri>model://Spearhead_Rack</uri>
+       <pose>3.025 4.65 0.05 0 0 1.570796327</pose>
+    </include>
 
 
 
