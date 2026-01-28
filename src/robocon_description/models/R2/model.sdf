@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
     <model name="R2">
-        <self_collide>true</self_collide>
+        <self_collide>false</self_collide>
         <link name="base_link">
             <inertial>
                 <pose>0.136 0.196 0.130 0 0 0</pose>
@@ -54,12 +54,12 @@
             <pose>0.250 0.456 0.004 0 0 0</pose> 
             <axis>
                 <xyz>1 0 0</xyz>
-                <dynamics>
+                <!-- <dynamics>
                     <damping>1.0</damping>
                     <friction>0.1</friction>
                     <spring_stiffness>20</spring_stiffness>
                     <spring_reference>0</spring_reference>
-                </dynamics>
+                </dynamics> -->
                 <limit>
                     <lower>-1.57</lower>
                     <upper>1.57</upper>
@@ -102,6 +102,8 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity>
                 </limit>
             </axis>
         </joint>
@@ -139,6 +141,8 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity> 
                 </limit>
             </axis>
         </joint>
@@ -176,6 +180,8 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity> 
                 </limit>
             </axis>
         </joint>
@@ -213,6 +219,8 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity>
                 </limit>
             </axis>
         </joint>
@@ -250,6 +258,8 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity> 
                 </limit>
             </axis>
         </joint>
@@ -287,89 +297,32 @@
                 <xyz>1 0 0</xyz> <limit>
                 <lower>-1e16</lower>
                 <upper>1e16</upper>
+                <effort>35</effort>
+                <velocity>50</velocity>
                 </limit>
             </axis>
         </joint>
 
-    <!-- Diff Drive Plugin -->
-    <plugin
-      filename="ignition-gazebo-diff-drive-system"
-      name="ignition::gazebo::systems::DiffDrive">
-      <left_joint>back_left_wheel_joint</left_joint>
-      <left_joint>front_left_wheel_joint</left_joint>
-      <right_joint>back_right_wheel_joint</right_joint>
-      <right_joint>front_right_wheel_joint</right_joint>
-      <wheel_separation>0.0</wheel_separation>
-      <wheel_radius>0.05</wheel_radius>
-      <odom_publish_frequency>20</odom_publish_frequency>
-      <topic>/model/R2/cmd_vel</topic>
-    </plugin>
 
-    <!-- Joint Controllers -->
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+
+    <!-- Apply Joint Force Plugins for Torque Control -->
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>front_left_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <d_gain>0.0</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>front_right_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <d_gain>0.0</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>mid_left_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <d_gain>0.0</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>mid_right_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>back_left_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <d_gain>0.0</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>back_right_wheel_joint</joint_name>
-      <use_force_commands>true</use_force_commands>
-      <p_gain>0.2</p_gain>
-      <i_gain>0.01</i_gain>
-      <d_gain>0.0</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
     </plugin>
   </model>
 </sdf>

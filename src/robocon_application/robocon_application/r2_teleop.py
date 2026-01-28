@@ -34,14 +34,14 @@ class R2Teleop(Node):
         
         # Individual Wheel Publishers - Using "A_" prefix as requested
         # Front
-        self.pub_A_front_left = self.create_publisher(Float64, '/R2/front_left_wheel/cmd_vel', 10)
-        self.pub_A_front_right = self.create_publisher(Float64, '/R2/front_right_wheel/cmd_vel', 10)
+        self.pub_A_front_left = self.create_publisher(Float64, '/R2/front_left_wheel/cmd_torque', 10)
+        self.pub_A_front_right = self.create_publisher(Float64, '/R2/front_right_wheel/cmd_torque', 10)
         # Mid
-        self.pub_A_mid_left = self.create_publisher(Float64, '/R2/mid_left_wheel/cmd_vel', 10)
-        self.pub_A_mid_right = self.create_publisher(Float64, '/R2/mid_right_wheel/cmd_vel', 10)
+        self.pub_A_mid_left = self.create_publisher(Float64, '/R2/mid_left_wheel/cmd_torque', 10)
+        self.pub_A_mid_right = self.create_publisher(Float64, '/R2/mid_right_wheel/cmd_torque', 10)
         # Back
-        self.pub_A_back_left = self.create_publisher(Float64, '/R2/back_left_wheel/cmd_vel', 10)
-        self.pub_A_back_right = self.create_publisher(Float64, '/R2/back_right_wheel/cmd_vel', 10)
+        self.pub_A_back_left = self.create_publisher(Float64, '/R2/back_left_wheel/cmd_torque', 10)
+        self.pub_A_back_right = self.create_publisher(Float64, '/R2/back_right_wheel/cmd_torque', 10)
         
         self.settings = termios.tcgetattr(sys.stdin)
 
@@ -77,25 +77,25 @@ def main():
             # Key mappings
             if key == 'w':
                 # All Forward
-                speed = 50.0 # Radians/sec
-                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = speed
+                torque = 35.0 # Nm
+                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = torque
                 
             elif key == 's':
                 # All Backward
-                speed = -50.0
-                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = speed
+                torque = -35.0 # Nm
+                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
-                speed = 50.0
-                v_fr = v_mr = v_br = speed
-                v_fl = v_ml = v_bl = -speed
+                torque = 35.0
+                v_fr = v_mr = v_br = torque
+                v_fl = v_ml = v_bl = -torque
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
-                speed = 50.0
-                v_fl = v_ml = v_bl = speed
-                v_fr = v_mr = v_br = -speed
+                torque = 35.0
+                v_fl = v_ml = v_bl = torque
+                v_fr = v_mr = v_br = -torque
             
             # elif key == 't':
             #      # Only Mid Forward
@@ -127,8 +127,8 @@ def main():
             node.pub_A_back_right.publish(msg_br)
             
             # Also publish zero to main cmd_vel to ensure DiffDrive doesn't fight (optional)
-            twist = Twist()
-            node.pub_cmd_vel.publish(twist)
+            # twist = Twist()
+            # node.pub_cmd_vel.publish(twist)
 
     except Exception as e:
         print(e)
