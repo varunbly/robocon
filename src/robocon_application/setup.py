@@ -32,6 +32,7 @@ setup(
             'dual_teleop = robocon_application.dual_teleop:main',
             'r1_teleop = robocon_application.r1_teleop:main',
             'r2_teleop = robocon_application.r2_teleop:main',
+            'mini_car_teleop = robocon_application.mini_car_teleop:main',
         ],
     },
 )
