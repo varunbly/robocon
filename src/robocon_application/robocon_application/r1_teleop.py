@@ -23,13 +23,13 @@ class R1Teleop(Node):
     def __init__(self):
         super().__init__('r1_teleop')
         self.pub_fl = self.create_publisher(
-            Float64, '/model/R1/joint/front_left_wheel_joint/cmd_torque', 10)
+            Float64, '/model/R1/joint/front_left_wheel_joint/cmd_vel', 10)
         self.pub_bl = self.create_publisher(
-            Float64, '/model/R1/joint/back_left_wheel_joint/cmd_torque', 10)
+            Float64, '/model/R1/joint/back_left_wheel_joint/cmd_vel', 10)
         self.pub_fr = self.create_publisher(
-            Float64, '/model/R1/joint/front_right_wheel_joint/cmd_torque', 10)
+            Float64, '/model/R1/joint/front_right_wheel_joint/cmd_vel', 10)
         self.pub_br = self.create_publisher(
-            Float64, '/model/R1/joint/back_right_wheel_joint/cmd_torque', 10)
+            Float64, '/model/R1/joint/back_right_wheel_joint/cmd_vel', 10)
 
         self.settings = termios.tcgetattr(sys.stdin)
 
@@ -63,15 +63,17 @@ def main():
             fl=bl=fr=br=0.0
             
             if key == 'w':
-                fl=bl=fr=br=35.0
+                fl=bl=fr=br=10.0
             elif key == 's':
-                fl=bl=fr=br=-35.0
+                fl=bl=fr=br=-10.0
             elif key == 'a':
-                fl=bl=-35.0
-                fr=br=35.0
+                # Turn Left: Left wheels back, Right wheels forward
+                fl=bl=-10.0
+                fr=br=10.0
             elif key == 'd':
-                fl=bl=35.0
-                fr=br=-35.0
+                # Turn Right: Left wheels forward, Right wheels back
+                fl=bl=10.0
+                fr=br=-10.0
             elif key == 'q':    
                 break
 

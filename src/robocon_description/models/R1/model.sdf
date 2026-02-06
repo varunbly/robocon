@@ -71,8 +71,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>1.0</mu>
+              <mu>0.4</mu>
               <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
             </ode>
           </friction>
         </surface>
@@ -87,11 +88,12 @@
       </visual>
     </link>
 
+
     <joint name="back_left_wheel_joint" type="revolute">
       <parent>base_link</parent>
       <child>back_left_wheel</child>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 0 0</xyz>
       </axis>
       <physics>
         <ode>
@@ -121,8 +123,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>1.0</mu>
+              <mu>0.4</mu>
               <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
             </ode>
           </friction>
         </surface>
@@ -141,7 +144,7 @@
       <parent>base_link</parent>
       <child>front_left_wheel</child>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 0 0</xyz>
       </axis>
       <physics>
         <ode>
@@ -171,8 +174,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>1.0</mu>
+              <mu>0.4</mu>
               <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
             </ode>
           </friction>
         </surface>
@@ -221,8 +225,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>1.0</mu>
+              <mu>0.4</mu>
               <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
             </ode>
           </friction>
         </surface>
@@ -250,18 +255,26 @@
       </physics>
     </joint>
 
-    <!-- ================= JOINT CONTROLLER ================= -->
-    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
+    <!-- Individual Wheel Velocity Controllers -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>front_left_wheel_joint</joint_name>
+      <sub_topic>joint/front_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
     </plugin>
-    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>front_right_wheel_joint</joint_name>
+      <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
     </plugin>
-     <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>back_left_wheel_joint</joint_name>
+      <sub_topic>joint/back_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
     </plugin>
-    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
-      <joint_name>back_left_wheel_joint</joint_name>
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_right_wheel_joint</joint_name>
+      <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
     </plugin>
 
   </model>
