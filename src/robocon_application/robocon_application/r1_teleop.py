@@ -9,14 +9,13 @@ import tty
 import select
 
 msg = """
-Control R1 Robot
+Control R1 Robot (Auto-Stop Mode)
 ---------------------------
-Controls:
+Controls (Hold to move):
    w: forward
    s: backward
    a: turn left (FAST)
    d: turn right (FAST)
-   x: stop
    q: quit
 """
 
@@ -24,22 +23,26 @@ class R1Teleop(Node):
     def __init__(self):
         super().__init__('r1_teleop')
         self.pub_fl = self.create_publisher(
-            Float64, '/model/R1/joint/front_left_wheel_joint/cmd_vel', 10)
+            Float64, '/model/R1/joint/front_left_wheel_joint/cmd_torque', 10)
         self.pub_bl = self.create_publisher(
-            Float64, '/model/R1/joint/back_left_wheel_joint/cmd_vel', 10)
+            Float64, '/model/R1/joint/back_left_wheel_joint/cmd_torque', 10)
         self.pub_fr = self.create_publisher(
-            Float64, '/model/R1/joint/front_right_wheel_joint/cmd_vel', 10)
+            Float64, '/model/R1/joint/front_right_wheel_joint/cmd_torque', 10)
         self.pub_br = self.create_publisher(
-            Float64, '/model/R1/joint/back_right_wheel_joint/cmd_vel', 10)
+            Float64, '/model/R1/joint/back_right_wheel_joint/cmd_torque', 10)
 
         self.settings = termios.tcgetattr(sys.stdin)
 
     def get_key(self):
         tty.setraw(sys.stdin.fileno())
-        key = sys.stdin.read(1)   # BLOCKS until key is pressed
+        # Non-blocking check with 0.1s timeout
+        rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+        if rlist:
+            key = sys.stdin.read(1)
+        else:
+            key = ''
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
         return key
-
     
     def publish_wheels(self, fl, bl, fr, br):
         self.pub_fl.publish(Float64(data=fl))
@@ -56,18 +59,19 @@ def main():
     try:
         while True:
             key = node.get_key()
-            twist = Twist()
+            # Default to 0.0 (Stop) if no key is pressed
             fl=bl=fr=br=0.0
+            
             if key == 'w':
-                fl=bl=fr=br=5.0
+                fl=bl=fr=br=35.0
             elif key == 's':
-                fl=bl=fr=br=-5.0
+                fl=bl=fr=br=-35.0
             elif key == 'a':
-                fl=bl=-5.0
-                fr=br=5.0
+                fl=bl=-35.0
+                fr=br=35.0
             elif key == 'd':
-                fl=bl=5.0
-                fr=br=-5.0
+                fl=bl=35.0
+                fr=br=-35.0
             elif key == 'q':    
                 break
 

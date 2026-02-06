@@ -18,10 +18,6 @@ Controls (Hold to move):
    a: pivot left
    d: pivot right
    
-   Specific Wheels (Example):
-   t: mid wheels forward
-   g: mid wheels backward
-   
    q: quit
 """
 
@@ -78,22 +74,22 @@ def main():
             if key == 'w':
                 # All Forward
                 torque = 35.0 # Nm
-                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = torque
+                v_fl = v_fr = v_ml = v_mr  = torque
                 
             elif key == 's':
                 # All Backward
                 torque = -35.0 # Nm
-                v_fl = v_fr = v_ml = v_mr = v_bl = v_br = torque
+                v_fl = v_fr = v_ml = v_mr = torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
-                torque = 35.0
-                v_fr = v_mr = v_br = torque
-                v_fl = v_ml = v_bl = -torque
+                torque = 25.0
+                v_mr  = torque
+                v_ml = -torque
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
-                torque = 35.0
+                torque = 25.0
                 v_fl = v_ml = v_bl = torque
                 v_fr = v_mr = v_br = -torque
             

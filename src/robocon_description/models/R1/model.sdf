@@ -251,13 +251,17 @@
     </joint>
 
     <!-- ================= JOINT CONTROLLER ================= -->
-    <plugin
-      filename="ignition-gazebo-joint-controller-system"
-      name="ignition::gazebo::systems::JointController">
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>front_left_wheel_joint</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>front_right_wheel_joint</joint_name>
+    </plugin>
+     <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
       <joint_name>back_left_wheel_joint</joint_name>
-      <joint_name>back_right_wheel_joint</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-apply-joint-force-system" name="ignition::gazebo::systems::ApplyJointForce">
+      <joint_name>back_left_wheel_joint</joint_name>
     </plugin>
 
   </model>
