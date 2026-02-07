@@ -4,21 +4,21 @@
         <self_collide>true</self_collide>
         <link name="base_link">
             <inertial>
-                <pose>0.136 0.196 0.130 0 0 0</pose>
-                <mass>7.352</mass> <inertia>
-                    <ixx>0.272906</ixx>   <ixy>-0.011438</ixy>  <ixz>-0.001470</ixz>   
-                    <iyy>0.115179</iyy>   <iyz>-0.048676</iyz>   
-                    <izz>0.270581</izz>
+                <pose>0.136 0.203 0.125 0 0 0</pose>
+                <mass>10.157</mass> <inertia>
+                    <ixx>0.399</ixx>   <ixy>-0.014</ixy>  <ixz>-0.003</ixz>   
+                    <iyy>0.168</iyy>   <iyz>-0.064</iyz>   
+                    <izz>0.392</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0 1.5707 0 0</pose>
+                <pose>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
             </collision>
             <visual name="visual">
-                <pose>0 0 0 1.5707 0 0</pose>
+                <pose>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
@@ -27,21 +27,21 @@
 
         <link name="A_link">
             <inertial>
-                <pose>0.124 0.456 -0.062 0 0 0</pose>
-                <mass>0.953</mass> <inertia>
-                    <ixx>0.008533</ixx> <ixy>0</ixy> <ixz>0</ixz>   
-                    <iyy>0.011742</iyy> <iyz>0</iyz>   
-                    <izz>0.016208</izz>
+                <pose>0.125 0.456 -0.073 0 0 0</pose>
+                <mass>1.502</mass> <inertia>
+                    <ixx>0.016</ixx> <ixy>-1.248e-8</ixy> <ixz>1.398e-7</ixz>   
+                    <iyy>0.017</iyy> <iyz>-1.527e-4</iyz>   
+                    <izz>0.025</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0 1.5707 0 0</pose>
+                <pose>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
                 </geometry>
             </collision>
             <visual name="visual">
-                <pose>0 0 0 1.5707 0 0</pose>
+                <pose>0 0 0 0 0 0</pose>
                 <geometry>
                     <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
                 </geometry>

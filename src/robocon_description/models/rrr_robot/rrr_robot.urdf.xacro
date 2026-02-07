@@ -5,7 +5,7 @@
   <xacro:property name="link0_len" value="0.02"/>
   <xacro:property name="link1_len" value="0.27"/>
   <xacro:property name="link2_len" value="0.27"/>
-  <xacro:property name="link3_len" value="0.55"/>
+  <xacro:property name="link3_len" value="0.35"/>
   <xacro:property name="link_rad" value="0.02"/>
 
   <!--  MATERIALS -->
@@ -28,7 +28,7 @@
 
   <!-- BASE -->
   <link name="base_link">
-    <xacro:simple_inertial mass="5.0"/>
+    <xacro:simple_inertial mass="0.001"/>
     <visual>
       <geometry><cylinder length="0.05" radius="0.01"/></geometry>
       <material name="grey"/>
@@ -49,7 +49,7 @@
 
   <!--  LINK 0 -->
   <link name="link0">
-    <xacro:simple_inertial mass="3.0"/>
+    <xacro:simple_inertial mass="0.3"/>
     <visual>
       <origin xyz="0 0 ${link0_len/2}" rpy="0 0 0"/>
       <geometry><cylinder length="${link0_len}" radius="${link_rad}"/></geometry>
@@ -72,7 +72,7 @@
 
   <!-- LINK 1 -->
   <link name="link1">
-    <xacro:simple_inertial mass="4.0"/>
+    <xacro:simple_inertial mass="0.2"/>
     <visual>
       <origin xyz="0 0 ${link1_len/2}" rpy="0 0 0"/>
       <geometry><cylinder length="${link1_len}" radius="${link_rad}"/></geometry>
@@ -95,7 +95,7 @@
 
   <!--  LINK 2 -->
   <link name="link2">
-    <xacro:simple_inertial mass="3.5"/>
+    <xacro:simple_inertial mass="0.3"/>
     <visual>
       <origin xyz="0 0 ${link2_len/2}" rpy="0 0 0"/>
       <geometry><cylinder length="${link2_len}" radius="${link_rad}"/></geometry>
@@ -118,7 +118,7 @@
 
   <!--  LINK 3 -->
   <link name="link3">
-    <xacro:simple_inertial mass="2.5"/>
+    <xacro:simple_inertial mass="0.3"/>
     <visual>
       <origin xyz="0 0 ${link3_len/2}" rpy="0 0 0"/>
       <geometry><cylinder length="${link3_len}" radius="${link_rad}"/></geometry>
@@ -141,15 +141,15 @@
   </joint>
 
   <link name="gripper_base">
-    <xacro:simple_inertial mass="1.5"/>
+    <xacro:simple_inertial mass="0.1"/>
     <visual>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
-      <geometry><box size="0.02 0.3 0.02"/></geometry>
+      <geometry><box size="0.02 0.4 0.02"/></geometry>
       <material name="grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0.01" rpy="0 0 0"/>
-      <geometry><box size="0.02 0.3 0.02"/></geometry>
+      <geometry><box size="0.02 0.4 0.02"/></geometry>
       <self_collide>true</self_collide>
     </collision>
   </link>
@@ -164,7 +164,7 @@
   </joint>
 
   <link name="gripper_finger_left">
-    <xacro:simple_inertial mass="0.3"/>
+    <xacro:simple_inertial mass="0.01"/>
     <visual>
       <geometry><box size="0.01 0.01 0.04"/></geometry>
       <material name="blue"/>
@@ -186,7 +186,7 @@
   </joint>
 
   <link name="gripper_finger_right">
-    <xacro:simple_inertial mass="0.3"/>
+    <xacro:simple_inertial mass="0.01"/>
     <visual>
       <geometry><box size="0.01 0.01 0.04"/></geometry>
       <material name="blue"/>
