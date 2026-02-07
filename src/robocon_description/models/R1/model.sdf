@@ -93,7 +93,7 @@
       <parent>base_link</parent>
       <child>back_left_wheel</child>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
       </axis>
       <physics>
         <ode>
@@ -144,7 +144,7 @@
       <parent>base_link</parent>
       <child>front_left_wheel</child>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
       </axis>
       <physics>
         <ode>
