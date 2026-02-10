@@ -369,11 +369,6 @@
       <child>gripper_finger_right</child>
       <axis>
         <xyz>0 -1 0</xyz>
-        <mimic joint='finger_left_joint'>
-          <multiplier>1</multiplier>
-          <offset>0</offset>
-          <reference>0</reference>
-        </mimic>
         <limit>
           <lower>-0.089999999999999997</lower>
           <upper>0.050000000000000003</upper>
@@ -421,5 +416,72 @@
         </material>
       </visual>
     </link>
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>joint0</joint_name>
+      <topic>/rrr/joint0/cmd_pos</topic>
+      <p_gain>1000</p_gain>
+      <i_gain>100</i_gain>
+      <d_gain>50</d_gain>
+      <cmd_max>30</cmd_max>
+      <cmd_min>-30</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>joint1</joint_name>
+      <topic>/rrr/joint1/cmd_pos</topic>
+      <p_gain>5000</p_gain> <i_gain>200</i_gain>
+      <d_gain>100</d_gain>
+      <cmd_max>50</cmd_max>
+      <cmd_min>-50</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>joint2</joint_name>
+      <topic>/rrr/joint2/cmd_pos</topic>
+      <p_gain>3000</p_gain>
+      <i_gain>100</i_gain>
+      <d_gain>50</d_gain>
+      <cmd_max>30</cmd_max>
+      <cmd_min>-30</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>joint3</joint_name>
+      <topic>/rrr/joint3/cmd_pos</topic>
+      <p_gain>1000</p_gain>
+      <i_gain>50</i_gain>
+      <d_gain>20</d_gain>
+      <cmd_max>15</cmd_max>
+      <cmd_min>-15</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>joint4</joint_name>
+      <topic>/rrr/joint4/cmd_pos</topic>
+      <p_gain>500</p_gain>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>finger_left_joint</joint_name>
+      <topic>/rrr/gripper/cmd_pos</topic>
+      <p_gain>200</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>finger_right_joint</joint_name>
+      <topic>/rrr/gripper/cmd_pos</topic>
+      <p_gain>200</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>10</d_gain>
+      <cmd_max>100</cmd_max>
+      <cmd_min>-100</cmd_min>
+    </plugin>
+
   </model>
 </sdf>
