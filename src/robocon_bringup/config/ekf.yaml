@@ -1,0 +1,58 @@
+### ekf config file ###
+ekf_filter_node:
+    ros__parameters:
+        use_sim_time: true
+        # Reset the filter when a jump back in time is detected (useful for Gazebo resets)
+        reset_on_time_jump: true
+        # The frequency, in Hz, at which the filter will output a position estimate.
+        frequency: 30.0
+
+        # Two-D mode: true for planar robots (ground vehicles). 
+        # Ignores 3D variables (Z, roll, pitch).
+        two_d_mode: true
+
+        # Whether to broadcast the transformation over the /tf topic.
+        publish_tf: true
+
+        # Map frame is usually 'map'. Odom frame is 'odom'. 
+        # Base link frame matches your robot's root link (base_footprint or base_link).
+        map_frame: map
+        odom_frame: odom
+        base_link_frame: base_link
+        world_frame: odom
+
+        # -------------------------------------
+        # ODOMETRY INPUT (from Gazebo DiffDrive)
+        # -------------------------------------
+        # Topic name
+        odom0: odom
+        
+        # Configuration: [x, y, z, 
+        #                 roll, pitch, yaw, 
+        #                 vx, vy, vz, 
+        #                 vroll, vpitch, vyaw, 
+        #                 ax, ay, az]
+        # Fuse velocities (vx, vy, vyaw) from wheel odometry.
+        odom0_config: [false, false, false,
+                       false, false, false,
+                       true,  true,  false,
+                       false, false, true,
+                       false, false, false]
+        
+        # -------------------------------------
+        # IMU INPUT (from Gazebo IMU)
+        # -------------------------------------
+        # Topic name
+        imu0: imu
+        
+        # Configuration: Fuse orientation (yaw) and angular velocity (vyaw).
+        # Note: If your IMU does not provide absolute orientation (magnetometer), set yaw to false.
+        # However, usually fusing at least 'vyaw' helps.
+        imu0_config: [false, false, false,
+                      false, false, true,
+                      false, false, false,
+                      false, false, true,
+                      true,  false, false] 
+                      # Added 'ax' (linear acceleration x) for better reaction to slipping if available.
+        
+        # Covariance adjustments can be added here if needed.

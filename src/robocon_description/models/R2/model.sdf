@@ -2,175 +2,347 @@
 <sdf version="1.8">
     <model name="R2">
         <self_collide>true</self_collide>
+
+        <!-- Root link with no inertia -->
+        <link name="base_footprint"/>
+
         <link name="base_link">
+            <pose>0 0 0.18 0 0 0</pose>
             <inertial>
                 <pose>0.136 0.203 0.125 0 0 0</pose>
-                <mass>10.157</mass> <inertia>
-                    <ixx>0.399</ixx>   <ixy>-0.014</ixy>  <ixz>-0.003</ixz>   
-                    <iyy>0.168</iyy>   <iyz>-0.064</iyz>   
+                <mass>10.157</mass> 
+                <inertia>
+                    <ixx>0.399</ixx> <ixy>-0.014</ixy> <ixz>-0.003</ixz>   
+                    <iyy>0.168</iyy> <iyz>-0.064</iyz>   
                     <izz>0.392</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0 0 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
+                    <mesh><uri>package://robocon_description/models/R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
             </collision>
             <visual name="visual">
-                <pose>0 0 0 0 0 0</pose>
                 <geometry>
-                    <mesh><uri>model://R2/meshes/R2-NO-A.dae</uri></mesh>
+                    <mesh><uri>package://robocon_description/models/R2/meshes/R2-NO-A.dae</uri></mesh>
                 </geometry>
             </visual>
         </link>
 
+        <joint name="base_footprint_joint" type="fixed">
+            <parent>base_link</parent>
+            <child>base_footprint</child>
+            <pose>0 0 -0.18 0 0 0</pose>
+        </joint>
+
+        <link name="lidar_link">
+            <pose>0.136 0.203 0.19 0 0 0</pose>
+            <inertial>
+                <mass>0.125</mass>
+                <inertia>
+                    <ixx>0.0001</ixx>
+                    <iyy>0.0001</iyy>
+                    <izz>0.0001</izz>
+                </inertia>
+            </inertial>
+            <collision name="collision">
+                <geometry>
+                    <cylinder>
+                        <radius>0.0508</radius>
+                        <length>0.055</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <cylinder>
+                        <radius>0.0508</radius>
+                        <length>0.055</length>
+                    </cylinder>
+                </geometry>
+            </visual>
+            <sensor name="gpu_lidar" type="gpu_lidar">
+                <update_rate>10</update_rate>
+                <topic>scan</topic>
+                <gz_frame_id>lidar_link</gz_frame_id>
+                <lidar>
+                    <scan>
+                        <horizontal>
+                            <samples>360</samples>
+                            <resolution>1</resolution>
+                            <min_angle>-3.14159</min_angle>
+                            <max_angle>3.14159</max_angle>
+                        </horizontal>
+                    </scan>
+                    <range>
+                        <min>0.6</min>
+                        <max>10.0</max>
+                        <resolution>0.01</resolution>
+                    </range>
+                    <noise>
+                        <type>gaussian</type>
+                        <mean>0.0</mean>
+                        <stddev>0.01</stddev>
+                    </noise>
+                </lidar>
+                <always_on>1</always_on>
+                <visualize>true</visualize>
+            </sensor>
+        </link>
+
+        <joint name="lidar_joint" type="fixed">
+            <parent>base_link</parent>
+            <child>lidar_link</child>
+        </joint>
+
         <link name="A_link">
+            <pose>0 0 0.18 0 0 0</pose>
             <inertial>
                 <pose>0.125 0.456 -0.073 0 0 0</pose>
-                <mass>1.502</mass> <inertia>
+                <mass>1.502</mass>
+                <inertia>
                     <ixx>0.016</ixx> <ixy>-1.248e-8</ixy> <ixz>1.398e-7</ixz>   
                     <iyy>0.017</iyy> <iyz>-1.527e-4</iyz>   
                     <izz>0.025</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
-                <pose>0 0 0 0 0 0</pose>
-                <geometry>
-                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
-                </geometry>
+                <geometry><mesh><uri>package://robocon_description/models/R2/meshes/R2-A.dae</uri></mesh></geometry>
             </collision>
             <visual name="visual">
-                <pose>0 0 0 0 0 0</pose>
-                <geometry>
-                    <mesh><uri>model://R2/meshes/R2-A.dae</uri></mesh>
-                </geometry>
+                <geometry><mesh><uri>package://robocon_description/models/R2/meshes/R2-A.dae</uri></mesh></geometry>
             </visual>
         </link>
 
         <joint name="A_joint" type="revolute">
             <parent>base_link</parent>
             <child>A_link</child>
-            
             <pose>0.250 0.456 0.004 0 0 0</pose> 
-
             <axis>
                 <xyz>1 0 0</xyz>
-                <limit>
-                    <lower>-1e16</lower>
-                    <upper>1e16</upper>
-                </limit>
+                <limit><lower>-1e16</lower><upper>1e16</upper></limit>
             </axis>
         </joint>
 
-        
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>mid_left_wheel</name>
-        <pose>0.045 0.300 -0.180 0 0 0</pose>
-        </include>
-
+        <!-- Wheels -->
+        <link name="mid_left_wheel">
+            <pose>0.045 0.300 0 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="mid_left_wheel_joint" type="revolute">
-            <parent>A_link</parent>
-            <child>mid_left_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>A_link</parent><child>mid_left_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
 
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>mid_right_wheel</name>
-        <pose>0.2 0.300 -0.180 0 0 0</pose>
-        </include>
-
+        <link name="mid_right_wheel">
+            <pose>0.2 0.300 0 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="mid_right_wheel_joint" type="revolute">
-            <parent>A_link</parent>
-            <child>mid_right_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>A_link</parent><child>mid_right_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
 
-
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>front_left_wheel</name>
-        <pose>0.045 0.610 -0.180 0 0 0</pose>
-        </include>
-
+        <link name="front_left_wheel">
+            <pose>0.045 0.610 0 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="front_left_wheel_joint" type="revolute">
-            <parent>A_link</parent>
-            <child>front_left_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>A_link</parent><child>front_left_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
 
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>front_right_wheel</name>
-        <pose>0.2 0.610 -0.180 0 0 0</pose>
-        </include>
-
+        <link name="front_right_wheel">
+            <pose>0.2 0.610 0 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="front_right_wheel_joint" type="revolute">
-            <parent>A_link</parent>
-            <child>front_right_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>A_link</parent><child>front_right_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
 
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>back_left_wheel</name>
-        <pose>0.04 -0.045 -0.175 0 0 0</pose>
-        </include>
-
+        <link name="back_left_wheel">
+            <pose>0.04 -0.045 0.005 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="back_left_wheel_joint" type="revolute">
-            <parent>base_link</parent>
-            <child>back_left_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>base_link</parent><child>back_left_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
 
-        <include>
-        <uri>model://R2_wheel</uri>
-        <name>back_right_wheel</name>
-        <pose>0.2 -0.045 -0.175 0 0 0</pose>
-        </include>
-
+        <link name="back_right_wheel">
+            <pose>0.2 -0.045 0.005 0 0 0</pose>
+            <inertial>
+                <mass>0.0001</mass>
+                <inertia><ixx>0.0004077</ixx><iyy>0.0002499</iyy><izz>0.0002499</izz></inertia>
+            </inertial>
+            <visual name="visual">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </visual>
+            <collision name="collision">
+                <pose>0 0 0 0 3.14159 0</pose>
+                <geometry><mesh><uri>package://robocon_description/models/R2_wheel/meshes/wheel.dae</uri></mesh></geometry>
+            </collision>    
+        </link>
         <joint name="back_right_wheel_joint" type="revolute">
-            <parent>base_link</parent>
-            <child>back_right_wheel</child> 
-
-            <axis>
-                <xyz>1 0 0</xyz> <limit>
-                <lower>-1e16</lower>
-                <upper>1e16</upper>
-                </limit>
-            </axis>
+            <parent>base_link</parent><child>back_right_wheel</child> 
+            <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
         </joint>
+
+        <link name='imu_link'>
+            <pose relative_to="base_link">0.136 0.203 0.05 0 0 0</pose>
+            <inertial>
+                <mass>0.1</mass>
+                <inertia>
+                    <ixx>0.000166667</ixx>
+                    <iyy>0.000166667</iyy>
+                    <izz>0.000166667</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry><box><size>0.05 0.05 0.02</size></box></geometry>
+            </visual>
+            <sensor name="imu_sensor" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <visualize>true</visualize>
+                <topic>imu</topic>
+                <gz_frame_id>imu_link</gz_frame_id>
+            </sensor>
+        </link>
+
+        <joint name='imu_joint' type='fixed'>
+            <parent>base_link</parent>
+            <child>imu_link</child>
+        </joint>
+
+        <link name="camera_link">
+            <pose relative_to="base_link">0.12 0 0.18 0 0 1.570796327</pose>
+            <inertial>
+                <mass>0.035</mass>
+                <inertia>
+                    <ixx>0.0001</ixx>
+                    <iyy>0.0001</iyy>
+                    <izz>0.0001</izz>
+                </inertia>
+            </inertial>
+            <visual name="visual">
+                <geometry>
+                    <box>
+                        <size>0.015 0.130 0.022</size>
+                    </box>
+                </geometry>
+            </visual>
+            <collision name="collision">
+                <geometry>
+                    <box>
+                        <size>0.015 0.130 0.022</size>
+                    </box>
+                </geometry>
+            </collision>
+            <sensor name="depth_camera" type="rgbd_camera">
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>5.0</update_rate>
+                <topic>depth_camera</topic>
+                <gz_frame_id>camera_link</gz_frame_id>
+                <camera>
+                    <horizontal_fov>1.047198</horizontal_fov>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                    </image>
+                    <clip>
+                        <near>0.05</near>
+                        <far>3</far>
+                    </clip>
+                </camera>
+            </sensor>
+        </link>
+
+        <joint name="camera_joint" type="fixed">
+            <parent>base_link</parent>
+            <child>camera_link</child>
+        </joint>
+
+        <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+            <left_joint>mid_left_wheel_joint</left_joint>
+            <right_joint>mid_right_wheel_joint</right_joint>
+            <wheel_separation>0.4</wheel_separation>
+            <wheel_radius>0.1</wheel_radius>
+            <odom_publish_frequency>20</odom_publish_frequency>
+            <topic>cmd_vel</topic>
+            <odom_topic>odom</odom_topic>
+            <tf_topic>odom_tf_internal</tf_topic>
+            <frame_id>odom</frame_id>
+            <child_frame_id>base_link</child_frame_id>
+        </plugin>
+
+        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+            <topic>joint_states</topic>
+        </plugin>
+
+        <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+            <publish_link_pose>true</publish_link_pose>
+            <use_pose_vector_msg>true</use_pose_vector_msg>
+            <static_publisher>true</static_publisher>
+            <static_update_frequency>1</static_update_frequency>
+        </plugin>
     </model>
 </sdf>
