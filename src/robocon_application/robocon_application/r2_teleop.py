@@ -10,7 +10,7 @@ import select
 from std_msgs.msg import Float64
 
 msg = """
-Control R2 Robot (Independent Wheel Control)
+Control R2 Robot (Velocity Control)
 ---------------------------
 Controls (Hold to move):
    w: move all forward
@@ -30,14 +30,14 @@ class R2Teleop(Node):
         
         # Individual Wheel Publishers - Using "A_" prefix as requested
         # Front
-        self.pub_A_front_left = self.create_publisher(Float64, '/R2/front_left_wheel/cmd_torque', 10)
-        self.pub_A_front_right = self.create_publisher(Float64, '/R2/front_right_wheel/cmd_torque', 10)
+        self.pub_A_front_left = self.create_publisher(Float64, '/R2/front_left_wheel/cmd_vel', 10)
+        self.pub_A_front_right = self.create_publisher(Float64, '/R2/front_right_wheel/cmd_vel', 10)
         # Mid
-        self.pub_A_mid_left = self.create_publisher(Float64, '/R2/mid_left_wheel/cmd_torque', 10)
-        self.pub_A_mid_right = self.create_publisher(Float64, '/R2/mid_right_wheel/cmd_torque', 10)
+        self.pub_A_mid_left = self.create_publisher(Float64, '/R2/mid_left_wheel/cmd_vel', 10)
+        self.pub_A_mid_right = self.create_publisher(Float64, '/R2/mid_right_wheel/cmd_vel', 10)
         # Back
-        self.pub_A_back_left = self.create_publisher(Float64, '/R2/back_left_wheel/cmd_torque', 10)
-        self.pub_A_back_right = self.create_publisher(Float64, '/R2/back_right_wheel/cmd_torque', 10)
+        self.pub_A_back_left = self.create_publisher(Float64, '/R2/back_left_wheel/cmd_vel', 10)
+        self.pub_A_back_right = self.create_publisher(Float64, '/R2/back_right_wheel/cmd_vel', 10)
         
         self.settings = termios.tcgetattr(sys.stdin)
 
@@ -71,27 +71,28 @@ def main():
             v_br = 0.0 # Back Right
             
             # Key mappings
+            # Key mappings
             if key == 'w':
                 # All Forward
-                torque = 35.0 # Nm
-                v_fl = v_fr = v_ml = v_mr  = torque
+                vel = 10.0 # rad/s
+                v_fl = v_fr =v_ml = v_mr = v_bl = v_br = vel
                 
             elif key == 's':
                 # All Backward
-                torque = -35.0 # Nm
-                v_fl = v_fr = v_ml = v_mr = torque
+                vel = -10.0 # rad/s
+                v_fl = v_fr =v_ml = v_mr = v_bl = v_br = vel
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
-                torque = 25.0
-                v_mr  = torque
-                v_ml = -torque
+                vel = 5.0
+                v_fr = v_mr = v_br = vel
+                v_fl = v_ml = v_bl = -vel
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
-                torque = 25.0
-                v_fl = v_ml = v_bl = torque
-                v_fr = v_mr = v_br = -torque
+                vel = 5.0
+                v_fl = v_ml = v_bl = vel
+                v_fr = v_mr = v_br = -vel
             
             # elif key == 't':
             #      # Only Mid Forward
