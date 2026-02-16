@@ -70,29 +70,30 @@ def main():
             v_bl = 0.0 # Back Left
             v_br = 0.0 # Back Right
             
+            torque = 2.0 # Nm
             # Key mappings
             # Key mappings
             if key == 'w':
                 # All Forward
-                vel = 10.0 # rad/s
-                v_fl = v_fr =v_ml = v_mr = v_bl = v_br = vel
+                # torque = -2.0 # Nm
+                v_fl = v_fr = v_bl = v_br = -torque
                 
             elif key == 's':
                 # All Backward
-                vel = -10.0 # rad/s
-                v_fl = v_fr =v_ml = v_mr = v_bl = v_br = vel
+                # torque = 3.0 # Nm
+                v_fl = v_fr = v_bl = v_br = torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
-                vel = 5.0
-                v_fr = v_mr = v_br = vel
-                v_fl = v_ml = v_bl = -vel
+                # torque = 3.0
+                v_fr = v_br = -6*torque
+                v_fl = v_bl = 6*torque
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
-                vel = 5.0
-                v_fl = v_ml = v_bl = vel
-                v_fr = v_mr = v_br = -vel
+                # torque = 3.0
+                v_fr = v_br = 6*torque
+                v_fl = v_bl = -6*torque
             
             # elif key == 't':
             #      # Only Mid Forward
