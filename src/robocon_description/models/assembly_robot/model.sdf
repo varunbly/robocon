@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.11">
+  <model name="assembly_robot">
+    <link name="base_link">
+      <inertial>
+        <pose>-0.15327864958996903 -0.00157843797029286 0.17813161632602856 0 0 0</pose>
+        <mass>26.261576001701442</mass>
+        <inertia>
+          <ixx>0.737589</ixx>
+          <iyy>1.70961</iyy>
+          <izz>1.332764</izz>
+          <ixy>0.004583</ixy>
+          <ixz>0.245481</ixz>
+          <iyz>-0.004624</iyz>
+        </inertia>
+      </inertial>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://assembly_robot/meshes/base_link.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.7 0.7 0.7 1.0</diffuse>
+          <ambient>0.7 0.7 0.7 1.0</ambient>
+        </material>
+      </visual>
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://assembly_robot/meshes/base_link.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
