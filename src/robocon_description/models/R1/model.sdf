@@ -3,7 +3,7 @@
   <model name="R1">
     <self_collide>true</self_collide>
     
-    <link name="base_link">
+    <link name="r1_base_1">
       <inertial>
         <pose>0.391 -0.424 0.107 0 0 0</pose>
         <mass>101.5</mass> 
@@ -39,7 +39,7 @@
       </visual>
     </link>
     <joint name="back_left_wheel_joint" type="revolute">
-      <parent>base_link</parent><child>back_left_wheel</child>
+      <parent>r1_base_1</parent><child>back_left_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
     </joint>
 
@@ -60,7 +60,7 @@
       </visual>
     </link>
     <joint name="front_left_wheel_joint" type="revolute">
-      <parent>base_link</parent><child>front_left_wheel</child>
+      <parent>r1_base_1</parent><child>front_left_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
     </joint>
 
@@ -81,7 +81,7 @@
       </visual>
     </link>
     <joint name="back_right_wheel_joint" type="revolute">
-      <parent>base_link</parent><child>back_right_wheel</child>
+      <parent>r1_base_1</parent><child>back_right_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
     </joint>
 
@@ -102,18 +102,18 @@
       </visual>
     </link>
     <joint name="front_right_wheel_joint" type="revolute">
-      <parent>base_link</parent><child>front_right_wheel</child>
+      <parent>r1_base_1</parent><child>front_right_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
     </joint>
 
     <include>
-      <uri>model://rrr_robot</uri>
-      <pose>0.21 -0.59694 0.4 0 0 0</pose>
+      <uri>model://robot</uri>
+      <pose>0.21 -0.59694 0.425 0 0 0</pose>
     </include>
 
     <joint name="arm_mount_joint" type="fixed">
-      <parent>base_link</parent>
-      <child>rrr_robot::base_link</child>
+      <parent>robot::connector</parent>
+      <child>r1_base_1</child>
     </joint>
 
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
