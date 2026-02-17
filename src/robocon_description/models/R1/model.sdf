@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <sdf version="1.8">
+
   <model name="R1">
+<<<<<<< HEAD
     <self_collide>true</self_collide>
     
     <link name="base_link">
@@ -10,98 +12,322 @@
         <inertia>
           <ixx>9.5318</ixx>   <ixy>-0.0244</ixy>  <ixz>0.2072</ixz>
           <iyy>10.6707</iyy>  <iyz>1.5103</iyz>   <izz>13.3936</izz>
+=======
+    <static>false</static>
+
+    <!-- ================= BASE ================= -->
+    <link name="base_link">
+      <inertial>
+        <pose>0.419 -0.448 0.116 0 0 0</pose>
+        <mass>183.77</mass>
+        <inertia>
+          <ixx>15.435</ixx>
+          <ixy>-0.647</ixy>
+          <ixz>0.276</ixz>
+          <iyy>17.277</iyy>
+          <iyz>1.909</iyz>
+          <izz>21.853</izz>
+>>>>>>> miracleSort
         </inertia>
       </inertial>
-      <collision name="collision">
+
+      <collision name="base_collision">
         <pose>0 0 0 1.5707 0 0</pose>
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/R1.dae</uri></mesh></geometry>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/R1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e6</kp>
+              <kd>100</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+>>>>>>> miracleSort
       </collision>
-      <visual name="visual">
+
+      <visual name="base_visual">
         <pose>0 0 0 1.5707 0 0</pose>
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/R1.dae</uri></mesh></geometry>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/R1.dae</uri>
+          </mesh>
+        </geometry>
+>>>>>>> miracleSort
       </visual>
     </link>
 
+    <!-- ================= WHEELS ================= -->
+
+    <!-- BACK LEFT -->
     <link name="back_left_wheel">
       <pose>0.82 0 -0.075 1.5707 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
+<<<<<<< HEAD
           <ixx>0.001</ixx> <ixy>0</ixy> <ixz>0</ixz> <iyy>0.001</iyy> <iyz>0</iyz> <izz>0.001</izz>
+=======
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+>>>>>>> miracleSort
         </inertia>
       </inertial>
+
       <collision name="collision">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
         <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+>>>>>>> miracleSort
       </collision>
+
       <visual name="visual">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
       </visual>
     </link>
     <joint name="back_left_wheel_joint" type="revolute">
       <parent>base_link</parent><child>back_left_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name="back_left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>back_left_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <max_force>200</max_force>
+        </ode>
+      </physics>
+>>>>>>> miracleSort
     </joint>
 
+    <!-- FRONT LEFT -->
     <link name="front_left_wheel">
       <pose>0.82 -0.700 -0.075 1.5707 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
+<<<<<<< HEAD
           <ixx>0.001</ixx> <ixy>0</ixy> <ixz>0</ixz> <iyy>0.001</iyy> <iyz>0</iyz> <izz>0.001</izz>
+=======
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+>>>>>>> miracleSort
         </inertia>
       </inertial>
+
       <collision name="collision">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
         <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+>>>>>>> miracleSort
       </collision>
+
       <visual name="visual">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+>>>>>>> miracleSort
       </visual>
     </link>
     <joint name="front_left_wheel_joint" type="revolute">
+<<<<<<< HEAD
       <parent>base_link</parent><child>front_left_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+=======
+      <parent>base_link</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <max_force>200</max_force>
+        </ode>
+      </physics>
+>>>>>>> miracleSort
     </joint>
 
+    <!-- BACK RIGHT -->
     <link name="back_right_wheel">
       <pose>-0.01 0 -0.075 1.5707 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
+<<<<<<< HEAD
           <ixx>0.001</ixx> <ixy>0</ixy> <ixz>0</ixz> <iyy>0.001</iyy> <iyz>0</iyz> <izz>0.001</izz>
+=======
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+>>>>>>> miracleSort
         </inertia>
       </inertial>
+
       <collision name="collision">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
         <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+>>>>>>> miracleSort
       </collision>
+
       <visual name="visual">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+>>>>>>> miracleSort
       </visual>
     </link>
     <joint name="back_right_wheel_joint" type="revolute">
+<<<<<<< HEAD
       <parent>base_link</parent><child>back_right_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+=======
+      <parent>base_link</parent>
+      <child>back_right_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <max_force>200</max_force>
+        </ode>
+      </physics>
+>>>>>>> miracleSort
     </joint>
 
+    <!-- FRONT RIGHT -->
     <link name="front_right_wheel">
       <pose>-0.01 -0.700 -0.075 1.5707 0 0</pose>
       <inertial>
         <mass>0.5</mass>
         <inertia>
+<<<<<<< HEAD
           <ixx>0.001</ixx> <ixy>0</ixy> <ixz>0</ixz> <iyy>0.001</iyy> <iyz>0</iyz> <izz>0.001</izz>
+=======
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+>>>>>>> miracleSort
         </inertia>
       </inertial>
+
       <collision name="collision">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
         <surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.4</mu>
+              <mu2>0.2</mu2>
+              <fdir1>0 1 0</fdir1>
+            </ode>
+          </friction>
+        </surface>
+>>>>>>> miracleSort
       </collision>
+
       <visual name="visual">
+<<<<<<< HEAD
         <geometry><mesh><uri>model://R1/meshes/wheel.dae</uri></mesh></geometry>
+=======
+        <geometry>
+          <mesh>
+            <uri>model://R1/meshes/wheel.dae</uri>
+          </mesh>
+        </geometry>
+>>>>>>> miracleSort
       </visual>
     </link>
     <joint name="front_right_wheel_joint" type="revolute">
+<<<<<<< HEAD
       <parent>base_link</parent><child>front_right_wheel</child>
       <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
     </joint>
@@ -112,12 +338,45 @@
     </include>
 
     <joint name="arm_mount_joint" type="fixed">
+=======
+>>>>>>> miracleSort
       <parent>base_link</parent>
-      <child>rrr_robot::base_link</child>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+      <physics>
+        <ode>
+          <max_force>200</max_force>
+        </ode>
+      </physics>
     </joint>
 
+<<<<<<< HEAD
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <parameters>PKG_ROBOCON_DESCRIPTION/models/rrr_robot/arm_controllers.yaml</parameters>
+=======
+    <!-- Individual Wheel Velocity Controllers -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>front_left_wheel_joint</joint_name>
+      <sub_topic>joint/front_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>front_right_wheel_joint</joint_name>
+      <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_left_wheel_joint</joint_name>
+      <sub_topic>joint/back_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_right_wheel_joint</joint_name>
+      <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+>>>>>>> miracleSort
     </plugin>
 
   </model>

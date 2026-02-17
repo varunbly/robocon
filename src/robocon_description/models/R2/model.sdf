@@ -9,11 +9,18 @@
         <link name="base_link">
             <pose>0 0 0.18 0 0 0</pose>
             <inertial>
+<<<<<<< HEAD
                 <pose>0.136 0.203 0.125 0 0 0</pose>
                 <mass>10.157</mass> 
                 <inertia>
                     <ixx>0.399</ixx> <ixy>-0.014</ixy> <ixz>-0.003</ixz>   
                     <iyy>0.168</iyy> <iyz>-0.064</iyz>   
+=======
+                <pose>0.125  0.456 0.004 0 0 0</pose>
+                <mass>10.157</mass> <inertia>
+                    <ixx>0.399</ixx>   <ixy>-0.014</ixy>  <ixz>-0.003</ixz>   
+                    <iyy>0.168</iyy>   <iyz>-0.064</iyz>   
+>>>>>>> miracleSort
                     <izz>0.392</izz>
                 </inertia>
             </inertial>
@@ -98,16 +105,31 @@
         <link name="A_link">
             <pose>0 0 0.18 0 0 0</pose>
             <inertial>
+<<<<<<< HEAD
                 <pose>0.125 0.456 -0.073 0 0 0</pose>
                 <mass>1.502</mass>
                 <inertia>
+=======
+                <pose>0.125  0.456 0.004 0 0 0</pose>
+                <mass>1.502</mass> <inertia>
+>>>>>>> miracleSort
                     <ixx>0.016</ixx> <ixy>-1.248e-8</ixy> <ixz>1.398e-7</ixz>   
                     <iyy>0.017</iyy> <iyz>-1.527e-4</iyz>   
                     <izz>0.025</izz>
                 </inertia>
             </inertial>
             <collision name="collision">
+<<<<<<< HEAD
                 <geometry><mesh><uri>package://robocon_description/models/R2/meshes/R2-A.dae</uri></mesh></geometry>
+=======
+                 <!-- Center X shifted to ~0.12 to be between wheels. Width reduced to 5cm -->
+                <pose>0.12 0.45 0 0 0 0</pose>
+                <geometry>
+                   <box>
+                        <size>0.05 0.4 0.2</size>
+                    </box>
+                </geometry>
+>>>>>>> miracleSort
             </collision>
             <visual name="visual">
                 <geometry><mesh><uri>package://robocon_description/models/R2/meshes/R2-A.dae</uri></mesh></geometry>
@@ -117,6 +139,7 @@
         <joint name="A_joint" type="revolute">
             <parent>base_link</parent>
             <child>A_link</child>
+<<<<<<< HEAD
             <pose>0.250 0.456 0.004 0 0 0</pose> 
             <axis>
                 <xyz>1 0 0</xyz>
@@ -343,6 +366,152 @@
             <use_pose_vector_msg>true</use_pose_vector_msg>
             <static_publisher>true</static_publisher>
             <static_update_frequency>1</static_update_frequency>
+=======
+            
+            <pose>0.243 0.445 0.04 0 0 0</pose> 
+
+            <axis>
+                <xyz>1 0 0</xyz>
+                <limit>
+                    <lower>-1.57</lower>
+                    <upper>1.57</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>mid_left_wheel</name>
+        <pose>0.04 0.300 -0.184 0 0 0</pose>
+        </include>
+
+        <joint name="mid_left_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>mid_left_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>mid_right_wheel</name>
+        <pose>0.2 0.300 -0.184 0 0 0</pose>
+        </include>
+
+        <joint name="mid_right_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>mid_right_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>front_left_wheel</name>
+        <pose>0.04 0.610 -0.184 0 0 0</pose>
+        </include>
+
+        <joint name="front_left_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>front_left_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>front_right_wheel</name>
+        <pose>0.2 0.610 -0.184 0 0 0</pose>
+        </include>
+
+        <joint name="front_right_wheel_joint" type="revolute">
+            <parent>A_link</parent>
+            <child>front_right_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>back_left_wheel</name>
+        <pose>0.04 -0.045 -0.180 0 0 0</pose>
+        </include>
+
+        <joint name="back_left_wheel_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>back_left_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+
+        <include>
+        <uri>model://R2_wheel</uri>
+        <name>back_right_wheel</name>
+        <pose>0.2 -0.045 -0.180 0 0 0</pose>
+        </include>
+
+        <joint name="back_right_wheel_joint" type="revolute">
+            <parent>base_link</parent>
+            <child>back_right_wheel</child> 
+            <axis>
+                <xyz>1 0 0</xyz> <limit>
+                <lower>-1e16</lower>
+                <upper>1e16</upper>
+                </limit>
+            </axis>
+        </joint>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>front_left_wheel_joint</joint_name>
+            <sub_topic>joint/front_left_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>front_right_wheel_joint</joint_name>
+            <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>mid_left_wheel_joint</joint_name>
+            <sub_topic>joint/mid_left_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>mid_right_wheel_joint</joint_name>
+            <sub_topic>joint/mid_right_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>back_left_wheel_joint</joint_name>
+            <sub_topic>joint/back_left_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+        </plugin>
+        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+            <joint_name>back_right_wheel_joint</joint_name>
+            <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
+            <p_gain>1.0</p_gain>
+>>>>>>> miracleSort
         </plugin>
     </model>
 </sdf>
