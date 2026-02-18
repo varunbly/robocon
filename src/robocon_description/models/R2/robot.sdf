@@ -244,10 +244,10 @@
         </dynamics>
       </axis>
     </joint>
-    <!-- Hand(ish) written part >
-    <joint name="spring_joint" type="prismatic">
-      <parent>part_1</parent>
-      <child>part_7_1</child>
+    <!-- Hand(ish) written part -->
+    <!-- <joint name="spring_joint" type="prismatic">
+      <parent>part_2</parent>
+      <child>fusioncomponent_6</child>
 
       <axis>
         <xyz>0 0 1</xyz>
@@ -258,12 +258,30 @@
 
         <dynamics>
           <spring_reference>0.32</spring_reference>
-          <spring_stiffness>1.5</spring_stiffness>
+          <spring_stiffness>8.5</spring_stiffness>
           <damping>10</damping>
         </dynamics>
       </axis>
     </joint>
-    <!-- Link part_3 -->
+    <joint name="spring_joint" type="prismatic">
+      <parent>part_2</parent>
+      <child>fusioncomponent</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.2</lower>
+          <upper>0.2</upper>
+        </limit>
+
+        <dynamics>
+          <spring_reference>0.42</spring_reference>
+          <spring_stiffness>8.5</spring_stiffness>
+          <damping>10</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    Link part_3 -->
     <link name="part_3">
       <inertial>
         <pose>-2.43696e-05 0 -0.250222 0 0 0</pose>
@@ -1677,6 +1695,17 @@
         </dynamics>
       </axis>
     </joint>
+
+    <include>
+      <uri>model://robot</uri>
+      <pose>-0.00146441 -0.10814863 0.21805145 0 0 1.5708</pose>
+    </include>
+
+    <joint name="arm_mount_joint" type="fixed">
+      <parent>Mate connector 10</parent>
+      <child>robot::connector</child>
+    </joint>
+
     <!-- Front Left -->
     <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>front_left_wheel_joint</joint_name>
@@ -1689,18 +1718,6 @@
       <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
       <p_gain>1.0</p_gain>
     </plugin>
-    <!-- <!-- Mid Left --> -->
-    <!-- <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController"> -->
-    <!--   <joint_name>mid_left_wheel_joint</joint_name> -->
-    <!--   <sub_topic>joint/mid_left_wheel_joint/cmd_vel</sub_topic> -->
-    <!--   <p_gain>1.0</p_gain> -->
-    <!-- </plugin> -->
-    <!-- <!-- Mid Right --> -->
-    <!-- <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController"> -->
-    <!--   <joint_name>mid_right_wheel_joint</joint_name> -->
-    <!--   <sub_topic>joint/mid_right_wheel_joint/cmd_vel</sub_topic> -->
-    <!--   <p_gain>1.0</p_gain> -->
-    <!-- </plugin> -->
     <!-- Back Left -->
     <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>back_left_wheel_joint</joint_name>
