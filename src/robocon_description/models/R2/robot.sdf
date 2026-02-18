@@ -43,8 +43,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -241,6 +241,25 @@
         <dynamics>
           <friction>0.0</friction>
           <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Hand(ish) written part >
+    <joint name="spring_joint" type="prismatic">
+      <parent>part_1</parent>
+      <child>part_7_1</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.2</lower>
+          <upper>0.2</upper>
+        </limit>
+
+        <dynamics>
+          <spring_reference>0.32</spring_reference>
+          <spring_stiffness>1.5</spring_stiffness>
+          <damping>10</damping>
         </dynamics>
       </axis>
     </joint>
@@ -517,8 +536,8 @@
         <surface>
           <friction>
             <ode>
-              <mu> 1</mu>
-              <mu2>1</mu2>
+              <mu> 0.5</mu>
+              <mu2> 0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -641,8 +660,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -765,8 +784,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -889,8 +908,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -964,7 +983,9 @@
           <effort>10</effort>
           <velocity>10</velocity>
           <lower>-1.5707963267948965</lower>
-          <upper>0.523599</upper>
+          <!-- <upper>0.523599</upper> -->
+          <upper>0.5</upper>
+          <!-- <upper>0.174</upper> -->
         </limit>
         <dynamics>
           <friction>0.0</friction>
@@ -1418,8 +1439,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
-              <mu2>1</mu2>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
             </ode>
           </friction>
         </surface>
@@ -1668,18 +1689,18 @@
       <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
       <p_gain>1.0</p_gain>
     </plugin>
-    <!-- Mid Left -->
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-      <joint_name>mid_left_wheel_joint</joint_name>
-      <sub_topic>joint/mid_left_wheel_joint/cmd_vel</sub_topic>
-      <p_gain>1.0</p_gain>
-    </plugin>
-    <!-- Mid Right -->
-    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-      <joint_name>mid_right_wheel_joint</joint_name>
-      <sub_topic>joint/mid_right_wheel_joint/cmd_vel</sub_topic>
-      <p_gain>1.0</p_gain>
-    </plugin>
+    <!-- <!-- Mid Left --> -->
+    <!-- <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController"> -->
+    <!--   <joint_name>mid_left_wheel_joint</joint_name> -->
+    <!--   <sub_topic>joint/mid_left_wheel_joint/cmd_vel</sub_topic> -->
+    <!--   <p_gain>1.0</p_gain> -->
+    <!-- </plugin> -->
+    <!-- <!-- Mid Right --> -->
+    <!-- <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController"> -->
+    <!--   <joint_name>mid_right_wheel_joint</joint_name> -->
+    <!--   <sub_topic>joint/mid_right_wheel_joint/cmd_vel</sub_topic> -->
+    <!--   <p_gain>1.0</p_gain> -->
+    <!-- </plugin> -->
     <!-- Back Left -->
     <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
       <joint_name>back_left_wheel_joint</joint_name>

@@ -70,20 +70,22 @@ def main():
             v_bl = 0.0 # Back Left
             v_br = 0.0 # Back Right
             
-            torque = 3.0 #
+            torque = 15.0 #
             # Key mappings
             # Key mappings
             if key == 'w':
                 # All Forward
                 # torque = -2.0 # Nm
-                v_fl = v_fr =6.0
-                v_bl = v_br = 6.0
+                v_fl = v_fr = torque
+                v_bl = v_br = torque
+                # v_ml = v_mr = torque
                 
             elif key == 's':
                 # All Backward
                 # torque = 3.0 # Nm
-                v_fl = v_fr = -6.0  
-                v_bl = v_br = -6.0
+                v_fl = v_fr = -torque  
+                v_bl = v_br = -torque  
+                # v_ml = v_mr = -torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
@@ -114,15 +116,15 @@ def main():
             # Create Float64 messages
             msg_fl = Float64(); msg_fl.data = -v_fl
             msg_fr = Float64(); msg_fr.data = v_fr
-            msg_ml = Float64(); msg_ml.data = v_ml
+            msg_ml = Float64(); msg_ml.data = -v_ml
             msg_mr = Float64(); msg_mr.data = v_mr
             msg_bl = Float64(); msg_bl.data = -v_bl
             msg_br = Float64(); msg_br.data = v_br
             
             node.pub_A_front_left.publish(msg_fl)
             node.pub_A_front_right.publish(msg_fr)
-            node.pub_A_mid_left.publish(msg_ml)
-            node.pub_A_mid_right.publish(msg_mr)
+            # node.pub_A_mid_left.publish(msg_ml)
+            # node.pub_A_mid_right.publish(msg_mr)
             node.pub_A_back_left.publish(msg_bl)
             node.pub_A_back_right.publish(msg_br)
             
