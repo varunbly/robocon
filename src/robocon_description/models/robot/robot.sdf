@@ -1,0 +1,2528 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/681c67d8b1abfc71ae8c68df/w/4fe5141cbd9599f63c013525/e/f53a1a8056dc1a0f76f61854 -->
+<sdf version="1.7">
+  <model name="robot">
+    <link name="connector">
+      <inertial>
+        <pose>-0 -0 0.0 0 0 0</pose>
+        <mass>1e-9</mass>
+        <inertia>
+          <ixx>1e-9</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-9</iyy>
+          <iyz>0</iyz>
+          <izz>1e-9</izz>
+        </inertia>
+      </inertial>
+        <pose>0 0 0 0 0 0</pose>
+    </link>
+
+    <joint name="connector_joint" type="revolute">
+      <parent>connector</parent><child>base_link</child>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+    <!-- Link base_link -->
+    <link name="base_link">
+      <inertial>
+        <pose>-0 -0 0.0183377 0 0 0</pose>
+        <mass>1.12889</mass>
+        <inertia>
+          <ixx>0.00242769</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00242769</iyy>
+          <iyz>0</iyz>
+          <izz>0.00458701</izz>
+        </inertia>
+      </inertial>
+      <pose>0 0 0 0 -0 0</pose>
+      <!-- Part base_link -->
+      <visual name="base_link_visual_mesh_1">
+        <pose relative_to="base_link">0 0 0.03056 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_link_collision_mesh_2">
+        <pose relative_to="base_link">0 0 0.03056 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- <joint name="base_link_fixed_world" type="fixed">
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint> -->
+    <!-- Link Mate connector 2 -->
+    <link name="Mate connector 2">
+      <inertial>
+        <pose>1.2e-10 0.038 -0.0568212 0 0 0</pose>
+        <mass>0.0727815</mass>
+        <inertia>
+          <ixx>7.28387e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>1e-12</ixz>
+          <iyy>0.000106914</iyy>
+          <iyz>-0</iyz>
+          <izz>3.5288e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 3">0 0 0 0 -0 0</pose>
+      <!-- Part arm_1_l -->
+      <visual name="arm_1_l_visual_mesh_1">
+        <pose relative_to="Mate connector 2">7.45e-10 -0.000499997 -4.5e-11 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_1_l.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_1_l_collision_mesh_2">
+        <pose relative_to="Mate connector 2">7.45e-10 -0.000499997 -4.5e-11 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_1_l.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link base_motor_holder -->
+    <link name="base_motor_holder">
+      <inertial>
+        <pose>0.000708205 0.0117951 -0.046662 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.1751e-08</ixy>
+          <ixz>1.48039e-07</ixz>
+          <iyy>1.23248e-05</iyy>
+          <iyz>3.47791e-06</iyz>
+          <izz>8.89399e-06</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_1">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_holder -->
+      <visual name="base_motor_holder_visual_mesh_1">
+        <pose relative_to="base_motor_holder">2.28185e-05 2.5901e-08 -0.0334334 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_holder.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_holder_collision_mesh_2">
+        <pose relative_to="base_motor_holder">2.28185e-05 2.5901e-08 -0.0334334 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_holder.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link arm_1_r -->
+    <link name="arm_1_r">
+      <inertial>
+        <pose>1.10476e-06 0.0203013 -0.00498936 0 0 0</pose>
+        <mass>0.0849117</mass>
+        <inertia>
+          <ixx>8.07762e-05</ixx>
+          <ixy>-3.168e-09</ixy>
+          <ixz>4.66e-10</ixz>
+          <iyy>3.74618e-05</iyy>
+          <iyz>-3.0806e-08</iyz>
+          <izz>0.000116829</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_2">0 0 0 0 -0 0</pose>
+      <!-- Part arm_1_r -->
+      <visual name="arm_1_r_visual_mesh_1">
+        <pose relative_to="arm_1_r">0 -0.033 0.0325 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_1_r.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_1_r_collision_mesh_2">
+        <pose relative_to="arm_1_r">0 -0.033 0.0325 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_1_r.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_holder to arm_1_r -->
+    <joint name="Fastened_2" type="fixed">
+      <pose relative_to="base_motor_holder">-3.73e-10 0.033 -0.066 0 -0 0</pose>
+      <parent>base_motor_holder</parent>
+      <child>arm_1_r</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor -->
+    <link name="base_motor">
+      <inertial>
+        <pose>-7.72022e-05 -0.0175772 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605662</ixx>
+          <ixy>1.93899e-07</ixy>
+          <ixz>-2.16774e-06</ixz>
+          <iyy>0.000605662</iyy>
+          <iyz>-2.16774e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="base">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1 -->
+      <visual name="base_motor_p1_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3 -->
+      <visual name="base_motor_p3_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5 -->
+      <visual name="base_motor_p5_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2 -->
+      <visual name="base_motor_p2_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4 -->
+      <visual name="base_motor_p4_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6 -->
+      <visual name="base_motor_p6_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle -->
+      <visual name="base_motor_axle_visual_mesh_1">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_collision_mesh_2">
+        <pose relative_to="base_motor">-0.0231301 -0.0407464 -0.0295 1.5708 -0 2.35619</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_holder to base_motor -->
+    <joint name="base" type="fixed">
+      <pose relative_to="base_motor_holder">-3.73e-10 0.0505 -0.063 3.14159 -0 -3.14159</pose>
+      <parent>base_motor_holder</parent>
+      <child>base_motor</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 2 to base_motor_holder -->
+    <joint name="Fastened_1" type="fixed">
+      <pose relative_to="Mate connector 2">0 0.033 0 -1.5708 -0 0</pose>
+      <parent>Mate connector 2</parent>
+      <child>base_motor_holder</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link joining_rod_1 -->
+    <link name="joining_rod_1">
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.0155207</mass>
+        <inertia>
+          <ixx>1.71672e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.71672e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.24166e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Revolute 1">0 0 0 0 -0 0</pose>
+      <!-- Part joining_rod_1 -->
+      <visual name="joining_rod_1_visual_mesh_1">
+        <pose relative_to="joining_rod_1">0 -0.086 -0.001 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="joining_rod_1_collision_mesh_2">
+        <pose relative_to="joining_rod_1">0 -0.086 -0.001 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 8 -->
+    <link name="Mate connector 8">
+      <inertial>
+        <pose>-0.000288184 0.146899 0.000134941 0 0 0</pose>
+        <mass>0.438917</mass>
+        <inertia>
+          <ixx>0.00357355</ixx>
+          <ixy>5.47325e-06</ixy>
+          <ixz>2.9186e-07</ixz>
+          <iyy>0.000884745</iyy>
+          <iyz>-4.10493e-06</iyz>
+          <izz>0.00284251</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 4">0 0 0 0 -0 0</pose>
+      <!-- Part arm_2 -->
+      <visual name="arm_2_visual_mesh_1">
+        <pose relative_to="Mate connector 8">1.00492e-05 -0.0860201 -0.000500003 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_2_collision_mesh_2">
+        <pose relative_to="Mate connector 8">1.00492e-05 -0.0860201 -0.000500003 -1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link motor -->
+    <link name="motor">
+      <inertial>
+        <pose>-0.02357 0.0232438 -0.0368201 0 0 0</pose>
+        <mass>0.595248</mass>
+        <inertia>
+          <ixx>0.000450245</ixx>
+          <ixy>-2e-12</ixy>
+          <ixz>-0</ixz>
+          <iyy>0.000444016</iyy>
+          <iyz>-5.61651e-06</iyz>
+          <izz>0.000274153</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 7">0 0 0 0 -0 0</pose>
+      <!-- Part motor_1_face -->
+      <visual name="motor_1_face_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_face.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_face_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_face.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part motor_1_gear -->
+      <visual name="motor_1_gear_visual_mesh_1">
+        <pose relative_to="motor">-0.0235432 0.0197789 -0.298055 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_gear.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_gear_collision_mesh_2">
+        <pose relative_to="motor">-0.0235432 0.0197789 -0.298055 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_gear.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part a_point_on_motor_1 -->
+      <visual name="a_point_on_motor_1_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/a_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="a_point_on_motor_1_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/a_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part motor_2_back -->
+      <visual name="motor_2_back_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_back.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_back_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_back.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part one_more_point_on_motor_1 -->
+      <visual name="one_more_point_on_motor_1_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0191393 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/one_more_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="one_more_point_on_motor_1_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0191393 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/one_more_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part real_motor_1 -->
+      <visual name="real_motor_1_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/real_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="real_motor_1_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0197777 -0.292195 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/real_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part another_point_on_motor_1 -->
+      <visual name="another_point_on_motor_1_visual_mesh_1">
+        <pose relative_to="motor">-0.0235312 0.0191396 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/another_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="another_point_on_motor_1_collision_mesh_2">
+        <pose relative_to="motor">-0.0235312 0.0191396 -0.291842 0 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/another_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 8 to motor -->
+    <joint name="Fastened 7" type="fixed">
+      <pose relative_to="Mate connector 8">0.0246004 0.211205 0.01932 -1.5708 0 0</pose>
+      <parent>Mate connector 8</parent>
+      <child>motor</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 7 -->
+    <link name="Mate connector 7">
+      <inertial>
+        <pose>-2.14e-09 1.696e-09 -0.0088763 0 0 0</pose>
+        <mass>0.0606554</mass>
+        <inertia>
+          <ixx>1.98986e-05</ixx>
+          <ixy>5e-12</ixy>
+          <ixz>0</ixz>
+          <iyy>1.98986e-05</iyy>
+          <iyz>-0</iyz>
+          <izz>3.15249e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Revolute 2">0 0 0 0 -0 0</pose>
+      <!-- Part gear_1 -->
+      <visual name="gear_1_visual_mesh_1">
+        <pose relative_to="Mate connector 7">-0.0110082 0.359488 0.00844098 1.5708 0 0.0349066</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/gear_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="gear_1_collision_mesh_2">
+        <pose relative_to="Mate connector 7">-0.0110082 0.359488 0.00844098 1.5708 0 0.0349066</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/gear_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 6 -->
+    <link name="Mate connector 6">
+      <inertial>
+        <pose>0 0 -0.00370712 0 0 0</pose>
+        <mass>0.0153858</mass>
+        <inertia>
+          <ixx>1.67243e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.67243e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.23086e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 8">0 0 0 0 -0 0</pose>
+      <!-- Part joining_rod_2 -->
+      <visual name="joining_rod_2_visual_mesh_1">
+        <pose relative_to="Mate connector 6">0.00159452 -0.359584 -0.00416486 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="joining_rod_2_collision_mesh_2">
+        <pose relative_to="Mate connector 6">0.00159452 -0.359584 -0.00416486 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 5 -->
+    <link name="Mate connector 5">
+      <inertial>
+        <pose>-0.138485 -9.03302e-05 0.0380018 0 0 0</pose>
+        <mass>0.157196</mass>
+        <inertia>
+          <ixx>2.18204e-05</ixx>
+          <ixy>1.37271e-07</ixy>
+          <ixz>2.384e-08</ixz>
+          <iyy>0.00122139</iyy>
+          <iyz>5.76e-10</iyz>
+          <izz>0.00124058</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_6">0 0 0 0 -0 0</pose>
+      <!-- Part arm_3_l -->
+      <visual name="arm_3_l_visual_mesh_1">
+        <pose relative_to="Mate connector 5">0.000499999 -0.363 -0.0205 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_3_l.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_3_l_collision_mesh_2">
+        <pose relative_to="Mate connector 5">0.000499999 -0.363 -0.0205 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_3_l.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link arm_3_r -->
+    <link name="arm_3_r">
+      <inertial>
+        <pose>-0.138485 9.03302e-05 0.0810023 0 0 0</pose>
+        <mass>0.157196</mass>
+        <inertia>
+          <ixx>2.18203e-05</ixx>
+          <ixy>-1.37271e-07</ixy>
+          <ixz>2.5388e-08</ixz>
+          <iyy>0.00122139</iyy>
+          <iyz>-1.399e-09</iyz>
+          <izz>0.00124058</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 5">0 0 0 0 -0 0</pose>
+      <!-- Part arm_3_r -->
+      <visual name="arm_3_r_visual_mesh_1">
+        <pose relative_to="arm_3_r">0.0005 0.363 0.0436 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_3_r.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_3_r_collision_mesh_2">
+        <pose relative_to="arm_3_r">0.0005 0.363 0.0436 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_3_r.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link motor_2_cover_back_ext -->
+    <link name="motor_2_cover_back_ext">
+      <inertial>
+        <pose>0 -0.03795 -0.00485341 0 0 0</pose>
+        <mass>0.010352</mass>
+        <inertia>
+          <ixx>6.03669e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.70907e-07</iyy>
+          <iyz>0</iyz>
+          <izz>6.04503e-06</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 25">0 0 0 0 -0 0</pose>
+      <!-- Part motor_2_cover_back_ext -->
+      <visual name="motor_2_cover_back_ext_visual_mesh_1">
+        <pose relative_to="motor_2_cover_back_ext">0.12969 -0.0373 -0.342135 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_back_ext.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_cover_back_ext_collision_mesh_2">
+        <pose relative_to="motor_2_cover_back_ext">0.12969 -0.0373 -0.342135 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_back_ext.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link motor_2_cover_back -->
+    <link name="motor_2_cover_back">
+      <inertial>
+        <pose>0 -0 -0.020375 0 0 0</pose>
+        <mass>0.0349904</mass>
+        <inertia>
+          <ixx>1.75435e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.13357e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.29931e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 24">0 0 0 0 -0 0</pose>
+      <!-- Part motor_2_cover_back -->
+      <visual name="motor_2_cover_back_visual_mesh_1">
+        <pose relative_to="motor_2_cover_back">0.129689 -0.0005 0.342136 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_back.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_cover_back_collision_mesh_2">
+        <pose relative_to="motor_2_cover_back">0.129689 -0.0005 0.342136 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_back.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from motor_2_cover_back_ext to motor_2_cover_back -->
+    <joint name="Fastened 24" type="fixed">
+      <pose relative_to="motor_2_cover_back_ext">0 -0.03795 -0 3.14159 -0 0</pose>
+      <parent>motor_2_cover_back_ext</parent>
+      <child>motor_2_cover_back</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from arm_3_r to motor_2_cover_back_ext -->
+    <joint name="Fastened 25" type="fixed">
+      <pose relative_to="arm_3_r">-0.12919 0.0201072 0.0809 1.5708 -0 0</pose>
+      <parent>arm_3_r</parent>
+      <child>motor_2_cover_back_ext</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 5 to arm_3_r -->
+    <joint name="Fastened 5" type="fixed">
+      <pose relative_to="Mate connector 5">0 0 0.043 3.14159 -0 0</pose>
+      <parent>Mate connector 5</parent>
+      <child>arm_3_r</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link motor_2_cover_front -->
+    <link name="motor_2_cover_front">
+      <inertial>
+        <pose>-0.000164612 0.0364847 0.0172842 0 0 0</pose>
+        <mass>0.0460071</mass>
+        <inertia>
+          <ixx>3.45963e-05</ixx>
+          <ixy>5.2e-11</ixy>
+          <ixz>-1.788e-09</ixz>
+          <iyy>1.43053e-05</iyy>
+          <iyz>4.36267e-07</iyz>
+          <izz>2.10645e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 14">0 0 0 0 -0 0</pose>
+      <!-- Part motor_2_cover_front -->
+      <visual name="motor_2_cover_front_visual_mesh_1">
+        <pose relative_to="motor_2_cover_front">0.215247 0.0377078 -0.342135 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_front.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_cover_front_collision_mesh_2">
+        <pose relative_to="motor_2_cover_front">0.215247 0.0377078 -0.342135 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_front.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link motor_2 -->
+    <link name="motor_2">
+      <inertial>
+        <pose>0.0232438 -0.02357 -0.0368201 0 0 0</pose>
+        <mass>0.595248</mass>
+        <inertia>
+          <ixx>0.000444016</ixx>
+          <ixy>2e-12</ixy>
+          <ixz>-5.61651e-06</ixz>
+          <iyy>0.000450245</iyy>
+          <iyz>0</iyz>
+          <izz>0.000274153</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_10">0 0 0 0 -0 0</pose>
+      <!-- Part motor_1_face_2 -->
+      <visual name="motor_1_face_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_face.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_face_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_face.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part motor_1_gear_2 -->
+      <visual name="motor_1_gear_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0198392 -0.0228958 -0.298055 -0 0 -1.75665</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_gear.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_gear_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0198392 -0.0228958 -0.298055 -0 0 -1.75665</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_gear.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part a_point_on_motor_1_2 -->
+      <visual name="a_point_on_motor_1_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/a_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="a_point_on_motor_1_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/a_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part motor_2_back_2 -->
+      <visual name="motor_2_back_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_back.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_back_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_back.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part one_more_point_on_motor_1_2 -->
+      <visual name="one_more_point_on_motor_1_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0191393 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/one_more_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="one_more_point_on_motor_1_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0191393 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/one_more_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part real_motor_1_2 -->
+      <visual name="real_motor_1_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/real_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="real_motor_1_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0197777 -0.0236088 -0.292195 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/real_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part another_point_on_motor_1_2 -->
+      <visual name="another_point_on_motor_1_2_visual_mesh_1">
+        <pose relative_to="motor_2">0.0191396 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/another_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="another_point_on_motor_1_2_collision_mesh_2">
+        <pose relative_to="motor_2">0.0191396 -0.0236088 -0.291842 0 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/another_point_on_motor_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from motor_2_cover_front to motor_2 -->
+    <joint name="Fastened_10" type="fixed">
+      <pose relative_to="motor_2_cover_front">0.00483714 0.0178878 -0.00204961 -1.5708 -0 1.5708</pose>
+      <parent>motor_2_cover_front</parent>
+      <child>motor_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link motor_2_cover_bottom -->
+    <link name="motor_2_cover_bottom">
+      <inertial>
+        <pose>0.0426962 0.0371579 -0.0025 0 0 0</pose>
+        <mass>0.0529753</mass>
+        <inertia>
+          <ixx>3.22783e-05</ixx>
+          <ixy>3.66e-10</ixy>
+          <ixz>0</ixz>
+          <iyy>4.00124e-05</iyy>
+          <iyz>0</iyz>
+          <izz>7.20699e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="final">0 0 0 0 -0 0</pose>
+      <!-- Part motor_2_cover_bottom -->
+      <visual name="motor_2_cover_bottom_visual_mesh_1">
+        <pose relative_to="motor_2_cover_bottom">0.215247 0.0377078 -0.332428 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_bottom.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_cover_bottom_collision_mesh_2">
+        <pose relative_to="motor_2_cover_bottom">0.215247 0.0377078 -0.332428 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_bottom.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from motor_2_cover_front to motor_2_cover_bottom -->
+    <joint name="final" type="fixed">
+      <pose relative_to="motor_2_cover_front">0 0 -0.00970682 0 -0 0</pose>
+      <parent>motor_2_cover_front</parent>
+      <child>motor_2_cover_bottom</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 5 to motor_2_cover_front -->
+    <joint name="Fastened 14" type="fixed">
+      <pose relative_to="Mate connector 5">-0.214747 -0.0201072 0.0372078 -1.5708 0 0</pose>
+      <parent>Mate connector 5</parent>
+      <child>motor_2_cover_front</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 11 -->
+    <link name="Mate connector 11">
+      <inertial>
+        <pose>1.383e-09 2.329e-09 -0.0088763 0 0 0</pose>
+        <mass>0.0606554</mass>
+        <inertia>
+          <ixx>1.98986e-05</ixx>
+          <ixy>-5e-12</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.98986e-05</iyy>
+          <iyz>-0</iyz>
+          <izz>3.15249e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Revolute 3">0 0 0 0 -0 0</pose>
+      <!-- Part gear_2 -->
+      <visual name="gear_2_visual_mesh_1">
+        <pose relative_to="Mate connector 11">0.264732 0.371934 0.00848324 1.5708 -0 0.0349066</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/gear_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="gear_2_collision_mesh_2">
+        <pose relative_to="Mate connector 11">0.264732 0.371934 0.00848324 1.5708 -0 0.0349066</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/gear_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 10 -->
+    <link name="Mate connector 10">
+      <inertial>
+        <pose>0 0 -0.00367377 0 0 0</pose>
+        <mass>0.0153858</mass>
+        <inertia>
+          <ixx>1.67243e-05</ixx>
+          <ixy>-0</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.67243e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.23086e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_13">0 0 0 0 -0 0</pose>
+      <!-- Part joining_rod_3 -->
+      <visual name="joining_rod_3_visual_mesh_1">
+        <pose relative_to="Mate connector 10">0.277483 -0.362418 -0.00417377 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="joining_rod_3_collision_mesh_2">
+        <pose relative_to="Mate connector 10">0.277483 -0.362418 -0.00417377 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/joining_rod_3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 9 -->
+    <link name="Mate connector 9">
+      <inertial>
+        <pose>-0.106756 0.0747512 -0.048 0 0 0</pose>
+        <mass>0.150457</mass>
+        <inertia>
+          <ixx>0.00036101</ixx>
+          <ixy>0.000485372</ixy>
+          <ixz>-0</ixz>
+          <iyy>0.000714332</iyy>
+          <iyz>0</iyz>
+          <izz>0.00107283</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_12">0 0 0 0 -0 0</pose>
+      <!-- Part arm_4_l -->
+      <visual name="arm_4_l_visual_mesh_1">
+        <pose relative_to="Mate connector 9">0.277463 0.362431 0.000499992 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_4_l.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_4_l_collision_mesh_2">
+        <pose relative_to="Mate connector 9">0.277463 0.362431 0.000499992 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_4_l.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link arm_4_r -->
+    <link name="arm_4_r">
+      <inertial>
+        <pose>-0.106756 -0.0747512 -0.091 0 0 0</pose>
+        <mass>0.150457</mass>
+        <inertia>
+          <ixx>0.00036101</ixx>
+          <ixy>-0.000485372</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000714332</iyy>
+          <iyz>0</iyz>
+          <izz>0.00107283</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened_11">0 0 0 0 -0 0</pose>
+      <!-- Part arm_4_r -->
+      <visual name="arm_4_r_visual_mesh_1">
+        <pose relative_to="arm_4_r">0.277448 -0.362414 -0.0435 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_4_r.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="arm_4_r_collision_mesh_2">
+        <pose relative_to="arm_4_r">0.277448 -0.362414 -0.0435 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/arm_4_r.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 9 to arm_4_r -->
+    <joint name="Fastened_11" type="fixed">
+      <pose relative_to="Mate connector 9">-0 0 -0.043 3.14159 -0 0</pose>
+      <parent>Mate connector 9</parent>
+      <child>arm_4_r</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 18 -->
+    <link name="Mate connector 18">
+      <inertial>
+        <pose>-4.232e-09 0.053 -0.0260249 0 0 0</pose>
+        <mass>0.804157</mass>
+        <inertia>
+          <ixx>0.00122787</ixx>
+          <ixy>-0</ixy>
+          <ixz>9e-12</ixz>
+          <iyy>0.00101794</iyy>
+          <iyz>0</iyz>
+          <izz>0.00186402</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 23">0 0 0 0 -0 0</pose>
+      <!-- Part end_effector_1 -->
+      <visual name="end_effector_1_visual_mesh_1">
+        <pose relative_to="Mate connector 18">0.459153 0.0541086 0.291811 -0 -0.959931 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="end_effector_1_collision_mesh_2">
+        <pose relative_to="Mate connector 18">0.459153 0.0541086 0.291811 -0 -0.959931 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 15 -->
+    <link name="Mate connector 15">
+      <inertial>
+        <pose>-0.000178475 0.000255058 0.0203601 0 0 0</pose>
+        <mass>0.129306</mass>
+        <inertia>
+          <ixx>0.00293828</ixx>
+          <ixy>-1.00197e-07</ixy>
+          <ixz>-2.06351e-06</ixz>
+          <iyy>0.00293835</iyy>
+          <iyz>2.94324e-06</iyz>
+          <izz>4.0316e-06</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Slider 1">0 0 0 0 -0 0</pose>
+      <!-- Part hand_rod_1 -->
+      <visual name="hand_rod_1_visual_mesh_1">
+        <pose relative_to="Mate connector 15">0.544936 -0.209229 -0.0024971 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/hand_rod_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.501961 0.501961 0.501961 1</ambient>
+          <diffuse>0.501961 0.501961 0.501961 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="hand_rod_1_collision_mesh_2">
+        <pose relative_to="Mate connector 15">0.544936 -0.209229 -0.0024971 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/hand_rod_1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link right_gripper_o -->
+    <link name="right_gripper_o">
+      <inertial>
+        <pose>-0.00432657 -0.0319175 0.0114524 0 0 0</pose>
+        <mass>0.122961</mass>
+        <inertia>
+          <ixx>6.77909e-05</ixx>
+          <ixy>2.98924e-07</ixy>
+          <ixz>3.58195e-06</ixz>
+          <iyy>6.10966e-05</iyy>
+          <iyz>2.90157e-06</iyz>
+          <izz>0.000121501</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 19">0 0 0 0 -0 0</pose>
+      <!-- Part right_gripper_o -->
+      <visual name="right_gripper_o_visual_mesh_1">
+        <pose relative_to="right_gripper_o">0.544936 -0.209229 0.241047 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_gripper_o.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="right_gripper_o_collision_mesh_2">
+        <pose relative_to="right_gripper_o">0.544936 -0.209229 0.241047 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_gripper_o.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link right_gripper_in -->
+    <link name="right_gripper_in">
+      <inertial>
+        <pose>0.0206426 -0.0144541 -0.00396119 0 0 0</pose>
+        <mass>0.0400812</mass>
+        <inertia>
+          <ixx>1.69974e-05</ixx>
+          <ixy>-5.87473e-06</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.2721e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.92893e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 21">0 0 0 0 -0 0</pose>
+      <!-- Part right_gripper_in -->
+      <visual name="right_gripper_in_visual_mesh_1">
+        <pose relative_to="right_gripper_in">0.585758 0.15037 -0.221047 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_gripper_in.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0.87451 0 1</ambient>
+          <diffuse>1 0.87451 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="right_gripper_in_collision_mesh_2">
+        <pose relative_to="right_gripper_in">0.585758 0.15037 -0.221047 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_gripper_in.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from right_gripper_o to right_gripper_in -->
+    <joint name="Fastened 21" type="fixed">
+      <pose relative_to="right_gripper_o">-0.0408223 -0.0588593 0.02 3.14159 -0 -0</pose>
+      <parent>right_gripper_o</parent>
+      <child>right_gripper_in</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link right_hole -->
+    <link name="right_hole">
+      <inertial>
+        <pose>0 0 -0.0084 0 0 0</pose>
+        <mass>0.00549321</mass>
+        <inertia>
+          <ixx>4.14847e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>-0</ixz>
+          <iyy>4.14847e-07</iyy>
+          <iyz>0</iyz>
+          <izz>5.71294e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 16">0 0 0 0 -0 0</pose>
+      <!-- Part right_hole -->
+      <visual name="right_hole_visual_mesh_1">
+        <pose relative_to="right_hole">0.516487 0.168599 -0.239447 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_hole.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.988235 0.737255 0.517647 1</ambient>
+          <diffuse>0.988235 0.737255 0.517647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="right_hole_collision_mesh_2">
+        <pose relative_to="right_hole">0.516487 0.168599 -0.239447 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/right_hole.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from right_gripper_o to right_hole -->
+    <joint name="Fastened 16" type="fixed">
+      <pose relative_to="right_gripper_o">0.0284494 -0.0406299 0 3.14159 -0 -0</pose>
+      <parent>right_gripper_o</parent>
+      <child>right_hole</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 15 to right_gripper_o -->
+    <joint name="Fastened 19" type="fixed">
+      <pose relative_to="Mate connector 15">-0 0 -0.243544 0 -0 -0</pose>
+      <parent>Mate connector 15</parent>
+      <child>right_gripper_o</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 18 to Mate connector 15 -->
+    <joint name="Slider 1" type="prismatic">
+      <pose relative_to="Mate connector 18">-0.0248 0.0402028 -0.0345662 1.5708 -0.959931 -0</pose>
+      <parent>Mate connector 18</parent>
+      <child>Mate connector 15</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>-0.012797221755875339</lower>
+          <upper>0.15774721744412468</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 16 -->
+    <link name="Mate connector 16">
+      <inertial>
+        <pose>0.000178634 0.000254947 0.0203601 0 0 0</pose>
+        <mass>0.129306</mass>
+        <inertia>
+          <ixx>0.00293828</ixx>
+          <ixy>1.00465e-07</ixy>
+          <ixz>2.05998e-06</ixz>
+          <iyy>0.00293835</iyy>
+          <iyz>2.94571e-06</iyz>
+          <izz>4.0316e-06</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Slider 2">0 0 0 0 -0 0</pose>
+      <!-- Part hand_rod_2 -->
+      <visual name="hand_rod_2_visual_mesh_1">
+        <pose relative_to="Mate connector 16">0.516487 0.168599 0.00248068 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/hand_rod_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.501961 0.501961 0.501961 1</ambient>
+          <diffuse>0.501961 0.501961 0.501961 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="hand_rod_2_collision_mesh_2">
+        <pose relative_to="Mate connector 16">0.516487 0.168599 0.00248068 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/hand_rod_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link left_gripper_o -->
+    <link name="left_gripper_o">
+      <inertial>
+        <pose>-0.0314724 0.00685078 -0.0114524 0 0 0</pose>
+        <mass>0.122961</mass>
+        <inertia>
+          <ixx>6.20718e-05</ixx>
+          <ixy>2.38051e-06</ixy>
+          <ixz>-3.95168e-06</ixz>
+          <iyy>6.68157e-05</iyy>
+          <iyz>-2.37353e-06</iyz>
+          <izz>0.000121501</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 18">0 0 0 0 -0 0</pose>
+      <!-- Part left_gripper_o -->
+      <visual name="left_gripper_o_visual_mesh_1">
+        <pose relative_to="left_gripper_o">0.516487 -0.168599 -0.246025 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_gripper_o.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="left_gripper_o_collision_mesh_2">
+        <pose relative_to="left_gripper_o">0.516487 -0.168599 -0.246025 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_gripper_o.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link left_gripper_i -->
+    <link name="left_gripper_i">
+      <inertial>
+        <pose>0.0206426 0.0144541 -0.00396119 0 0 0</pose>
+        <mass>0.0400812</mass>
+        <inertia>
+          <ixx>1.69974e-05</ixx>
+          <ixy>5.87473e-06</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.2721e-05</iyy>
+          <iyz>-0</iyz>
+          <izz>2.92893e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 22">0 0 0 0 -0 0</pose>
+      <!-- Part left_gripper_i -->
+      <visual name="left_gripper_i_visual_mesh_1">
+        <pose relative_to="left_gripper_i">0.585758 -0.15037 -0.226025 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_gripper_i.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>1 0.87451 0 1</ambient>
+          <diffuse>1 0.87451 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="left_gripper_i_collision_mesh_2">
+        <pose relative_to="left_gripper_i">0.585758 -0.15037 -0.226025 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_gripper_i.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from left_gripper_o to left_gripper_i -->
+    <joint name="Fastened 22" type="fixed">
+      <pose relative_to="left_gripper_o">-0.0692717 -0.0182294 -0.02 0 0 -0</pose>
+      <parent>left_gripper_o</parent>
+      <child>left_gripper_i</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link left_hole -->
+    <link name="left_hole">
+      <inertial>
+        <pose>0 -0 -0.0084 0 0 0</pose>
+        <mass>0.00549321</mass>
+        <inertia>
+          <ixx>4.14847e-07</ixx>
+          <ixy>-0</ixy>
+          <ixz>-0</ixz>
+          <iyy>4.14847e-07</iyy>
+          <iyz>0</iyz>
+          <izz>5.71294e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 17">0 0 0 0 -0 0</pose>
+      <!-- Part left_hole -->
+      <visual name="left_hole_visual_mesh_1">
+        <pose relative_to="left_hole">0.544936 -0.209229 -0.244425 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_hole.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.988235 0.737255 0.517647 1</ambient>
+          <diffuse>0.988235 0.737255 0.517647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="left_hole_collision_mesh_2">
+        <pose relative_to="left_hole">0.544936 -0.209229 -0.244425 -1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/left_hole.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from left_gripper_o to left_hole -->
+    <joint name="Fastened 17" type="fixed">
+      <pose relative_to="left_gripper_o">-0.0284494 0.0406299 -0 0 -0 -0</pose>
+      <parent>left_gripper_o</parent>
+      <child>left_hole</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 16 to left_gripper_o -->
+    <joint name="Fastened 18" type="fixed">
+      <pose relative_to="Mate connector 16">0 0 -0.243544 3.14159 -0 0</pose>
+      <parent>Mate connector 16</parent>
+      <child>left_gripper_o</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 18 to Mate connector 16 -->
+    <joint name="Slider 2" type="prismatic">
+      <pose relative_to="Mate connector 18">0.0248 0.0657972 -0.0345662 -1.5708 -0.959931 -0</pose>
+      <parent>Mate connector 18</parent>
+      <child>Mate connector 16</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>-0.012797221755875339</lower>
+          <upper>0.15774721744412468</upper>
+        </limit>
+        <mimic joint="Revolute 4">
+          <multiplier>1.0</multiplier>
+        </mimic>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link end_effector_2 -->
+    <link name="end_effector_2">
+      <inertial>
+        <pose>0.00216069 0.031123 -0.0146603 0 0 0</pose>
+        <mass>0.301084</mass>
+        <inertia>
+          <ixx>0.000120212</ixx>
+          <ixy>6.7e-10</ixy>
+          <ixz>3.82766e-06</ixz>
+          <iyy>0.000120832</iyy>
+          <iyz>-2.23e-09</iyz>
+          <izz>0.000140921</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 20">0 0 0 0 -0 0</pose>
+      <!-- Part end_effector_2 -->
+      <visual name="end_effector_2_visual_mesh_1">
+        <pose relative_to="end_effector_2">0.462196 0.0300154 -0.301921 -3.14159 0.959931 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="end_effector_2_collision_mesh_2">
+        <pose relative_to="end_effector_2">0.462196 0.0300154 -0.301921 -3.14159 0.959931 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link end_effector_3 -->
+    <link name="end_effector_3">
+      <inertial>
+        <pose>3.4627e-08 -1.7234e-08 -0.00866831 0 0 0</pose>
+        <mass>0.0383305</mass>
+        <inertia>
+          <ixx>4.05177e-06</ixx>
+          <ixy>-0</ixy>
+          <ixz>-6e-12</ixz>
+          <iyy>4.05169e-06</iyy>
+          <iyz>3e-12</iyz>
+          <izz>5.07072e-06</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Revolute 4">0 0 0 0 -0 0</pose>
+      <!-- Part end_effector_3 -->
+      <visual name="end_effector_3_visual_mesh_1">
+        <pose relative_to="end_effector_3">0.459153 -0.00110858 -0.330377 3.14159 0.959931 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.792157 0.819608 0.933333 1</ambient>
+          <diffuse>0.792157 0.819608 0.933333 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="end_effector_3_collision_mesh_2">
+        <pose relative_to="end_effector_3">0.459153 -0.00110858 -0.330377 3.14159 0.959931 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/end_effector_3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from end_effector_2 to end_effector_3 -->
+    <joint name="Revolute 4" type="revolute">
+      <pose relative_to="end_effector_2">0.00418158 0.031122 0.0297485 0 0 0.695746</pose>
+      <parent>end_effector_2</parent>
+      <child>end_effector_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>30</effort>
+          <velocity>100</velocity>
+          <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 18 to end_effector_2 -->
+    <joint name="Fastened 20" type="fixed">
+      <pose relative_to="Mate connector 18">-0.00411985 0.085432 0 3.14159 0 -0</pose>
+      <parent>Mate connector 18</parent>
+      <child>end_effector_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 9 to Mate connector 18 -->
+    <joint name="Fastened 23" type="fixed">
+      <pose relative_to="Mate connector 9">-0.225267 0.157734 -0.053 1.5708 -0 0.959931</pose>
+      <parent>Mate connector 9</parent>
+      <child>Mate connector 18</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 10 to Mate connector 9 -->
+    <joint name="Fastened_12" type="fixed">
+      <pose relative_to="Mate connector 10">0 0 -0.00367377 -3.14159 0 -0</pose>
+      <parent>Mate connector 10</parent>
+      <child>Mate connector 9</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 11 to Mate connector 10 -->
+    <joint name="Fastened_13" type="fixed">
+      <pose relative_to="Mate connector 11">0 0 0 -3.14159 -0 0</pose>
+      <parent>Mate connector 11</parent>
+      <child>Mate connector 10</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 5 to Mate connector 11 -->
+    <joint name="Revolute 3" type="revolute">
+      <pose relative_to="Mate connector 5">-0.276963 -0.000525296 0.0037071 3.14159 0 -0.046463</pose>
+      <parent>Mate connector 5</parent>
+      <child>Mate connector 11</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>30</effort>
+          <velocity>100</velocity>
+          <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link motor_2_cover_top -->
+    <link name="motor_2_cover_top">
+      <inertial>
+        <pose>0.0426962 -0.0371579 -0.0025 0 0 0</pose>
+        <mass>0.0529753</mass>
+        <inertia>
+          <ixx>3.22783e-05</ixx>
+          <ixy>-3.66e-10</ixy>
+          <ixz>-0</ixz>
+          <iyy>4.00124e-05</iyy>
+          <iyz>0</iyz>
+          <izz>7.20699e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 15">0 0 0 0 -0 0</pose>
+      <!-- Part motor_2_cover_top -->
+      <visual name="motor_2_cover_top_visual_mesh_1">
+        <pose relative_to="motor_2_cover_top">0.215247 -0.0377078 0.392128 3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_top.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_2_cover_top_collision_mesh_2">
+        <pose relative_to="motor_2_cover_top">0.215247 -0.0377078 0.392128 3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_2_cover_top.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 5 to motor_2_cover_top -->
+    <joint name="Fastened 15" type="fixed">
+      <pose relative_to="Mate connector 5">-0.214747 0.029886 0.0372078 1.5708 0 0</pose>
+      <parent>Mate connector 5</parent>
+      <child>motor_2_cover_top</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 6 to Mate connector 5 -->
+    <joint name="Fastened_6" type="fixed">
+      <pose relative_to="Mate connector 6">0 0 -0.00370712 -0 0 -0</pose>
+      <parent>Mate connector 6</parent>
+      <child>Mate connector 5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 7 to Mate connector 6 -->
+    <joint name="Fastened 8" type="fixed">
+      <pose relative_to="Mate connector 7">0 0 0 -3.14159 -0 -0</pose>
+      <parent>Mate connector 7</parent>
+      <child>Mate connector 6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 8 to Mate connector 7 -->
+    <joint name="Revolute 2" type="revolute">
+      <pose relative_to="Mate connector 8">-0.000107217 0.2763 0.00370711 -3.14159 -0 0</pose>
+      <parent>Mate connector 8</parent>
+      <child>Mate connector 7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>30</effort>
+          <velocity>100</velocity>
+          <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link motor_1_cover_top -->
+    <link name="motor_1_cover_top">
+      <inertial>
+        <pose>0.043 0.0502125 -0.0025 0 0 0</pose>
+        <mass>0.0556698</mass>
+        <inertia>
+          <ixx>4.62868e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.40035e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.00583e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 9">0 0 0 0 -0 0</pose>
+      <!-- Part motor_1_cover_top -->
+      <visual name="motor_1_cover_top_visual_mesh_1">
+        <pose relative_to="motor_1_cover_top">0.0435 0.307225 0.0294932 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_cover_top.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_cover_top_collision_mesh_2">
+        <pose relative_to="motor_1_cover_top">0.0435 0.307225 0.0294932 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_cover_top.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 8 to motor_1_cover_top -->
+    <joint name="Fastened 9" type="fixed">
+      <pose relative_to="Mate connector 8">0.0295032 0.221205 0.043 -3.14159 1.5708 0</pose>
+      <parent>Mate connector 8</parent>
+      <child>motor_1_cover_top</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link motor_1_cover_bottom -->
+    <link name="motor_1_cover_bottom">
+      <inertial>
+        <pose>0.043 -0.0502125 -0.0025 0 0 0</pose>
+        <mass>0.0556698</mass>
+        <inertia>
+          <ixx>4.62868e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>3.40035e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.00583e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="middle">0 0 0 0 -0 0</pose>
+      <!-- Part motor_1_cover_bottom -->
+      <visual name="motor_1_cover_bottom_visual_mesh_1">
+        <pose relative_to="motor_1_cover_bottom">0.0435 -0.307225 0.0302068 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_cover_bottom.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="motor_1_cover_bottom_collision_mesh_2">
+        <pose relative_to="motor_1_cover_bottom">0.0435 -0.307225 0.0302068 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://robot/assets/motor_1_cover_bottom.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 8 to motor_1_cover_bottom -->
+    <joint name="middle" type="fixed">
+      <pose relative_to="Mate connector 8">-0.0301968 0.221205 0.043 -0 1.5708 0</pose>
+      <parent>Mate connector 8</parent>
+      <child>motor_1_cover_bottom</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from joining_rod_1 to Mate connector 8 -->
+    <joint name="Fastened 4" type="fixed">
+      <pose relative_to="joining_rod_1">-0 0 0 0 -0 0</pose>
+      <parent>joining_rod_1</parent>
+      <child>Mate connector 8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 2 to joining_rod_1 -->
+    <joint name="Revolute 1" type="revolute">
+      <pose relative_to="Mate connector 2">7.45e-10 3.33175e-05 -0.086 -1.5708 -0 0</pose>
+      <parent>Mate connector 2</parent>
+      <child>joining_rod_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>30</effort>
+          <velocity>100</velocity>
+          <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to Mate connector 2 -->
+    <joint name="Fastened 3" type="fixed">
+      <pose relative_to="base_link">0 0 0.03056 3.14159 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Mate connector 2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>connector_joint</joint_name>
+      <topic>/rrr/joint0/cmd_pos</topic>
+      <p_gain>1000</p_gain>
+      <i_gain>100</i_gain>
+      <d_gain>50</d_gain>
+      <cmd_max>300</cmd_max>
+      <cmd_min>-300</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Revolute 1</joint_name>
+      <topic>/rrr/joint1/cmd_pos</topic>
+      <p_gain>8000</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>400</d_gain>
+      <cmd_max>5000</cmd_max>
+      <cmd_min>-5000</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Revolute 2</joint_name>
+      <topic>/rrr/joint2/cmd_pos</topic>
+      <p_gain>8000</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>400</d_gain>
+
+      <cmd_max>5000</cmd_max>
+      <cmd_min>-5000</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Revolute 3</joint_name>
+      <topic>/rrr/joint3/cmd_pos</topic>
+      <p_gain>5000</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>300</d_gain>
+      <cmd_max>5000</cmd_max>
+      <cmd_min>-5000</cmd_min>
+    </plugin>
+
+    <!-- <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Revolute 4</joint_name>
+      <topic>/rrr/joint4/cmd_pos</topic>
+      <p_gain>500</p_gain>
+      <cmd_max>5</cmd_max>
+      <cmd_min>-5</cmd_min>
+    </plugin> -->
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Slider 1</joint_name>
+      <topic>/rrr/gripper/cmd_pos</topic>
+      <p_gain>5000</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>300</d_gain>
+      <cmd_max>5000</cmd_max>
+      <cmd_min>-5000</cmd_min>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>Slider 2</joint_name>
+      <topic>/rrr/gripper/cmd_pos</topic>
+      <p_gain>5000</p_gain>
+      <i_gain>0</i_gain>
+      <d_gain>300</d_gain>
+      <cmd_max>5000</cmd_max>
+      <cmd_min>-5000</cmd_min>
+    </plugin>    
+  </model>
+</sdf>
