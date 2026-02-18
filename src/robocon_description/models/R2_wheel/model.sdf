@@ -26,5 +26,6 @@
                 </surface>
             </collision>    
         </link>
+        
     </model>
 </sdf>

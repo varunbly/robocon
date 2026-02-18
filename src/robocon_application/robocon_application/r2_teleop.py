@@ -76,24 +76,26 @@ def main():
             if key == 'w':
                 # All Forward
                 # torque = -2.0 # Nm
-                v_fl = v_fr = v_bl = v_br = -torque
+                v_fl = v_fr = torque
+                v_bl = v_br = -torque
                 
             elif key == 's':
                 # All Backward
                 # torque = 3.0 # Nm
-                v_fl = v_fr = v_bl = v_br = torque
+                v_fl = v_fr = -torque
+                v_bl = v_br = torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
                 # torque = 3.0
-                v_fr = v_br = -6*torque
+                v_fr = v_br = 6*torque
                 v_fl = v_bl = 6*torque
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
                 # torque = 3.0
                 v_fr = v_br = 6*torque
-                v_fl = v_bl = -6*torque
+                v_fl = v_bl = 6*torque
             
             # elif key == 't':
             #      # Only Mid Forward

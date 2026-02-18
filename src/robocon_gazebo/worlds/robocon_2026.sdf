@@ -156,7 +156,7 @@
     <include>
       <name>R2</name>
       <uri>model://R2</uri>
-      <pose>1 2 0.34 0 0 -1.57</pose>
+      <pose>0 4.6 1 0 0 0</pose>
     </include>
 
     <!-- Mini Car -->
