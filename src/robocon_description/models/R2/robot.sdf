@@ -40,6 +40,14 @@
             <uri>model://R2/assets/part_1.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Link part_16 -->
@@ -483,7 +491,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 2">0 0 0 0 -0 0</pose>
+      <pose relative_to="back_right_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_2 -->
       <visual name="part_1_2_visual_mesh_1">
         <pose relative_to="part_1">-0.607 -0.213739 0.314979 1.5708 1.5708 0</pose>
@@ -506,10 +514,18 @@
             <uri>model://R2/assets/part_1__2.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu> 1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Joint from fusioncomponent to part_1 -->
-    <joint name="Revolute 2" type="revolute">
+    <joint name="back_right_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent">-3.73e-10 -0.013047 -0.033 -1.5708 -0 -0</pose>
       <parent>fusioncomponent</parent>
       <child>part_1</child>
@@ -517,7 +533,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -599,7 +615,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 3">0 0 0 0 -0 0</pose>
+      <pose relative_to="back_left_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_3 -->
       <visual name="part_1_3_visual_mesh_1">
         <pose relative_to="part_1_2">-0.607 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
@@ -622,10 +638,18 @@
             <uri>model://R2/assets/part_1__3.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Joint from fusioncomponent_2 to part_1_2 -->
-    <joint name="Revolute 3" type="revolute">
+    <joint name="back_left_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent_2">-3.73e-10 -0.013047 -0.033 1.5708 0 3.14159</pose>
       <parent>fusioncomponent_2</parent>
       <child>part_1_2</child>
@@ -633,7 +657,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -715,7 +739,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 5">0 0 0 0 -0 0</pose>
+      <pose relative_to="mid_right_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_4 -->
       <visual name="part_1_4_visual_mesh_1">
         <pose relative_to="part_1_3">-0.301 -0.213739 0.314979 1.5708 1.5708 0</pose>
@@ -738,10 +762,18 @@
             <uri>model://R2/assets/part_1__4.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Joint from fusioncomponent_3 to part_1_3 -->
-    <joint name="Revolute 5" type="revolute">
+    <joint name="mid_right_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent_3">-3.73e-10 -0.013047 -0.033 -1.5708 -0 -0</pose>
       <parent>fusioncomponent_3</parent>
       <child>part_1_3</child>
@@ -749,7 +781,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -831,7 +863,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 4">0 0 0 0 -0 0</pose>
+      <pose relative_to="mid_left_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_5 -->
       <visual name="part_1_5_visual_mesh_1">
         <pose relative_to="part_1_4">-0.302 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
@@ -854,10 +886,18 @@
             <uri>model://R2/assets/part_1__5.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Joint from fusioncomponent_4 to part_1_4 -->
-    <joint name="Revolute 4" type="revolute">
+    <joint name="mid_left_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent_4">-3.73e-10 -0.013047 -0.033 1.5708 0 -3.14159</pose>
       <parent>fusioncomponent_4</parent>
       <child>part_1_4</child>
@@ -865,7 +905,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -923,8 +963,8 @@
         <limit>
           <effort>10</effort>
           <velocity>10</velocity>
-          <lower>-3.141592653589793</lower>
-          <upper>3.141592653589793</upper>
+          <lower>-1.5707963267948965</lower>
+          <upper>0.523599</upper>
         </limit>
         <dynamics>
           <friction>0.0</friction>
@@ -1352,7 +1392,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 7">0 0 0 0 -0 0</pose>
+      <pose relative_to="front_left_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_6 -->
       <visual name="part_1_6_visual_mesh_1">
         <pose relative_to="part_1_5">0.046 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
@@ -1375,10 +1415,18 @@
             <uri>model://R2/assets/part_1__6.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
     </link>
     <!-- Joint from fusioncomponent_5 to part_1_5 -->
-    <joint name="Revolute 7" type="revolute">
+    <joint name="front_left_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent_5">-3.73e-10 -0.013047 -0.033 1.5708 0.104909 -3.14159</pose>
       <parent>fusioncomponent_5</parent>
       <child>part_1_5</child>
@@ -1386,7 +1434,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -1526,7 +1574,7 @@
           <izz>0.00216114</izz>
         </inertia>
       </inertial>
-      <pose relative_to="Revolute 6">0 0 0 0 -0 0</pose>
+      <pose relative_to="front_right_wheel_joint">0 0 0 0 -0 0</pose>
       <!-- Part part_1_7 -->
       <visual name="part_1_7_visual_mesh_1">
         <pose relative_to="part_1_6">0.046 -0.213739 0.314979 1.5708 1.5708 0</pose>
@@ -1552,7 +1600,7 @@
       </collision>
     </link>
     <!-- Joint from fusioncomponent_6 to part_1_6 -->
-    <joint name="Revolute 6" type="revolute">
+    <joint name="front_right_wheel_joint" type="revolute">
       <pose relative_to="fusioncomponent_6">-3.73e-10 -0.013047 -0.033 -1.5708 0.104909 0</pose>
       <parent>fusioncomponent_6</parent>
       <child>part_1_6</child>
@@ -1560,7 +1608,7 @@
         <xyz>0 0 1</xyz>
         <limit>
           <effort>10</effort>
-          <velocity>10</velocity>
+          <!-- <velocity>10</velocity> -->
           <!-- <lower>-3.141592653589793</lower>
           <upper>3.141592653589793</upper> -->
         </limit>
@@ -1608,25 +1656,41 @@
         </dynamics>
       </axis>
     </joint>
+    <!-- Front Left -->
     <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-            <joint_name>Revolute 2</joint_name>
-            <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
-            <p_gain>1.0</p_gain>
-        </plugin>
+      <joint_name>front_left_wheel_joint</joint_name>
+      <sub_topic>joint/front_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Front Right -->
     <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-            <joint_name>Revolute 6</joint_name>
-            <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
-            <p_gain>1.0</p_gain>
-        </plugin>
-        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-            <joint_name>Revolute 3</joint_name>
-            <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
-            <p_gain>1.0</p_gain>
-        </plugin>
-        <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
-            <joint_name>Revolute 7</joint_name>
-            <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
-            <p_gain>1.0</p_gain>
-        </plugin>
+      <joint_name>front_right_wheel_joint</joint_name>
+      <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Mid Left -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>mid_left_wheel_joint</joint_name>
+      <sub_topic>joint/mid_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Mid Right -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>mid_right_wheel_joint</joint_name>
+      <sub_topic>joint/mid_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Back Left -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_left_wheel_joint</joint_name>
+      <sub_topic>joint/back_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Back Right -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_right_wheel_joint</joint_name>
+      <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
   </model>
 </sdf>
