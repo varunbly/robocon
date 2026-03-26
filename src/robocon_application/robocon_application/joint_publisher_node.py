@@ -16,13 +16,13 @@ class JointPublisherNode(Node):
         
         # Joint names matching the URDF
         self.joint_names = [
-            'joint0', 
-            'joint1', 
-            'joint2', 
-            'joint3', 
-            'joint4', 
-            'finger_left_joint', 
-            'finger_right_joint'
+            'front_left_wheel_joint',
+            'front_right_wheel_joint',
+            'mid_left_wheel_joint',
+            'mid_right_wheel_joint',
+            'back_left_wheel_joint',
+            'back_right_wheel_joint',
+            'A_joint'
         ]
         
         # Initial joint positions

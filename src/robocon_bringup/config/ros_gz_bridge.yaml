@@ -1,27 +1,41 @@
-- ros_topic_name: "clock"
-  gz_topic_name: "clock"
+---
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
   ros_type_name: "rosgraph_msgs/msg/Clock"
   gz_type_name: "gz.msgs.Clock"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "joint_states"
-  gz_topic_name: "joint_states"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "gz.msgs.Model"
+- ros_topic_name: "imu"
+  gz_topic_name: "imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "odom"
-  gz_topic_name: "odom"
+- ros_topic_name: "/scan"
+  gz_topic_name: "/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/odom"
+  gz_topic_name: "/odometry"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "cmd_vel"
-  gz_topic_name: "cmd_vel"
-  ros_type_name: "geometry_msgs/msg/Twist"
-  gz_type_name: "gz.msgs.Twist"
-<<<<<<< Updated upstream
-  direction: ROS_TO_GZ
+  # Topic published by JointStatePublisher plugin
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: "GZ_TO_ROS"
+
+#   # Global Transforms (TF aggregates all robots) # bcz ekf node enabled
+# - ros_topic_name: "/tf"
+#   gz_topic_name: "/tf"
+#   ros_type_name: "tf2_msgs/msg/TFMessage"
+#   gz_type_name: "gz.msgs.Pose_V"
+#   direction: GZ_TO_ROS
 
   # --- ARM CONTROL BRIDGES ---
 - ros_topic_name: "/rrr/joint0/cmd_pos"
@@ -79,14 +93,12 @@
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
+# - ros_topic_name: "/R2/cmd_vel"
+#   gz_topic_name: "/model/R2/cmd_vel"
+#   ros_type_name: "geometry_msgs/msg/Twist"
+#   gz_type_name: "gz.msgs.Twist"
+#   direction: ROS_TO_GZ
 
-- ros_topic_name: "/R2/cmd_vel"
-  gz_topic_name: "/model/R2/cmd_vel"
-  ros_type_name: "geometry_msgs/msg/Twist"
-  gz_type_name: "gz.msgs.Twist"
-  direction: ROS_TO_GZ
-
-# Individual Wheel Control
 # Individual Wheel Control
 - ros_topic_name: "/R2/front_left_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/front_left_wheel_joint/cmd_vel"
@@ -124,87 +136,40 @@
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-# Mini Car Velocity Control
-- ros_topic_name: "/mini_car/left_wheel/cmd_vel"
-  gz_topic_name: "/model/mini_car/joint/left_wheel_joint/cmd_vel"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/mini_car/right_wheel/cmd_vel"
-  gz_topic_name: "/model/mini_car/joint/right_wheel_joint/cmd_vel"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
 - ros_topic_name: "/rrr/gripper/cmd_pos"
   gz_topic_name: "/rrr/gripper/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-=======
   direction: "ROS_TO_GZ"
 
-# - ros_topic_name: "camera/camera_info"
-#   gz_topic_name: "camera/camera_info"
-#   ros_type_name: "sensor_msgs/msg/CameraInfo"
-#   gz_type_name: "gz.msgs.CameraInfo"
-#   direction: "GZ_TO_ROS"
+# # Topic subscribed to by DiffDrive plugin
+# - ros_topic_name: "cmd_vel"
+#   gz_topic_name: "cmd_vel"
+#   ros_type_name: "geometry_msgs/msg/Twist"
+#   gz_type_name: "gz.msgs.Twist"
+#   direction: ROS_TO_GZ
 
-- ros_topic_name: "scan"
-  gz_topic_name: "scan"
-  ros_type_name: "sensor_msgs/msg/LaserScan"
-  gz_type_name: "gz.msgs.LaserScan"
-  direction: "GZ_TO_ROS"
-
-- ros_topic_name: "scan/points"
-  gz_topic_name: "scan/points"
+- ros_topic_name: "/scan/points"
+  gz_topic_name: "/scan/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
-  direction: "GZ_TO_ROS"
+  direction: GZ_TO_ROS
 
-- ros_topic_name: "depth_camera/camera_info"
-  gz_topic_name: "depth_camera/camera_info"
+- ros_topic_name: "/depth_camera/camera_info"
+  gz_topic_name: "/depth_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  direction: "GZ_TO_ROS"
+  direction: GZ_TO_ROS
 
-- ros_topic_name: "depth_camera/points"
-  gz_topic_name: "depth_camera/points"
+- ros_topic_name: "/depth_camera/points"
+  gz_topic_name: "/depth_camera/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
-  direction: "GZ_TO_ROS"
+  direction: GZ_TO_ROS
 
-- ros_topic_name: "depth_camera/image_raw"
-  gz_topic_name: "depth_camera/image"
+- ros_topic_name: "/depth_camera/image_raw"
+  gz_topic_name: "/depth_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  direction: "GZ_TO_ROS"
-
-# - ros_topic_name: "tf"
-#   gz_topic_name: "tf"
-#   ros_type_name: "tf2_msgs/msg/TFMessage"
-#   gz_type_name: "gz.msgs.Pose_V"
-#   direction: "GZ_TO_ROS"
-
-# - ros_topic_name: "tf_static"
-#   gz_topic_name: "tf_static"
-#   ros_type_name: "tf2_msgs/msg/TFMessage"
-#   gz_type_name: "gz.msgs.Pose_V"
-#   direction: "GZ_TO_ROS"
-#   qos:
-#     durability: "transient_local"
-
-#  Most 2D Navigation (Nav2) only needs scan (LaserScan). scan/points is for 3D Lidar (PointCloud2). If you only have a 2D Lidar, you can delete this.
-# - ros_topic_name: "scan/points"
-#   gz_topic_name: "scan/points"
-#   ros_type_name: "sensor_msgs/msg/PointCloud2"
-#   gz_type_name: "gz.msgs.PointCloudPacked"
-#   direction: "GZ_TO_ROS"
-
-- ros_topic_name: "imu"
-  gz_topic_name: "imu"
-  ros_type_name: "sensor_msgs/msg/Imu"
-  gz_type_name: "gz.msgs.IMU"
-  direction: "GZ_TO_ROS"
->>>>>>> Stashed changes
+  direction: GZ_TO_ROS
+  

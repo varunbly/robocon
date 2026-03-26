@@ -174,15 +174,15 @@
     <include>
       <name>R2</name>
       <uri>model://R2</uri>
-      <pose>1 2 0.34 0 0 -1.57</pose>
+      <pose>-2.5 5.1 0.34 0 0 -1.57</pose>
     </include>
 
     <!-- Mini Car -->
-    <include>
+    <!-- <include>
       <name>mini_car</name>
       <uri>model://mini_car</uri>
       <pose>0 0 0.5 0 0 0</pose>
-    </include>
+    </include> -->
 
 <!-- origin -->
     <model name="retry_zone_1">
@@ -794,8 +794,8 @@
       </geometry>
       <material>
       </material>
-      <transparency>0.3</transparency>  <!-- Adjust: 0.1 for almost clear, 0.5 for more tinted -->
-      <cast_shadows>false</cast_shadows>  <!-- Optional: no shadows for cleaner look -->
+      <transparency>0.3</transparency> 
+      <cast_shadows>false</cast_shadows> 
     </visual>
   </link>
 </model>

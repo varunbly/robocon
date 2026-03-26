@@ -1,12 +1,14 @@
 import os
 
 from ament_index_python.packages import get_package_share_directory
-
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable, AppendEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable, AppendEnvironmentVariable, ExecuteProcess
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
+from ros_gz_bridge.actions import RosGzBridge
+from ros_gz_sim.actions import GzServer
+
 
 def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
@@ -23,7 +25,7 @@ def generate_launch_description():
 
     # The directory containing the package (the 'share' directory)
     # This allows Gazebo to resolve package://robocon_description/...
-    resource_path = os.path.dirname(pkg_robocon_description)
+    resource_path = os.path.join(pkg_robocon_description, 'models')
 
     # Append to the resource paths
     set_env_vars = AppendEnvironmentVariable(
@@ -85,7 +87,7 @@ def generate_launch_description():
         output='both',
         parameters=[
             {'use_sim_time': use_sim_time},
-            {'robot_description': robot_desc},
+            {'robot_description': robot_desc}
         ],
         arguments=['--ros-args', '--log-level', 'info'],
         env=env_vars
