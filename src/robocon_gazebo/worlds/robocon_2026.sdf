@@ -145,14 +145,28 @@
       </link>
     </model> 
 
+    <!-- R1 Robot -->
+    <!-- <include>
+      <name>R1</name>
+      <uri>model://R1</uri>
+      <pose>-1.5 -2.5 0.5 0 0 0</pose>
+    </include> -->
+
+    <!-- R2 Robot -->
+    <include>
+      <name>R1</name>
+      <uri>model://R1</uri>
+      <pose>0 4.6 1 0 0 0</pose>
+    </include>
+
 <!-- origin -->
     <model name="retry_zone_1">
       <static>true</static>
       <pose>-2.5 5.1 0.051 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>1 1 0.000001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>1 1 0.000001</size></box>
@@ -168,10 +182,10 @@
     <model name="retry_zone_2">
       <static>true</static>
       <pose>1.6 5.2 0.051 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>1 1 0.000001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>0.8 0.8 0.000001</size></box>
@@ -187,10 +201,10 @@
     <model name="retry_zone_3">
       <static>true</static>
       <pose>-2.5 -5.9 0.4501 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>1 1 0.000001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>1 1 0.000001</size></box>
@@ -206,10 +220,10 @@
     <model name="mat_space_1_H">
       <static>true</static>
       <pose>0 3.615 0.05001 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>6 0.03 0.00001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>6 0.03 0.00001</size></box>
@@ -226,10 +240,10 @@
      <model name="mat_space_2_V">
       <static>true</static>
       <pose>-1.785 3 0.05001 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>0.03 1.2 0.00001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>0.03 1.2 0.00001</size></box>
@@ -246,10 +260,10 @@
     <model name="mat_space_3_V">
       <static>true</static>
       <pose>1.785 3 0.05001 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>0.03 1.2 0.00001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>0.03 1.2 0.00001</size></box>
@@ -266,10 +280,10 @@
      <model name="mat_space_4_H">
       <static>true</static>
       <pose>-2.4 -2.385 0.05001 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>1.2 0.03 0.00001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>1.2 0.03 0.00001</size></box>
@@ -286,10 +300,10 @@
       <model name="mat_space_5_V">
       <static>true</static>
       <pose>1.785 -3.125 0.05001 0 0 0</pose> <link name="link">
-        <collision name="collision">
+        <!-- <collision name="collision">
           <geometry>
             <box><size>0.03 1.45 0.00001</size></box> </geometry>
-        </collision>
+        </collision> -->
         <visual name="visual">
           <geometry>
             <box><size>0.03 1.45 0.00001</size></box>
@@ -1160,11 +1174,7 @@
 
 
 
-    <!-- Simple Car -->
-    <include>
-      <uri>model://R2</uri>
-      <pose>0 4.6 1 0 0 0</pose>
-    </include>
+
 
   </world>
 

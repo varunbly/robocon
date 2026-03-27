@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "1c6ba35544f6521ef75e2dbc",
+    "documentMicroversion": "ef0d1a6e225ff057a414a570",
+    "elementId": "da5b47ecd8a1ea8164df8f48",
+    "fullConfiguration": "default",
+    "id": "M2/DHQKD8C6fE6Td5",
+    "isStandardContent": false,
+    "name": "motor-1-gear <1>",
+    "partId": "KF/B",
+    "suppressed": false,
+    "type": "Part"
+}

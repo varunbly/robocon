@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "681c67d8b1abfc71ae8c68df",
+    "documentMicroversion": "8d0ab1fe6788dc24feb87b11",
+    "elementId": "27ec66fad2506b3dc73ec615",
+    "fullConfiguration": "default",
+    "id": "M5lTrp4fNgGWTej1Q",
+    "isStandardContent": false,
+    "name": "right-gripper-in <6>",
+    "partId": "JFX",
+    "suppressed": false,
+    "type": "Part"
+}

@@ -1,0 +1,1406 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/681c67d8b1abfc71ae8c68df/w/4fe5141cbd9599f63c013525/e/f53a1a8056dc1a0f76f61854 -->
+<robot name="robot">
+  <!-- Link base -->
+  <link name="base">
+    <inertial>
+      <origin xyz="-0 0 0.0183377" rpy="0 0 0"/>
+      <mass value="1.12889"/>
+      <inertia ixx="0.00242769" ixy="0" ixz="0" iyy="0.00242769" iyz="0" izz="0.00458701"/>
+    </inertial>
+    <!-- Part base -->
+    <visual>
+      <origin xyz="0 0 0.03056" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/base.stl"/>
+      </geometry>
+      <material name="base_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.03056" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/base.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 2 -->
+  <link name="Mate connector 2">
+    <inertial>
+      <origin xyz="1.2e-10 0.038 -0.0568212" rpy="0 0 0"/>
+      <mass value="0.0727815"/>
+      <inertia ixx="7.28387e-05" ixy="0" ixz="1e-12" iyy="0.000106914" iyz="-0" izz="3.5288e-05"/>
+    </inertial>
+    <!-- Part arm_1_l -->
+    <visual>
+      <origin xyz="7.45e-10 -0.000499997 -4.5e-11" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1_l.stl"/>
+      </geometry>
+      <material name="arm_1_l_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="7.45e-10 -0.000499997 -4.5e-11" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1_l.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link base_motor_holder -->
+  <link name="base_motor_holder">
+    <inertial>
+      <origin xyz="0.000708205 0.0117951 -0.046662" rpy="0 0 0"/>
+      <mass value="0.0191029"/>
+      <inertia ixx="1.31209e-05" ixy="1.1751e-08" ixz="1.48039e-07" iyy="1.23248e-05" iyz="3.47791e-06" izz="8.89399e-06"/>
+    </inertial>
+    <!-- Part base_motor_holder -->
+    <visual>
+      <origin xyz="2.28185e-05 2.5901e-08 -0.0334334" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_holder.stl"/>
+      </geometry>
+      <material name="base_motor_holder_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="2.28185e-05 2.5901e-08 -0.0334334" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_holder.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link arm_1_r -->
+  <link name="arm_1_r">
+    <inertial>
+      <origin xyz="1.10476e-06 0.0203013 -0.00498936" rpy="0 0 0"/>
+      <mass value="0.0849117"/>
+      <inertia ixx="8.07762e-05" ixy="-3.168e-09" ixz="4.66e-10" iyy="3.74618e-05" iyz="-3.0806e-08" izz="0.000116829"/>
+    </inertial>
+    <!-- Part arm_1_r -->
+    <visual>
+      <origin xyz="0 -0.033 0.0325" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1_r.stl"/>
+      </geometry>
+      <material name="arm_1_r_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.033 0.0325" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_1_r.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from base_motor_holder to arm_1_r -->
+  <joint name="Fastened_2" type="fixed">
+    <origin xyz="-3.73e-10 0.033 -0.066" rpy="0 -0 0"/>
+    <parent link="base_motor_holder"/>
+    <child link="arm_1_r"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link base_motor -->
+  <link name="base_motor">
+    <inertial>
+      <origin xyz="-7.72022e-05 -0.0175772 -0.057213" rpy="0 0 0"/>
+      <mass value="0.324308"/>
+      <inertia ixx="0.000605662" ixy="1.93899e-07" ixz="-2.16774e-06" iyy="0.000605662" iyz="-2.16774e-06" izz="8.11588e-05"/>
+    </inertial>
+    <!-- Part base_motor_p1 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p1.stl"/>
+      </geometry>
+      <material name="base_motor_p1_material">
+        <color rgba="0.207843 0.207843 0.207843 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_p3 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p3.stl"/>
+      </geometry>
+      <material name="base_motor_p3_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p3.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_p5 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p5.stl"/>
+      </geometry>
+      <material name="base_motor_p5_material">
+        <color rgba="0.65098 0.619608 0.588235 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p5.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_p2 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p2.stl"/>
+      </geometry>
+      <material name="base_motor_p2_material">
+        <color rgba="0.65098 0.619608 0.588235 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p2.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_p4 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p4.stl"/>
+      </geometry>
+      <material name="base_motor_p4_material">
+        <color rgba="0.65098 0.619608 0.588235 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p4.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_p6 -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p6.stl"/>
+      </geometry>
+      <material name="base_motor_p6_material">
+        <color rgba="0.207843 0.207843 0.207843 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_p6.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part base_motor_axle -->
+    <visual>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_axle.stl"/>
+      </geometry>
+      <material name="base_motor_axle_material">
+        <color rgba="0.776471 0.756863 0.737255 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0231301 -0.0407464 -0.0295" rpy="1.5708 -0 2.35619"/>
+      <geometry>
+        <mesh filename="package://assets/base_motor_axle.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from base_motor_holder to base_motor -->
+  <joint name="base" type="fixed">
+    <origin xyz="-3.73e-10 0.0505 -0.063" rpy="3.14159 -0 -3.14159"/>
+    <parent link="base_motor_holder"/>
+    <child link="base_motor"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 2 to base_motor_holder -->
+  <joint name="Fastened_1" type="fixed">
+    <origin xyz="0 0.033 0" rpy="-1.5708 -0 0"/>
+    <parent link="Mate connector 2"/>
+    <child link="base_motor_holder"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link joining_rod_1 -->
+  <link name="joining_rod_1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.0155207"/>
+      <inertia ixx="1.71672e-05" ixy="0" ixz="0" iyy="1.71672e-05" iyz="0" izz="1.24166e-07"/>
+    </inertial>
+    <!-- Part joining_rod_1 -->
+    <visual>
+      <origin xyz="0 -0.086 -0.001" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_1.stl"/>
+      </geometry>
+      <material name="joining_rod_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.086 -0.001" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 8 -->
+  <link name="Mate connector 8">
+    <inertial>
+      <origin xyz="-0.000288184 0.146899 0.000134941" rpy="0 0 0"/>
+      <mass value="0.438917"/>
+      <inertia ixx="0.00357355" ixy="5.47325e-06" ixz="2.9186e-07" iyy="0.000884745" iyz="-4.10493e-06" izz="0.00284251"/>
+    </inertial>
+    <!-- Part arm_2 -->
+    <visual>
+      <origin xyz="1.00492e-05 -0.0860201 -0.000500003" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+      <material name="arm_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.00492e-05 -0.0860201 -0.000500003" rpy="-1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link motor -->
+  <link name="motor">
+    <inertial>
+      <origin xyz="-0.02357 0.0232438 -0.0368201" rpy="0 0 0"/>
+      <mass value="0.595248"/>
+      <inertia ixx="0.000450245" ixy="-2e-12" ixz="-0" iyy="0.000444016" iyz="-5.61651e-06" izz="0.000274153"/>
+    </inertial>
+    <!-- Part motor_1_face -->
+    <visual>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_face.stl"/>
+      </geometry>
+      <material name="motor_1_face_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_face.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part motor_1_gear -->
+    <visual>
+      <origin xyz="-0.0235432 0.0197789 -0.298055" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_gear.stl"/>
+      </geometry>
+      <material name="motor_1_gear_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235432 0.0197789 -0.298055" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_gear.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part a_point_on_motor_1 -->
+    <visual>
+      <origin xyz="-0.0235312 0.0197777 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/a_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="a_point_on_motor_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0197777 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/a_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part motor_2_back -->
+    <visual>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_back.stl"/>
+      </geometry>
+      <material name="motor_2_back_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_back.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part one_more_point_on_motor_1 -->
+    <visual>
+      <origin xyz="-0.0235312 0.0191393 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/one_more_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="one_more_point_on_motor_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0191393 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/one_more_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_motor_1 -->
+    <visual>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/real_motor_1.stl"/>
+      </geometry>
+      <material name="real_motor_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0197777 -0.292195" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/real_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part another_point_on_motor_1 -->
+    <visual>
+      <origin xyz="-0.0235312 0.0191396 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/another_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="another_point_on_motor_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0235312 0.0191396 -0.291842" rpy="0 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/another_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from Mate connector 8 to motor -->
+  <joint name="Fastened 7" type="fixed">
+    <origin xyz="0.0246004 0.211205 0.01932" rpy="-1.5708 0 0"/>
+    <parent link="Mate connector 8"/>
+    <child link="motor"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link Mate connector 7 -->
+  <link name="Mate connector 7">
+    <inertial>
+      <origin xyz="-2.14e-09 1.696e-09 -0.0088763" rpy="0 0 0"/>
+      <mass value="0.0606554"/>
+      <inertia ixx="1.98986e-05" ixy="5e-12" ixz="0" iyy="1.98986e-05" iyz="-0" izz="3.15249e-05"/>
+    </inertial>
+    <!-- Part gear_1 -->
+    <visual>
+      <origin xyz="-0.0110082 0.359488 0.00844098" rpy="1.5708 0 0.0349066"/>
+      <geometry>
+        <mesh filename="package://assets/gear_1.stl"/>
+      </geometry>
+      <material name="gear_1_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0110082 0.359488 0.00844098" rpy="1.5708 0 0.0349066"/>
+      <geometry>
+        <mesh filename="package://assets/gear_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 6 -->
+  <link name="Mate connector 6">
+    <inertial>
+      <origin xyz="0 0 -0.00370712" rpy="0 0 0"/>
+      <mass value="0.0153858"/>
+      <inertia ixx="1.67243e-05" ixy="0" ixz="-0" iyy="1.67243e-05" iyz="0" izz="1.23086e-07"/>
+    </inertial>
+    <!-- Part joining_rod_2 -->
+    <visual>
+      <origin xyz="0.00159452 -0.359584 -0.00416486" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_2.stl"/>
+      </geometry>
+      <material name="joining_rod_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.00159452 -0.359584 -0.00416486" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 5 -->
+  <link name="Mate connector 5">
+    <inertial>
+      <origin xyz="-0.138485 -9.03302e-05 0.0380018" rpy="0 0 0"/>
+      <mass value="0.157196"/>
+      <inertia ixx="2.18204e-05" ixy="1.37271e-07" ixz="2.384e-08" iyy="0.00122139" iyz="5.76e-10" izz="0.00124058"/>
+    </inertial>
+    <!-- Part arm_3_l -->
+    <visual>
+      <origin xyz="0.000499999 -0.363 -0.0205" rpy="-1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_3_l.stl"/>
+      </geometry>
+      <material name="arm_3_l_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.000499999 -0.363 -0.0205" rpy="-1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_3_l.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link arm_3_r -->
+  <link name="arm_3_r">
+    <inertial>
+      <origin xyz="-0.138485 9.03302e-05 0.0810023" rpy="0 0 0"/>
+      <mass value="0.157196"/>
+      <inertia ixx="2.18203e-05" ixy="-1.37271e-07" ixz="2.5388e-08" iyy="0.00122139" iyz="-1.399e-09" izz="0.00124058"/>
+    </inertial>
+    <!-- Part arm_3_r -->
+    <visual>
+      <origin xyz="0.0005 0.363 0.0436" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_3_r.stl"/>
+      </geometry>
+      <material name="arm_3_r_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0005 0.363 0.0436" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_3_r.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link motor_2_cover_back_ext -->
+  <link name="motor_2_cover_back_ext">
+    <inertial>
+      <origin xyz="0 -0.03795 -0.00485341" rpy="0 0 0"/>
+      <mass value="0.010352"/>
+      <inertia ixx="6.03669e-06" ixy="0" ixz="0" iyy="1.70907e-07" iyz="0" izz="6.04503e-06"/>
+    </inertial>
+    <!-- Part motor_2_cover_back_ext -->
+    <visual>
+      <origin xyz="0.12969 -0.0373 -0.342135" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_back_ext.stl"/>
+      </geometry>
+      <material name="motor_2_cover_back_ext_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.12969 -0.0373 -0.342135" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_back_ext.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link motor_2_cover_back -->
+  <link name="motor_2_cover_back">
+    <inertial>
+      <origin xyz="0 -0 -0.020375" rpy="0 0 0"/>
+      <mass value="0.0349904"/>
+      <inertia ixx="1.75435e-05" ixy="0" ixz="0" iyy="5.13357e-06" iyz="0" izz="1.29931e-05"/>
+    </inertial>
+    <!-- Part motor_2_cover_back -->
+    <visual>
+      <origin xyz="0.129689 -0.0005 0.342136" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_back.stl"/>
+      </geometry>
+      <material name="motor_2_cover_back_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.129689 -0.0005 0.342136" rpy="3.14159 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_back.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from motor_2_cover_back_ext to motor_2_cover_back -->
+  <joint name="Fastened 24" type="fixed">
+    <origin xyz="0 -0.03795 -0" rpy="3.14159 -0 0"/>
+    <parent link="motor_2_cover_back_ext"/>
+    <child link="motor_2_cover_back"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from arm_3_r to motor_2_cover_back_ext -->
+  <joint name="Fastened 25" type="fixed">
+    <origin xyz="-0.12919 0.0201072 0.0809" rpy="1.5708 -0 0"/>
+    <parent link="arm_3_r"/>
+    <child link="motor_2_cover_back_ext"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 5 to arm_3_r -->
+  <joint name="Fastened 5" type="fixed">
+    <origin xyz="0 0 0.043" rpy="3.14159 -0 0"/>
+    <parent link="Mate connector 5"/>
+    <child link="arm_3_r"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link motor_2_cover_front -->
+  <link name="motor_2_cover_front">
+    <inertial>
+      <origin xyz="-0.000164612 0.0364847 0.0172842" rpy="0 0 0"/>
+      <mass value="0.0460071"/>
+      <inertia ixx="3.45963e-05" ixy="5.2e-11" ixz="-1.788e-09" iyy="1.43053e-05" iyz="4.36267e-07" izz="2.10645e-05"/>
+    </inertial>
+    <!-- Part motor_2_cover_front -->
+    <visual>
+      <origin xyz="0.215247 0.0377078 -0.342135" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_front.stl"/>
+      </geometry>
+      <material name="motor_2_cover_front_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.215247 0.0377078 -0.342135" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_front.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link motor_2 -->
+  <link name="motor_2">
+    <inertial>
+      <origin xyz="0.0232438 -0.02357 -0.0368201" rpy="0 0 0"/>
+      <mass value="0.595248"/>
+      <inertia ixx="0.000444016" ixy="2e-12" ixz="-5.61651e-06" iyy="0.000450245" iyz="0" izz="0.000274153"/>
+    </inertial>
+    <!-- Part motor_1_face_2 -->
+    <visual>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_face.stl"/>
+      </geometry>
+      <material name="motor_1_face_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_face.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part motor_1_gear_2 -->
+    <visual>
+      <origin xyz="0.0198392 -0.0228958 -0.298055" rpy="-0 0 -1.75665"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_gear.stl"/>
+      </geometry>
+      <material name="motor_1_gear_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0198392 -0.0228958 -0.298055" rpy="-0 0 -1.75665"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_gear.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part a_point_on_motor_1_2 -->
+    <visual>
+      <origin xyz="0.0197777 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/a_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="a_point_on_motor_1_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0197777 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/a_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part motor_2_back_2 -->
+    <visual>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_back.stl"/>
+      </geometry>
+      <material name="motor_2_back_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_back.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part one_more_point_on_motor_1_2 -->
+    <visual>
+      <origin xyz="0.0191393 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/one_more_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="one_more_point_on_motor_1_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0191393 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/one_more_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part real_motor_1_2 -->
+    <visual>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/real_motor_1.stl"/>
+      </geometry>
+      <material name="real_motor_1_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0197777 -0.0236088 -0.292195" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/real_motor_1.stl"/>
+      </geometry>
+    </collision>
+    <!-- Part another_point_on_motor_1_2 -->
+    <visual>
+      <origin xyz="0.0191396 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/another_point_on_motor_1.stl"/>
+      </geometry>
+      <material name="another_point_on_motor_1_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0191396 -0.0236088 -0.291842" rpy="0 -0 -1.5708"/>
+      <geometry>
+        <mesh filename="package://assets/another_point_on_motor_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from motor_2_cover_front to motor_2 -->
+  <joint name="Fastened_10" type="fixed">
+    <origin xyz="0.00483714 0.0178878 -0.00204961" rpy="-1.5708 -0 1.5708"/>
+    <parent link="motor_2_cover_front"/>
+    <child link="motor_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link motor_2_cover_bottom -->
+  <link name="motor_2_cover_bottom">
+    <inertial>
+      <origin xyz="0.0426962 0.0371579 -0.0025" rpy="0 0 0"/>
+      <mass value="0.0529753"/>
+      <inertia ixx="3.22783e-05" ixy="3.66e-10" ixz="0" iyy="4.00124e-05" iyz="0" izz="7.20699e-05"/>
+    </inertial>
+    <!-- Part motor_2_cover_bottom -->
+    <visual>
+      <origin xyz="0.215247 0.0377078 -0.332428" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_bottom.stl"/>
+      </geometry>
+      <material name="motor_2_cover_bottom_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.215247 0.0377078 -0.332428" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_bottom.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from motor_2_cover_front to motor_2_cover_bottom -->
+  <joint name="final" type="fixed">
+    <origin xyz="0 0 -0.00970682" rpy="0 -0 0"/>
+    <parent link="motor_2_cover_front"/>
+    <child link="motor_2_cover_bottom"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 5 to motor_2_cover_front -->
+  <joint name="Fastened 14" type="fixed">
+    <origin xyz="-0.214747 -0.0201072 0.0372078" rpy="-1.5708 0 0"/>
+    <parent link="Mate connector 5"/>
+    <child link="motor_2_cover_front"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link Mate connector 11 -->
+  <link name="Mate connector 11">
+    <inertial>
+      <origin xyz="1.383e-09 2.329e-09 -0.0088763" rpy="0 0 0"/>
+      <mass value="0.0606554"/>
+      <inertia ixx="1.98986e-05" ixy="-5e-12" ixz="-0" iyy="1.98986e-05" iyz="-0" izz="3.15249e-05"/>
+    </inertial>
+    <!-- Part gear_2 -->
+    <visual>
+      <origin xyz="0.264732 0.371934 0.00848324" rpy="1.5708 -0 0.0349066"/>
+      <geometry>
+        <mesh filename="package://assets/gear_2.stl"/>
+      </geometry>
+      <material name="gear_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.264732 0.371934 0.00848324" rpy="1.5708 -0 0.0349066"/>
+      <geometry>
+        <mesh filename="package://assets/gear_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 10 -->
+  <link name="Mate connector 10">
+    <inertial>
+      <origin xyz="0 0 -0.00367377" rpy="0 0 0"/>
+      <mass value="0.0153858"/>
+      <inertia ixx="1.67243e-05" ixy="-0" ixz="-0" iyy="1.67243e-05" iyz="0" izz="1.23086e-07"/>
+    </inertial>
+    <!-- Part joining_rod_3 -->
+    <visual>
+      <origin xyz="0.277483 -0.362418 -0.00417377" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_3.stl"/>
+      </geometry>
+      <material name="joining_rod_3_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.277483 -0.362418 -0.00417377" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/joining_rod_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 9 -->
+  <link name="Mate connector 9">
+    <inertial>
+      <origin xyz="-0.106756 0.0747512 -0.048" rpy="0 0 0"/>
+      <mass value="0.150457"/>
+      <inertia ixx="0.00036101" ixy="0.000485372" ixz="-0" iyy="0.000714332" iyz="0" izz="0.00107283"/>
+    </inertial>
+    <!-- Part arm_4_l -->
+    <visual>
+      <origin xyz="0.277463 0.362431 0.000499992" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_4_l.stl"/>
+      </geometry>
+      <material name="arm_4_l_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.277463 0.362431 0.000499992" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_4_l.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link arm_4_r -->
+  <link name="arm_4_r">
+    <inertial>
+      <origin xyz="-0.106756 -0.0747512 -0.091" rpy="0 0 0"/>
+      <mass value="0.150457"/>
+      <inertia ixx="0.00036101" ixy="-0.000485372" ixz="0" iyy="0.000714332" iyz="0" izz="0.00107283"/>
+    </inertial>
+    <!-- Part arm_4_r -->
+    <visual>
+      <origin xyz="0.277448 -0.362414 -0.0435" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_4_r.stl"/>
+      </geometry>
+      <material name="arm_4_r_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.277448 -0.362414 -0.0435" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/arm_4_r.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from Mate connector 9 to arm_4_r -->
+  <joint name="Fastened_11" type="fixed">
+    <origin xyz="-0 0 -0.043" rpy="3.14159 -0 0"/>
+    <parent link="Mate connector 9"/>
+    <child link="arm_4_r"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link Mate connector 18 -->
+  <link name="Mate connector 18">
+    <inertial>
+      <origin xyz="-4.232e-09 0.053 -0.0260249" rpy="0 0 0"/>
+      <mass value="0.804157"/>
+      <inertia ixx="0.00122787" ixy="-0" ixz="9e-12" iyy="0.00101794" iyz="0" izz="0.00186402"/>
+    </inertial>
+    <!-- Part end_effector_1 -->
+    <visual>
+      <origin xyz="0.459153 0.0541086 0.291811" rpy="-0 -0.959931 -0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_1.stl"/>
+      </geometry>
+      <material name="end_effector_1_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.459153 0.0541086 0.291811" rpy="-0 -0.959931 -0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link Mate connector 15 -->
+  <link name="Mate connector 15">
+    <inertial>
+      <origin xyz="-0.000178475 0.000255058 0.0203601" rpy="0 0 0"/>
+      <mass value="0.129306"/>
+      <inertia ixx="0.00293828" ixy="-1.00197e-07" ixz="-2.06351e-06" iyy="0.00293835" iyz="2.94324e-06" izz="4.0316e-06"/>
+    </inertial>
+    <!-- Part hand_rod_1 -->
+    <visual>
+      <origin xyz="0.544936 -0.209229 -0.0024971" rpy="-1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/hand_rod_1.stl"/>
+      </geometry>
+      <material name="hand_rod_1_material">
+        <color rgba="0.501961 0.501961 0.501961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.544936 -0.209229 -0.0024971" rpy="-1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/hand_rod_1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link right_gripper_o -->
+  <link name="right_gripper_o">
+    <inertial>
+      <origin xyz="-0.00432657 -0.0319175 0.0114524" rpy="0 0 0"/>
+      <mass value="0.122961"/>
+      <inertia ixx="6.77909e-05" ixy="2.98924e-07" ixz="3.58195e-06" iyy="6.10966e-05" iyz="2.90157e-06" izz="0.000121501"/>
+    </inertial>
+    <!-- Part right_gripper_o -->
+    <visual>
+      <origin xyz="0.544936 -0.209229 0.241047" rpy="-1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/right_gripper_o.stl"/>
+      </geometry>
+      <material name="right_gripper_o_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.544936 -0.209229 0.241047" rpy="-1.5708 -0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/right_gripper_o.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link right_gripper_in -->
+  <link name="right_gripper_in">
+    <inertial>
+      <origin xyz="0.0206426 -0.0144541 -0.00396119" rpy="0 0 0"/>
+      <mass value="0.0400812"/>
+      <inertia ixx="1.69974e-05" ixy="-5.87473e-06" ixz="-0" iyy="1.2721e-05" iyz="0" izz="2.92893e-05"/>
+    </inertial>
+    <!-- Part right_gripper_in -->
+    <visual>
+      <origin xyz="0.585758 0.15037 -0.221047" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/right_gripper_in.stl"/>
+      </geometry>
+      <material name="right_gripper_in_material">
+        <color rgba="1 0.87451 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.585758 0.15037 -0.221047" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/right_gripper_in.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from right_gripper_o to right_gripper_in -->
+  <joint name="Fastened 21" type="fixed">
+    <origin xyz="-0.0408223 -0.0588593 0.02" rpy="3.14159 -0 -0"/>
+    <parent link="right_gripper_o"/>
+    <child link="right_gripper_in"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link right_hole -->
+  <link name="right_hole">
+    <inertial>
+      <origin xyz="0 0 -0.0084" rpy="0 0 0"/>
+      <mass value="0.00549321"/>
+      <inertia ixx="4.14847e-07" ixy="0" ixz="-0" iyy="4.14847e-07" iyz="0" izz="5.71294e-07"/>
+    </inertial>
+    <!-- Part right_hole -->
+    <visual>
+      <origin xyz="0.516487 0.168599 -0.239447" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/right_hole.stl"/>
+      </geometry>
+      <material name="right_hole_material">
+        <color rgba="0.988235 0.737255 0.517647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.516487 0.168599 -0.239447" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/right_hole.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from right_gripper_o to right_hole -->
+  <joint name="Fastened 16" type="fixed">
+    <origin xyz="0.0284494 -0.0406299 0" rpy="3.14159 -0 -0"/>
+    <parent link="right_gripper_o"/>
+    <child link="right_hole"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 15 to right_gripper_o -->
+  <joint name="Fastened 19" type="fixed">
+    <origin xyz="-0 0 -0.243544" rpy="0 -0 -0"/>
+    <parent link="Mate connector 15"/>
+    <child link="right_gripper_o"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 18 to Mate connector 15 -->
+  <joint name="Slider 1" type="prismatic">
+    <origin xyz="-0.0248 0.0402028 -0.0345662" rpy="1.5708 -0.959931 -0"/>
+    <parent link="Mate connector 18"/>
+    <child link="Mate connector 15"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0127972" upper="0.157747"/>
+  </joint>
+  <!-- Link Mate connector 16 -->
+  <link name="Mate connector 16">
+    <inertial>
+      <origin xyz="0.000178634 0.000254947 0.0203601" rpy="0 0 0"/>
+      <mass value="0.129306"/>
+      <inertia ixx="0.00293828" ixy="1.00465e-07" ixz="2.05998e-06" iyy="0.00293835" iyz="2.94571e-06" izz="4.0316e-06"/>
+    </inertial>
+    <!-- Part hand_rod_2 -->
+    <visual>
+      <origin xyz="0.516487 0.168599 0.00248068" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/hand_rod_2.stl"/>
+      </geometry>
+      <material name="hand_rod_2_material">
+        <color rgba="0.501961 0.501961 0.501961 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.516487 0.168599 0.00248068" rpy="1.5708 -0 0"/>
+      <geometry>
+        <mesh filename="package://assets/hand_rod_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link left_gripper_o -->
+  <link name="left_gripper_o">
+    <inertial>
+      <origin xyz="-0.0314724 0.00685078 -0.0114524" rpy="0 0 0"/>
+      <mass value="0.122961"/>
+      <inertia ixx="6.20718e-05" ixy="2.38051e-06" ixz="-3.95168e-06" iyy="6.68157e-05" iyz="-2.37353e-06" izz="0.000121501"/>
+    </inertial>
+    <!-- Part left_gripper_o -->
+    <visual>
+      <origin xyz="0.516487 -0.168599 -0.246025" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_gripper_o.stl"/>
+      </geometry>
+      <material name="left_gripper_o_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.516487 -0.168599 -0.246025" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_gripper_o.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link left_gripper_i -->
+  <link name="left_gripper_i">
+    <inertial>
+      <origin xyz="0.0206426 0.0144541 -0.00396119" rpy="0 0 0"/>
+      <mass value="0.0400812"/>
+      <inertia ixx="1.69974e-05" ixy="5.87473e-06" ixz="-0" iyy="1.2721e-05" iyz="-0" izz="2.92893e-05"/>
+    </inertial>
+    <!-- Part left_gripper_i -->
+    <visual>
+      <origin xyz="0.585758 -0.15037 -0.226025" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_gripper_i.stl"/>
+      </geometry>
+      <material name="left_gripper_i_material">
+        <color rgba="1 0.87451 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.585758 -0.15037 -0.226025" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_gripper_i.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from left_gripper_o to left_gripper_i -->
+  <joint name="Fastened 22" type="fixed">
+    <origin xyz="-0.0692717 -0.0182294 -0.02" rpy="0 0 -0"/>
+    <parent link="left_gripper_o"/>
+    <child link="left_gripper_i"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link left_hole -->
+  <link name="left_hole">
+    <inertial>
+      <origin xyz="0 -0 -0.0084" rpy="0 0 0"/>
+      <mass value="0.00549321"/>
+      <inertia ixx="4.14847e-07" ixy="-0" ixz="-0" iyy="4.14847e-07" iyz="0" izz="5.71294e-07"/>
+    </inertial>
+    <!-- Part left_hole -->
+    <visual>
+      <origin xyz="0.544936 -0.209229 -0.244425" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_hole.stl"/>
+      </geometry>
+      <material name="left_hole_material">
+        <color rgba="0.988235 0.737255 0.517647 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.544936 -0.209229 -0.244425" rpy="-1.5708 0 -0"/>
+      <geometry>
+        <mesh filename="package://assets/left_hole.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from left_gripper_o to left_hole -->
+  <joint name="Fastened 17" type="fixed">
+    <origin xyz="-0.0284494 0.0406299 -0" rpy="0 -0 -0"/>
+    <parent link="left_gripper_o"/>
+    <child link="left_hole"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 16 to left_gripper_o -->
+  <joint name="Fastened 18" type="fixed">
+    <origin xyz="0 0 -0.243544" rpy="3.14159 -0 0"/>
+    <parent link="Mate connector 16"/>
+    <child link="left_gripper_o"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 18 to Mate connector 16 -->
+  <joint name="Slider 2" type="prismatic">
+    <origin xyz="0.0248 0.0657972 -0.0345662" rpy="-1.5708 -0.959931 -0"/>
+    <parent link="Mate connector 18"/>
+    <child link="Mate connector 16"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-0.0127972" upper="0.157747"/>
+    <mimic joint="Revolute 4" multiplier="1.0"/>
+  </joint>
+  <!-- Link end_effector_2 -->
+  <link name="end_effector_2">
+    <inertial>
+      <origin xyz="0.00216069 0.031123 -0.0146603" rpy="0 0 0"/>
+      <mass value="0.301084"/>
+      <inertia ixx="0.000120212" ixy="6.7e-10" ixz="3.82766e-06" iyy="0.000120832" iyz="-2.23e-09" izz="0.000140921"/>
+    </inertial>
+    <!-- Part end_effector_2 -->
+    <visual>
+      <origin xyz="0.462196 0.0300154 -0.301921" rpy="-3.14159 0.959931 -0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_2.stl"/>
+      </geometry>
+      <material name="end_effector_2_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.462196 0.0300154 -0.301921" rpy="-3.14159 0.959931 -0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Link end_effector_3 -->
+  <link name="end_effector_3">
+    <inertial>
+      <origin xyz="3.4627e-08 -1.7234e-08 -0.00866831" rpy="0 0 0"/>
+      <mass value="0.0383305"/>
+      <inertia ixx="4.05177e-06" ixy="-0" ixz="-6e-12" iyy="4.05169e-06" iyz="3e-12" izz="5.07072e-06"/>
+    </inertial>
+    <!-- Part end_effector_3 -->
+    <visual>
+      <origin xyz="0.459153 -0.00110858 -0.330377" rpy="3.14159 0.959931 0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_3.stl"/>
+      </geometry>
+      <material name="end_effector_3_material">
+        <color rgba="0.792157 0.819608 0.933333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.459153 -0.00110858 -0.330377" rpy="3.14159 0.959931 0"/>
+      <geometry>
+        <mesh filename="package://assets/end_effector_3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from end_effector_2 to end_effector_3 -->
+  <joint name="Revolute 4" type="revolute">
+    <origin xyz="0.00418158 0.031122 0.0297485" rpy="0 0 0.695746"/>
+    <parent link="end_effector_2"/>
+    <child link="end_effector_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from Mate connector 18 to end_effector_2 -->
+  <joint name="Fastened 20" type="fixed">
+    <origin xyz="-0.00411985 0.085432 0" rpy="3.14159 0 -0"/>
+    <parent link="Mate connector 18"/>
+    <child link="end_effector_2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 9 to Mate connector 18 -->
+  <joint name="Fastened 23" type="fixed">
+    <origin xyz="-0.225267 0.157734 -0.053" rpy="1.5708 -0 0.959931"/>
+    <parent link="Mate connector 9"/>
+    <child link="Mate connector 18"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 10 to Mate connector 9 -->
+  <joint name="Fastened_12" type="fixed">
+    <origin xyz="0 0 -0.00367377" rpy="-3.14159 0 -0"/>
+    <parent link="Mate connector 10"/>
+    <child link="Mate connector 9"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 11 to Mate connector 10 -->
+  <joint name="Fastened_13" type="fixed">
+    <origin xyz="0 0 0" rpy="-3.14159 -0 0"/>
+    <parent link="Mate connector 11"/>
+    <child link="Mate connector 10"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 5 to Mate connector 11 -->
+  <joint name="Revolute 3" type="revolute">
+    <origin xyz="-0.276963 -0.000525296 0.0037071" rpy="3.14159 0 -0.046463"/>
+    <parent link="Mate connector 5"/>
+    <child link="Mate connector 11"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link motor_2_cover_top -->
+  <link name="motor_2_cover_top">
+    <inertial>
+      <origin xyz="0.0426962 -0.0371579 -0.0025" rpy="0 0 0"/>
+      <mass value="0.0529753"/>
+      <inertia ixx="3.22783e-05" ixy="-3.66e-10" ixz="-0" iyy="4.00124e-05" iyz="0" izz="7.20699e-05"/>
+    </inertial>
+    <!-- Part motor_2_cover_top -->
+    <visual>
+      <origin xyz="0.215247 -0.0377078 0.392128" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_top.stl"/>
+      </geometry>
+      <material name="motor_2_cover_top_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.215247 -0.0377078 0.392128" rpy="3.14159 0 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_2_cover_top.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from Mate connector 5 to motor_2_cover_top -->
+  <joint name="Fastened 15" type="fixed">
+    <origin xyz="-0.214747 0.029886 0.0372078" rpy="1.5708 0 0"/>
+    <parent link="Mate connector 5"/>
+    <child link="motor_2_cover_top"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 6 to Mate connector 5 -->
+  <joint name="Fastened_6" type="fixed">
+    <origin xyz="0 0 -0.00370712" rpy="-0 0 -0"/>
+    <parent link="Mate connector 6"/>
+    <child link="Mate connector 5"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 7 to Mate connector 6 -->
+  <joint name="Fastened 8" type="fixed">
+    <origin xyz="0 0 0" rpy="-3.14159 -0 -0"/>
+    <parent link="Mate connector 7"/>
+    <child link="Mate connector 6"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 8 to Mate connector 7 -->
+  <joint name="Revolute 2" type="revolute">
+    <origin xyz="-0.000107217 0.2763 0.00370711" rpy="-3.14159 -0 0"/>
+    <parent link="Mate connector 8"/>
+    <child link="Mate connector 7"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Link motor_1_cover_top -->
+  <link name="motor_1_cover_top">
+    <inertial>
+      <origin xyz="0.043 0.0502125 -0.0025" rpy="0 0 0"/>
+      <mass value="0.0556698"/>
+      <inertia ixx="4.62868e-05" ixy="0" ixz="0" iyy="3.40035e-05" iyz="0" izz="8.00583e-05"/>
+    </inertial>
+    <!-- Part motor_1_cover_top -->
+    <visual>
+      <origin xyz="0.0435 0.307225 0.0294932" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_cover_top.stl"/>
+      </geometry>
+      <material name="motor_1_cover_top_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0435 0.307225 0.0294932" rpy="1.5708 1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_cover_top.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from Mate connector 8 to motor_1_cover_top -->
+  <joint name="Fastened 9" type="fixed">
+    <origin xyz="0.0295032 0.221205 0.043" rpy="-3.14159 1.5708 0"/>
+    <parent link="Mate connector 8"/>
+    <child link="motor_1_cover_top"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Link motor_1_cover_bottom -->
+  <link name="motor_1_cover_bottom">
+    <inertial>
+      <origin xyz="0.043 -0.0502125 -0.0025" rpy="0 0 0"/>
+      <mass value="0.0556698"/>
+      <inertia ixx="4.62868e-05" ixy="0" ixz="0" iyy="3.40035e-05" iyz="0" izz="8.00583e-05"/>
+    </inertial>
+    <!-- Part motor_1_cover_bottom -->
+    <visual>
+      <origin xyz="0.0435 -0.307225 0.0302068" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_cover_bottom.stl"/>
+      </geometry>
+      <material name="motor_1_cover_bottom_material">
+        <color rgba="0.627451 0.627451 0.627451 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0435 -0.307225 0.0302068" rpy="-1.5708 -1.5708 0"/>
+      <geometry>
+        <mesh filename="package://assets/motor_1_cover_bottom.stl"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- Joint from Mate connector 8 to motor_1_cover_bottom -->
+  <joint name="middle" type="fixed">
+    <origin xyz="-0.0301968 0.221205 0.043" rpy="-0 1.5708 0"/>
+    <parent link="Mate connector 8"/>
+    <child link="motor_1_cover_bottom"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from joining_rod_1 to Mate connector 8 -->
+  <joint name="Fastened 4" type="fixed">
+    <origin xyz="-0 0 0" rpy="0 -0 0"/>
+    <parent link="joining_rod_1"/>
+    <child link="Mate connector 8"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <!-- Joint from Mate connector 2 to joining_rod_1 -->
+  <joint name="Revolute 1" type="revolute">
+    <origin xyz="7.45e-10 3.33175e-05 -0.086" rpy="-1.5708 -0 0"/>
+    <parent link="Mate connector 2"/>
+    <child link="joining_rod_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10" lower="-3.141592653589793" upper="3.141592653589793"/>
+  </joint>
+  <!-- Joint from base to Mate connector 2 -->
+  <joint name="Fastened 3" type="fixed">
+    <origin xyz="0 0 0.03056" rpy="3.14159 -0 0"/>
+    <parent link="base"/>
+    <child link="Mate connector 2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+</robot>

@@ -1,0 +1,1734 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/1c6ba35544f6521ef75e2dbc/w/a24d30a6cacdb2c442768e27/e/0fb044494aab98421a349906 -->
+<sdf version="1.7">
+  <model name="R2">
+    <!-- Link Mate connector 6 -->
+    <link name="Mate connector 6">
+      <inertial>
+        <pose>-3.29534e-05 -0.500484 -0.0918481 0 0 0</pose>
+        <mass>0.697132</mass>
+        <inertia>
+          <ixx>0.00402566</ixx>
+          <ixy>1.38241e-06</ixy>
+          <ixz>-6.61642e-07</ixz>
+          <iyy>0.0100799</iyy>
+          <iyz>-1.08249e-05</iyz>
+          <izz>0.00624016</izz>
+        </inertia>
+      </inertial>
+      <pose>0 0 0 0 -0 0</pose>
+      <!-- Part part_1 -->
+      <visual name="part_1_visual_mesh_1">
+        <pose relative_to="Mate connector 6">-0.125035 -0.456621 -0.0422535 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_collision_mesh_2">
+        <pose relative_to="Mate connector 6">-0.125035 -0.456621 -0.0422535 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Link part_16 -->
+    <link name="part_16">
+      <inertial>
+        <pose>-0.125319 0.005 0.26129 0 0 0</pose>
+        <mass>1.16704</mass>
+        <inertia>
+          <ixx>0.0355837</ixx>
+          <ixy>0</ixy>
+          <ixz>3.24118e-06</ixz>
+          <iyy>0.045374</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00980979</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 9">0 0 0 0 -0 0</pose>
+      <!-- Part part_16 -->
+      <visual name="part_16_visual_mesh_1">
+        <pose relative_to="part_16">-0.25 0.07687 0.064 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_16.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.498039 0.498039 0.498039 1</ambient>
+          <diffuse>0.498039 0.498039 0.498039 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_16_collision_mesh_2">
+        <pose relative_to="part_16">-0.25 0.07687 0.064 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_16.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 7 -->
+    <link name="Mate connector 7">
+      <inertial>
+        <pose>0.0155 -0.0168142 0.0372647 0 0 0</pose>
+        <mass>0.197196</mass>
+        <inertia>
+          <ixx>0.000397746</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00035995</iyy>
+          <iyz>4.21169e-05</iyz>
+          <izz>7.94715e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 2">0 0 0 0 -0 0</pose>
+      <!-- Part part_7 -->
+      <visual name="part_7_visual_mesh_1">
+        <pose relative_to="Mate connector 7">0.0105 -0.06687 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_7.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.972549 0.529412 0.00392157 1</ambient>
+          <diffuse>0.972549 0.529412 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_7_collision_mesh_2">
+        <pose relative_to="Mate connector 7">0.0105 -0.06687 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_7.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 3 -->
+    <link name="Mate connector 3">
+      <inertial>
+        <pose>-0.005 -0.0866361 -0.0199993 0 0 0</pose>
+        <mass>0.0901411</mass>
+        <inertia>
+          <ixx>0.000237398</ixx>
+          <ixy>0</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.27703e-05</iyy>
+          <iyz>-5.737e-09</iyz>
+          <izz>0.00022613</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 4">0 0 0 0 -0 0</pose>
+      <!-- Part part_4 -->
+      <visual name="part_4_visual_mesh_1">
+        <pose relative_to="Mate connector 3">-0.01 0.0767763 -0.476568 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.972549 0.529412 0.00392157 1</ambient>
+          <diffuse>0.972549 0.529412 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_4_collision_mesh_2">
+        <pose relative_to="Mate connector 3">-0.01 0.0767763 -0.476568 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_17 -->
+    <link name="part_17">
+      <inertial>
+        <pose>0.12505 -0.0242059 0.203978 0 0 0</pose>
+        <mass>1.56439</mass>
+        <inertia>
+          <ixx>0.0459794</ixx>
+          <ixy>1.97823e-06</ixy>
+          <ixz>-7.09813e-06</ixz>
+          <iyy>0.0550475</iyy>
+          <iyz>0.00831636</iyz>
+          <izz>0.0134381</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 6">0 0 0 0 -0 0</pose>
+      <!-- Part part_17 -->
+      <visual name="part_17_visual_mesh_1">
+        <pose relative_to="part_17">-0.00196487 -0.23214 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_17.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.980392 0.713725 0.00392157 1</ambient>
+          <diffuse>0.980392 0.713725 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_17_collision_mesh_2">
+        <pose relative_to="part_17">-0.00196487 -0.23214 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_17.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 3 to part_17 -->
+    <joint name="Fastened 6" type="fixed">
+      <pose relative_to="Mate connector 3">-0.01 -0.15527 0 3.14159 0 0</pose>
+      <parent>Mate connector 3</parent>
+      <child>part_17</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 7 to Mate connector 3 -->
+    <joint name="Fastened 4" type="fixed">
+      <pose relative_to="Mate connector 7">0.0205 0.0100002 -0 -3.14159 -0 -0</pose>
+      <parent>Mate connector 7</parent>
+      <child>Mate connector 3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Hand(ish) written part -->
+    <!-- <joint name="spring_joint" type="prismatic">
+      <parent>part_2</parent>
+      <child>fusioncomponent_6</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.2</lower>
+          <upper>0.2</upper>
+        </limit>
+
+        <dynamics>
+          <spring_reference>0.32</spring_reference>
+          <spring_stiffness>8.5</spring_stiffness>
+          <damping>10</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="spring_joint" type="prismatic">
+      <parent>part_2</parent>
+      <child>fusioncomponent</child>
+
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.2</lower>
+          <upper>0.2</upper>
+        </limit>
+
+        <dynamics>
+          <spring_reference>0.42</spring_reference>
+          <spring_stiffness>8.5</spring_stiffness>
+          <damping>10</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    Link part_3 -->
+    <link name="part_3">
+      <inertial>
+        <pose>-2.43696e-05 0 -0.250222 0 0 0</pose>
+        <mass>1.07099</mass>
+        <inertia>
+          <ixx>0.0265819</ixx>
+          <ixy>0</ixy>
+          <ixz>7.17666e-06</ixz>
+          <iyy>0.0350136</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00844956</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 10">0 0 0 0 -0 0</pose>
+      <!-- Part part_3 -->
+      <visual name="part_3_visual_mesh_1">
+        <pose relative_to="part_3">-0.126052 0.04187 -0.396796 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.980392 0.713725 0.00392157 1</ambient>
+          <diffuse>0.980392 0.713725 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_3_collision_mesh_2">
+        <pose relative_to="part_3">-0.126052 0.04187 -0.396796 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from Mate connector 7 to part_3 -->
+    <joint name="Fastened 10" type="fixed">
+      <pose relative_to="Mate connector 7">0.135535 -0.02 0.0797727 3.14159 -0 -0</pose>
+      <parent>Mate connector 7</parent>
+      <child>part_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from part_16 to Mate connector 7 -->
+    <joint name="Fastened 2" type="fixed">
+      <pose relative_to="part_16">-0.2605 0.01 0.540568 3.14159 0 -0</pose>
+      <parent>part_16</parent>
+      <child>Mate connector 7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 2 -->
+    <link name="Mate connector 2">
+      <inertial>
+        <pose>-0.0155 -0.0168142 0.0372647 0 0 0</pose>
+        <mass>0.197196</mass>
+        <inertia>
+          <ixx>0.000397746</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00035995</iyy>
+          <iyz>4.21169e-05</iyz>
+          <izz>7.94715e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 3">0 0 0 0 -0 0</pose>
+      <!-- Part part_6 -->
+      <visual name="part_6_visual_mesh_1">
+        <pose relative_to="Mate connector 2">-0.2605 -0.06687 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.972549 0.529412 0.00392157 1</ambient>
+          <diffuse>0.972549 0.529412 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_6_collision_mesh_2">
+        <pose relative_to="Mate connector 2">-0.2605 -0.06687 0.476568 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_12 -->
+    <link name="part_12">
+      <inertial>
+        <pose>-0 -0 -0 0 0 0</pose>
+        <mass>0.0202229</mass>
+        <inertia>
+          <ixx>0.000162053</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000162053</iyy>
+          <iyz>0</iyz>
+          <izz>1.61083e-07</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Revolute 1">0 0 0 0 -0 0</pose>
+      <!-- Part part_12 -->
+      <visual name="part_12_visual_mesh_1">
+        <pose relative_to="part_12">-0.456621 0.0422535 0.125 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_12.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.231373 0.380392 0.705882 1</ambient>
+          <diffuse>0.231373 0.380392 0.705882 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_12_collision_mesh_2">
+        <pose relative_to="part_12">-0.456621 0.0422535 0.125 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_12.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 1 -->
+    <link name="Mate connector 1">
+      <inertial>
+        <pose>-0.000576251 0.154848 3.21702e-06 0 0 0</pose>
+        <mass>2.29417</mass>
+        <inertia>
+          <ixx>0.0324366</ixx>
+          <ixy>0.000105564</ixy>
+          <ixz>1.4517e-08</ixz>
+          <iyy>0.0532945</iyy>
+          <iyz>4.29751e-07</iyz>
+          <izz>0.0419041</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 1">0 0 0 0 -0 0</pose>
+      <!-- Part part_8 -->
+      <visual name="part_8_visual_mesh_1">
+        <pose relative_to="Mate connector 1">-0.456621 0.0422535 0.125 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_8.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.498039 0.498039 0.498039 1</ambient>
+          <diffuse>0.498039 0.498039 0.498039 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_8_collision_mesh_2">
+        <pose relative_to="Mate connector 1">-0.456621 0.0422535 0.125 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_8.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link fusioncomponent -->
+    <link name="fusioncomponent">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 15">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent -->
+      <visual name="fusioncomponent_visual_mesh_1">
+        <pose relative_to="fusioncomponent">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_collision_mesh_2">
+        <pose relative_to="fusioncomponent">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1 -->
+    <link name="part_1">
+      <inertial>
+        <pose>0.000134182 0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>-2.81483e-06</ixy>
+          <ixz>-1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="back_right_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_2 -->
+      <visual name="part_1_2_visual_mesh_1">
+        <pose relative_to="part_1">-0.607 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_2_collision_mesh_2">
+        <pose relative_to="part_1">-0.607 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu> 0.5</mu>
+              <mu2> 0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent to part_1 -->
+    <joint name="back_right_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent">-3.73e-10 -0.013047 -0.033 -1.5708 -0 -0</pose>
+      <parent>fusioncomponent</parent>
+      <child>part_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 1 to fusioncomponent -->
+    <joint name="Fastened 15" type="fixed">
+      <pose relative_to="Mate connector 1">0.153115 0.23681 -0.164453 1.5708 0 -0</pose>
+      <parent>Mate connector 1</parent>
+      <child>fusioncomponent</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link fusioncomponent_2 -->
+    <link name="fusioncomponent_2">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 16">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent_2 -->
+      <visual name="fusioncomponent_2_visual_mesh_1">
+        <pose relative_to="fusioncomponent_2">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_2_collision_mesh_2">
+        <pose relative_to="fusioncomponent_2">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1_2 -->
+    <link name="part_1_2">
+      <inertial>
+        <pose>0.000134182 -0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>2.81483e-06</ixy>
+          <ixz>1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="back_left_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_3 -->
+      <visual name="part_1_3_visual_mesh_1">
+        <pose relative_to="part_1_2">-0.607 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_3_collision_mesh_2">
+        <pose relative_to="part_1_2">-0.607 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__3.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent_2 to part_1_2 -->
+    <joint name="back_left_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent_2">-3.73e-10 -0.013047 -0.033 1.5708 0 3.14159</pose>
+      <parent>fusioncomponent_2</parent>
+      <child>part_1_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 1 to fusioncomponent_2 -->
+    <joint name="Fastened 16" type="fixed">
+      <pose relative_to="Mate connector 1">0.153115 0.23681 0.164453 -1.5708 0 3.14159</pose>
+      <parent>Mate connector 1</parent>
+      <child>fusioncomponent_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link fusioncomponent_3 -->
+    <link name="fusioncomponent_3">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 17">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent_3 -->
+      <visual name="fusioncomponent_3_visual_mesh_1">
+        <pose relative_to="fusioncomponent_3">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_3_collision_mesh_2">
+        <pose relative_to="fusioncomponent_3">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1_3 -->
+    <link name="part_1_3">
+      <inertial>
+        <pose>0.000134182 0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>-2.81483e-06</ixy>
+          <ixz>-1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="mid_right_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_4 -->
+      <visual name="part_1_4_visual_mesh_1">
+        <pose relative_to="part_1_3">-0.301 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_4_collision_mesh_2">
+        <pose relative_to="part_1_3">-0.301 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__4.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent_3 to part_1_3 -->
+    <joint name="mid_right_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent_3">-3.73e-10 -0.013047 -0.033 -1.5708 -0 -0</pose>
+      <parent>fusioncomponent_3</parent>
+      <child>part_1_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 1 to fusioncomponent_3 -->
+    <joint name="Fastened 17" type="fixed">
+      <pose relative_to="Mate connector 1">-0.153221 0.23681 -0.164453 1.5708 -0 0</pose>
+      <parent>Mate connector 1</parent>
+      <child>fusioncomponent_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link fusioncomponent_4 -->
+    <link name="fusioncomponent_4">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 18">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent_4 -->
+      <visual name="fusioncomponent_4_visual_mesh_1">
+        <pose relative_to="fusioncomponent_4">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_4_collision_mesh_2">
+        <pose relative_to="fusioncomponent_4">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1_4 -->
+    <link name="part_1_4">
+      <inertial>
+        <pose>0.000134182 -0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>2.81483e-06</ixy>
+          <ixz>1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="mid_left_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_5 -->
+      <visual name="part_1_5_visual_mesh_1">
+        <pose relative_to="part_1_4">-0.302 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_5_collision_mesh_2">
+        <pose relative_to="part_1_4">-0.302 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__5.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent_4 to part_1_4 -->
+    <joint name="mid_left_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent_4">-3.73e-10 -0.013047 -0.033 1.5708 0 -3.14159</pose>
+      <parent>fusioncomponent_4</parent>
+      <child>part_1_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 1 to fusioncomponent_4 -->
+    <joint name="Fastened 18" type="fixed">
+      <pose relative_to="Mate connector 1">-0.153221 0.23681 0.164453 -1.5708 -0 3.14159</pose>
+      <parent>Mate connector 1</parent>
+      <child>fusioncomponent_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from part_12 to Mate connector 1 -->
+    <joint name="Fastened 1" type="fixed">
+      <pose relative_to="part_12">0 0 0 0 -0 -0</pose>
+      <parent>part_12</parent>
+      <child>Mate connector 1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 2 to part_12 -->
+    <joint name="Revolute 1" type="revolute">
+      <pose relative_to="Mate connector 2">-0.135535 -0.0246164 0.019947 3.14159 1.5708 0</pose>
+      <parent>Mate connector 2</parent>
+      <child>part_12</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>-1.5707963267948965</lower>
+          <!-- <upper>0.523599</upper> -->
+          <upper>0.5</upper>
+          <!-- <upper>0.174</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link part_5 -->
+    <link name="part_5">
+      <inertial>
+        <pose>-0.005 -0.0867317 -0.0199993 0 0 0</pose>
+        <mass>0.0902406</mass>
+        <inertia>
+          <ixx>0.000238158</ixx>
+          <ixy>0</ixy>
+          <ixz>-0</ixz>
+          <iyy>1.27844e-05</iyy>
+          <iyz>-5.743e-09</iyz>
+          <izz>0.000226878</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 5">0 0 0 0 -0 0</pose>
+      <!-- Part part_5 -->
+      <visual name="part_5_visual_mesh_1">
+        <pose relative_to="part_5">-0.25 0.0765851 -0.476568 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_5_collision_mesh_2">
+        <pose relative_to="part_5">-0.25 0.0765851 -0.476568 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link Mate connector 10 -->
+    <link name="Mate connector 10">
+      <inertial>
+        <pose>-0.121514 0.206307 0.0181081 0 0 0</pose>
+        <mass>1.67817</mass>
+        <inertia>
+          <ixx>0.0485032</ixx>
+          <ixy>7.23047e-06</ixy>
+          <ixz>2.20566e-06</ixz>
+          <iyy>0.0141413</iyy>
+          <iyz>-0.00916012</iyz>
+          <izz>0.057772</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 13">0 0 0 0 -0 0</pose>
+      <!-- Part part_2 -->
+      <visual name="part_2_visual_mesh_1">
+        <pose relative_to="Mate connector 10">-0.2465 0.456568 0.25002 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.972549 0.529412 0.00392157 1</ambient>
+          <diffuse>0.972549 0.529412 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_2_collision_mesh_2">
+        <pose relative_to="Mate connector 10">-0.2465 0.456568 0.25002 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from part_5 to Mate connector 10 -->
+    <joint name="Fastened 13" type="fixed">
+      <pose relative_to="part_5">-0.005 -0.173435 -0.02 -1.5708 0 0</pose>
+      <parent>part_5</parent>
+      <child>Mate connector 10</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 2 to part_5 -->
+    <joint name="Fastened 5" type="fixed">
+      <pose relative_to="Mate connector 2">-0.0105 0.0100002 -0 -3.14159 -0 -0</pose>
+      <parent>Mate connector 2</parent>
+      <child>part_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from part_16 to Mate connector 2 -->
+    <joint name="Fastened 3" type="fixed">
+      <pose relative_to="part_16">0.0105703 0.01 0.540568 3.14159 0 -0</pose>
+      <parent>part_16</parent>
+      <child>Mate connector 2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 4 -->
+    <link name="Mate connector 4">
+      <inertial>
+        <pose>0.005 0.076908 -0.0177242 0 0 0</pose>
+        <mass>0.0882107</mass>
+        <inertia>
+          <ixx>0.000285677</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.73549e-06</iyy>
+          <iyz>1.91498e-06</iyz>
+          <izz>0.000277412</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 7">0 0 0 0 -0 0</pose>
+      <!-- Part part_9 -->
+      <visual name="part_9_visual_mesh_1">
+        <pose relative_to="Mate connector 4">0 -0.0676684 0.176069 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_9.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.980392 0.713725 0.00392157 1</ambient>
+          <diffuse>0.980392 0.713725 0.00392157 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_9_collision_mesh_2">
+        <pose relative_to="Mate connector 4">0 -0.0676684 0.176069 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_9.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from part_16 to Mate connector 4 -->
+    <joint name="Fastened 7" type="fixed">
+      <pose relative_to="part_16">-0.25 0.01 0.240069 -3.14159 0 0</pose>
+      <parent>part_16</parent>
+      <child>Mate connector 4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 5 -->
+    <link name="Mate connector 5">
+      <inertial>
+        <pose>-0.005 0.0768968 -0.0177243 0 0 0</pose>
+        <mass>0.0882005</mass>
+        <inertia>
+          <ixx>0.00028558</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>9.73436e-06</iyy>
+          <iyz>1.91476e-06</iyz>
+          <izz>0.000277316</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 8">0 0 0 0 -0 0</pose>
+      <!-- Part part_10 -->
+      <visual name="part_10_visual_mesh_1">
+        <pose relative_to="Mate connector 5">-0.25 -0.0677463 0.176 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_10.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_10_collision_mesh_2">
+        <pose relative_to="Mate connector 5">-0.25 -0.0677463 0.176 -1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_10.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from part_16 to Mate connector 5 -->
+    <joint name="Fastened 8" type="fixed">
+      <pose relative_to="part_16">0 0.01 0.24 -3.14159 0 0</pose>
+      <parent>part_16</parent>
+      <child>Mate connector 5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link part_24 -->
+    <link name="part_24">
+      <inertial>
+        <pose>-0.1325 -0.0765702 -0.0163047 0 0 0</pose>
+        <mass>0.359382</mass>
+        <inertia>
+          <ixx>0.0014783</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00261522</iyy>
+          <iyz>-5.96595e-06</iyz>
+          <izz>0.00406644</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 14">0 0 0 0 -0 0</pose>
+      <!-- Part part_24 -->
+      <visual name="part_24_visual_mesh_1">
+        <pose relative_to="part_24">-0.476 0.07187 0.26057 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_24.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.647059 0.647059 0.647059 1</ambient>
+          <diffuse>0.647059 0.647059 0.647059 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_24_collision_mesh_2">
+        <pose relative_to="part_24">-0.476 0.07187 0.26057 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_24.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from part_16 to part_24 -->
+    <joint name="Fastened 14" type="fixed">
+      <pose relative_to="part_16">0.0105703 0.005 0.540568 -0 -1.5708 0</pose>
+      <parent>part_16</parent>
+      <child>part_24</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 6 to part_16 -->
+    <joint name="Fastened 9" type="fixed">
+      <pose relative_to="Mate connector 6">0.124965 -0.520621 0.0346164 -1.5708 0 -0</pose>
+      <parent>Mate connector 6</parent>
+      <child>part_16</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 8 -->
+    <link name="Mate connector 8">
+      <inertial>
+        <pose>-0.0589297 0 -0.0075 0 0 0</pose>
+        <mass>0.198077</mass>
+        <inertia>
+          <ixx>8.45955e-05</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000350762</iyy>
+          <iyz>-0</iyz>
+          <izz>0.000427929</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 11">0 0 0 0 -0 0</pose>
+      <!-- Part part_13 -->
+      <visual name="part_13_visual_mesh_1">
+        <pose relative_to="Mate connector 8">-0.0864297 0.0439337 0.179557 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_13.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_13_collision_mesh_2">
+        <pose relative_to="Mate connector 8">-0.0864297 0.0439337 0.179557 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_13.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link fusioncomponent_5 -->
+    <link name="fusioncomponent_5">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 19">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent_5 -->
+      <visual name="fusioncomponent_5_visual_mesh_1">
+        <pose relative_to="fusioncomponent_5">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_5_collision_mesh_2">
+        <pose relative_to="fusioncomponent_5">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1_5 -->
+    <link name="part_1_5">
+      <inertial>
+        <pose>0.000134182 -0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>2.81483e-06</ixy>
+          <ixz>1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="front_left_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_6 -->
+      <visual name="part_1_6_visual_mesh_1">
+        <pose relative_to="part_1_5">0.046 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_6_collision_mesh_2">
+        <pose relative_to="part_1_5">0.046 0.213739 0.0630206 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__6.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.4</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent_5 to part_1_5 -->
+    <joint name="front_left_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent_5">-3.73e-10 -0.013047 -0.033 1.5708 0.104909 -3.14159</pose>
+      <parent>fusioncomponent_5</parent>
+      <child>part_1_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 8 to fusioncomponent_5 -->
+    <joint name="Fastened 19" type="fixed">
+      <pose relative_to="Mate connector 8">-0.125883 0 -0.015 0 -0 -1.5708</pose>
+      <parent>Mate connector 8</parent>
+      <child>fusioncomponent_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 6 to Mate connector 8 -->
+    <joint name="Fastened 11" type="fixed">
+      <pose relative_to="Mate connector 6">-0.0400351 -0.500553 -0.22181 0 0 -0</pose>
+      <parent>Mate connector 6</parent>
+      <child>Mate connector 8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link Mate connector 9 -->
+    <link name="Mate connector 9">
+      <inertial>
+        <pose>0.0589297 -0 -0.0075 0 0 0</pose>
+        <mass>0.198077</mass>
+        <inertia>
+          <ixx>8.45955e-05</ixx>
+          <ixy>-0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000350762</iyy>
+          <iyz>-0</iyz>
+          <izz>0.000427929</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 12">0 0 0 0 -0 0</pose>
+      <!-- Part part_14 -->
+      <visual name="part_14_visual_mesh_1">
+        <pose relative_to="Mate connector 9">-0.16357 0.0439337 0.179557 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_14.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_14_collision_mesh_2">
+        <pose relative_to="Mate connector 9">-0.16357 0.0439337 0.179557 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_14.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link fusioncomponent_6 -->
+    <link name="fusioncomponent_6">
+      <inertial>
+        <pose>0.000708205 0.016338 -0.0117951 0 0 0</pose>
+        <mass>0.0191029</mass>
+        <inertia>
+          <ixx>1.31209e-05</ixx>
+          <ixy>1.48039e-07</ixy>
+          <ixz>-1.1751e-08</ixz>
+          <iyy>8.89399e-06</iyy>
+          <iyz>-3.47791e-06</iyz>
+          <izz>1.23248e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 20">0 0 0 0 -0 0</pose>
+      <!-- Part fusioncomponent_6 -->
+      <visual name="fusioncomponent_6_visual_mesh_1">
+        <pose relative_to="fusioncomponent_6">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="fusioncomponent_6_collision_mesh_2">
+        <pose relative_to="fusioncomponent_6">2.28185e-05 0.0295666 -2.5878e-08 -3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/fusioncomponent.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link part_1_6 -->
+    <link name="part_1_6">
+      <inertial>
+        <pose>0.000134182 0.00010887 -0.0075 0 0 0</pose>
+        <mass>0.468299</mass>
+        <inertia>
+          <ixx>0.00110998</ixx>
+          <ixy>-2.81483e-06</ixy>
+          <ixz>-1e-12</ixz>
+          <iyy>0.00111295</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00216114</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="front_right_wheel_joint">0 0 0 0 -0 0</pose>
+      <!-- Part part_1_7 -->
+      <visual name="part_1_7_visual_mesh_1">
+        <pose relative_to="part_1_6">0.046 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__7.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.615686 0.811765 0.929412 1</ambient>
+          <diffuse>0.615686 0.811765 0.929412 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="part_1_7_collision_mesh_2">
+        <pose relative_to="part_1_6">0.046 -0.213739 0.314979 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R2/assets/part_1__7.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from fusioncomponent_6 to part_1_6 -->
+    <joint name="front_right_wheel_joint" type="revolute">
+      <pose relative_to="fusioncomponent_6">-3.73e-10 -0.013047 -0.033 -1.5708 0.104909 0</pose>
+      <parent>fusioncomponent_6</parent>
+      <child>part_1_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <!-- <velocity>10</velocity> -->
+          <!-- <lower>-3.141592653589793</lower>
+          <upper>3.141592653589793</upper> -->
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 9 to fusioncomponent_6 -->
+    <joint name="Fastened 20" type="fixed">
+      <pose relative_to="Mate connector 9">0.125883 -0 -0.015 -0 0 1.5708</pose>
+      <parent>Mate connector 9</parent>
+      <child>fusioncomponent_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from Mate connector 6 to Mate connector 9 -->
+    <joint name="Fastened 12" type="fixed">
+      <pose relative_to="Mate connector 6">0.0399649 -0.500553 -0.22181 0 0 -0</pose>
+      <parent>Mate connector 6</parent>
+      <child>Mate connector 9</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://robot</uri>
+      <pose>-0.00146441 -0.10814863 0.21805145 0 0 -1.5708</pose>
+    </include>
+
+    <joint name="arm_mount_joint" type="fixed">
+      <parent>Mate connector 10</parent>
+      <child>robot::connector</child>
+    </joint>
+
+    <!-- Front Left -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>front_left_wheel_joint</joint_name>
+      <sub_topic>joint/front_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Front Right -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>front_right_wheel_joint</joint_name>
+      <sub_topic>joint/front_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Back Left -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_left_wheel_joint</joint_name>
+      <sub_topic>joint/back_left_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+    <!-- Back Right -->
+    <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+      <joint_name>back_right_wheel_joint</joint_name>
+      <sub_topic>joint/back_right_wheel_joint/cmd_vel</sub_topic>
+      <p_gain>1.0</p_gain>
+    </plugin>
+  </model>
+</sdf>
