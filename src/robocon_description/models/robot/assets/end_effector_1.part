@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "681c67d8b1abfc71ae8c68df",
+    "documentMicroversion": "7df61d85c51429513f7367fe",
+    "elementId": "d9af7a5b92f6026099517d70",
+    "fullConfiguration": "default",
+    "id": "MCdl7G4JwFvQYIesv",
+    "isStandardContent": false,
+    "name": "end-effector-1 <1>",
+    "partId": "JFD",
+    "suppressed": false,
+    "type": "Part"
+}

@@ -23,19 +23,43 @@
   gz_type_name: "gz.msgs.Odometry"
   direction: "GZ_TO_ROS"
 
-  # Topic published by JointStatePublisher plugin
+# Topic published by JointStatePublisher plugin
 - ros_topic_name: "/joint_states"
   gz_topic_name: "/joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: "GZ_TO_ROS"
 
-#   # Global Transforms (TF aggregates all robots) # bcz ekf node enabled
-# - ros_topic_name: "/tf"
-#   gz_topic_name: "/tf"
-#   ros_type_name: "tf2_msgs/msg/TFMessage"
-#   gz_type_name: "gz.msgs.Pose_V"
-#   direction: GZ_TO_ROS
+- ros_topic_name: "car_cmd_vel"
+  gz_topic_name: "/model/simple_car/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# R1 Individual Wheel Velocity Control
+- ros_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
+  gz_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
+  gz_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+  
+- ros_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
+  gz_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
+  gz_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
 
   # --- ARM CONTROL BRIDGES ---
 - ros_topic_name: "/rrr/joint0/cmd_pos"
@@ -68,38 +92,19 @@
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
 
-# R1 Individual Wheel Velocity Control
-- ros_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
-  gz_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
+- ros_topic_name: "/rrr/gripper/cmd_pos"
+  gz_topic_name: "/rrr/gripper/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
-  gz_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
-  gz_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-- ros_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
-  gz_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
-
-# - ros_topic_name: "/R2/cmd_vel"
-#   gz_topic_name: "/model/R2/cmd_vel"
-#   ros_type_name: "geometry_msgs/msg/Twist"
-#   gz_type_name: "gz.msgs.Twist"
-#   direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
 # Individual Wheel Control
+- ros_topic_name: "/R2/cmd_vel"
+  gz_topic_name: "/model/R2/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
 - ros_topic_name: "/R2/front_left_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/front_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
@@ -135,12 +140,6 @@
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: ROS_TO_GZ
-
-- ros_topic_name: "/rrr/gripper/cmd_pos"
-  gz_topic_name: "/rrr/gripper/cmd_pos"
-  ros_type_name: "std_msgs/msg/Float64"
-  gz_type_name: "gz.msgs.Double"
-  direction: "ROS_TO_GZ"
 
 # # Topic subscribed to by DiffDrive plugin
 # - ros_topic_name: "cmd_vel"

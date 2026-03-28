@@ -1,0 +1,13 @@
+{
+    "configuration": "default",
+    "documentId": "465a63c4d3629688fe4281b0",
+    "documentMicroversion": "28c9ed711de0af0d81331b13",
+    "elementId": "6ca0f9bcd5d80c60ddfea2e7",
+    "fullConfiguration": "default",
+    "id": "MwUygNkquWA8XxbtU",
+    "isStandardContent": false,
+    "name": "base-motor-axle <1>",
+    "partId": "KF7C",
+    "suppressed": false,
+    "type": "Part"
+}

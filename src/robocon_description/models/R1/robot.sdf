@@ -1,0 +1,1639 @@
+<?xml version="1.0" ?>
+<!-- Generated using onshape-to-robot -->
+<!-- Onshape https://cad.onshape.com/documents/465a63c4d3629688fe4281b0/w/eae927b39c218324719cca98/e/294e9c53a2eb0484201cfa8a -->
+<sdf version="1.7">
+  <model name="R1">
+    <!-- Link side_frame -->
+    <link name="side_frame">
+      <inertial>
+        <pose>0.434999 -0.222872 0.309742 0 0 0</pose>
+        <mass>2.95367</mass>
+        <inertia>
+          <ixx>0.110659</ixx>
+          <ixy>0</ixy>
+          <ixz>-0</ixz>
+          <iyy>0.0398301</iyy>
+          <iyz>1.76212e-05</iyz>
+          <izz>0.0712717</izz>
+        </inertia>
+      </inertial>
+      <pose>0 0 0 0 -0 0</pose>
+      <!-- Part side_frame -->
+      <visual name="side_frame_visual_mesh_1">
+        <pose relative_to="side_frame">-0.450001 0.373741 0.14124 -0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/side_frame.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="side_frame_collision_mesh_2">
+        <pose relative_to="side_frame">-0.450001 0.373741 0.14124 -0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/side_frame.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link base_link -->
+    <link name="base_link">
+      <inertial>
+        <pose>-0.485863 -0.403669 0.194909 0 0 0</pose>
+        <mass>41.4803</mass>
+        <inertia>
+          <ixx>4.3721</ixx>
+          <ixy>0.293695</ixy>
+          <ixz>0.231154</ixz>
+          <iyy>4.8724</iyy>
+          <iyz>0.568069</iyz>
+          <izz>6.23924</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 1">0 0 0 0 -0 0</pose>
+      <!-- Part base_link -->
+      <visual name="base_link_visual_mesh_1">
+        <pose relative_to="base_link">-0.9 -0.835751 0.348078 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_link.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_link_collision_mesh_2">
+        <pose relative_to="base_link">-0.9 -0.835751 0.348078 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_link.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link base_motor_copy_1 -->
+    <link name="base_motor_copy_1">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 2">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1 -->
+      <visual name="base_motor_p1_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3 -->
+      <visual name="base_motor_p3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5 -->
+      <visual name="base_motor_p5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2 -->
+      <visual name="base_motor_p2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4 -->
+      <visual name="base_motor_p4_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6 -->
+      <visual name="base_motor_p6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle -->
+      <visual name="base_motor_axle_visual_mesh_1">
+        <pose relative_to="base_motor_copy_1">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_collision_mesh_2">
+        <pose relative_to="base_motor_copy_1">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel -->
+    <link name="wheel">
+      <inertial>
+        <pose>-1.609e-09 -5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>1.24e-10</ixy>
+          <ixz>-3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 10">0 0 0 0 -0 0</pose>
+      <!-- Part wheel -->
+      <visual name="wheel_visual_mesh_1">
+        <pose relative_to="wheel">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_collision_mesh_2">
+        <pose relative_to="wheel">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_copy_1 to wheel -->
+    <joint name="Fastened 10" type="fixed">
+      <pose relative_to="base_motor_copy_1">0 0 0.022 -3.14159 -0 -0.785398</pose>
+      <parent>base_motor_copy_1</parent>
+      <child>wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor_copy_1 -->
+    <joint name="Fastened 2" type="fixed">
+      <pose relative_to="base_link">-0.9 -0.0751237 0.38953 1.5708 -0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor_copy_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor_copy_4 -->
+    <link name="base_motor_copy_4">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 3">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1_2 -->
+      <visual name="base_motor_p1_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3_2 -->
+      <visual name="base_motor_p3_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5_2 -->
+      <visual name="base_motor_p5_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2_2 -->
+      <visual name="base_motor_p2_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4_2 -->
+      <visual name="base_motor_p4_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6_2 -->
+      <visual name="base_motor_p6_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle_2 -->
+      <visual name="base_motor_axle_2_visual_mesh_1">
+        <pose relative_to="base_motor_copy_4">0.0231301 0.0232464 -0.0295 1.5708 0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_2_collision_mesh_2">
+        <pose relative_to="base_motor_copy_4">0.0231301 0.0232464 -0.0295 1.5708 0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel_2 -->
+    <link name="wheel_2">
+      <inertial>
+        <pose>-1.609e-09 -5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>1.24e-10</ixy>
+          <ixz>-3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 9">0 0 0 0 -0 0</pose>
+      <!-- Part wheel_2 -->
+      <visual name="wheel_2_visual_mesh_1">
+        <pose relative_to="wheel_2">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_2_collision_mesh_2">
+        <pose relative_to="wheel_2">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_copy_4 to wheel_2 -->
+    <joint name="Fastened 9" type="fixed">
+      <pose relative_to="base_motor_copy_4">-0 0 0.022 -3.14159 0 -0.785398</pose>
+      <parent>base_motor_copy_4</parent>
+      <child>wheel_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor_copy_4 -->
+    <joint name="Fastened 3" type="fixed">
+      <pose relative_to="base_link">-0.9 -0.405124 0.38953 1.5708 -0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor_copy_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor_copy_5 -->
+    <link name="base_motor_copy_5">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 4">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1_3 -->
+      <visual name="base_motor_p1_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3_3 -->
+      <visual name="base_motor_p3_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5_3 -->
+      <visual name="base_motor_p5_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2_3 -->
+      <visual name="base_motor_p2_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4_3 -->
+      <visual name="base_motor_p4_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6_3 -->
+      <visual name="base_motor_p6_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle_3 -->
+      <visual name="base_motor_axle_3_visual_mesh_1">
+        <pose relative_to="base_motor_copy_5">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_3_collision_mesh_2">
+        <pose relative_to="base_motor_copy_5">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel_3 -->
+    <link name="wheel_3">
+      <inertial>
+        <pose>-1.609e-09 -5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>1.24e-10</ixy>
+          <ixz>-3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 8">0 0 0 0 -0 0</pose>
+      <!-- Part wheel_3 -->
+      <visual name="wheel_3_visual_mesh_1">
+        <pose relative_to="wheel_3">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_3_collision_mesh_2">
+        <pose relative_to="wheel_3">-0.00131432 0.0414513 0.0181359 -1.5708 -1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_copy_5 to wheel_3 -->
+    <joint name="Fastened 8" type="fixed">
+      <pose relative_to="base_motor_copy_5">0 0 0.022 3.14159 -0 -0.785398</pose>
+      <parent>base_motor_copy_5</parent>
+      <child>wheel_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor_copy_5 -->
+    <joint name="Fastened 4" type="fixed">
+      <pose relative_to="base_link">-0.899626 -0.795124 0.38953 1.5708 -0 -1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor_copy_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor -->
+    <link name="base_motor">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 5">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1_4 -->
+      <visual name="base_motor_p1_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3_4 -->
+      <visual name="base_motor_p3_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5_4 -->
+      <visual name="base_motor_p5_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2_4 -->
+      <visual name="base_motor_p2_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4_4 -->
+      <visual name="base_motor_p4_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6_4 -->
+      <visual name="base_motor_p6_4_visual_mesh_1">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_4_collision_mesh_2">
+        <pose relative_to="base_motor">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 -0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle_4 -->
+      <visual name="base_motor_axle_4_visual_mesh_1">
+        <pose relative_to="base_motor">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_4_collision_mesh_2">
+        <pose relative_to="base_motor">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel_4 -->
+    <link name="wheel_4">
+      <inertial>
+        <pose>-1.609e-09 5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>-1.24e-10</ixy>
+          <ixz>3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 11">0 0 0 0 -0 0</pose>
+      <!-- Part wheel_4 -->
+      <visual name="wheel_4_visual_mesh_1">
+        <pose relative_to="wheel_4">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_4_collision_mesh_2">
+        <pose relative_to="wheel_4">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor to wheel_4 -->
+    <joint name="Fastened 11" type="fixed">
+      <pose relative_to="base_motor">0.000328104 0.000328104 0.022 -3.14159 0 -2.35619</pose>
+      <parent>base_motor</parent>
+      <child>wheel_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor -->
+    <joint name="Fastened 5" type="fixed">
+      <pose relative_to="base_link">-0 -0.0751237 0.389417 1.5708 -0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor_copy_2 -->
+    <link name="base_motor_copy_2">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 6">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1_5 -->
+      <visual name="base_motor_p1_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3_5 -->
+      <visual name="base_motor_p3_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5_5 -->
+      <visual name="base_motor_p5_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2_5 -->
+      <visual name="base_motor_p2_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4_5 -->
+      <visual name="base_motor_p4_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6_5 -->
+      <visual name="base_motor_p6_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle_5 -->
+      <visual name="base_motor_axle_5_visual_mesh_1">
+        <pose relative_to="base_motor_copy_2">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_5_collision_mesh_2">
+        <pose relative_to="base_motor_copy_2">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel_5 -->
+    <link name="wheel_5">
+      <inertial>
+        <pose>-1.609e-09 5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>-1.24e-10</ixy>
+          <ixz>3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 12">0 0 0 0 -0 0</pose>
+      <!-- Part wheel_5 -->
+      <visual name="wheel_5_visual_mesh_1">
+        <pose relative_to="wheel_5">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_5_collision_mesh_2">
+        <pose relative_to="wheel_5">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_copy_2 to wheel_5 -->
+    <joint name="Fastened 12" type="fixed">
+      <pose relative_to="base_motor_copy_2">-0 0 0.022 -3.14159 0 -2.35619</pose>
+      <parent>base_motor_copy_2</parent>
+      <child>wheel_5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor_copy_2 -->
+    <joint name="Fastened 6" type="fixed">
+      <pose relative_to="base_link">-0 -0.405124 0.389417 1.5708 -0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor_copy_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Link base_motor_copy_3 -->
+    <link name="base_motor_copy_3">
+      <inertial>
+        <pose>1.4261e-06 0.00010859 -0.057213 0 0 0</pose>
+        <mass>0.324308</mass>
+        <inertia>
+          <ixx>0.000605469</ixx>
+          <ixy>8.68e-10</ixy>
+          <ixz>-3.3848e-08</ixz>
+          <iyy>0.000605856</iyy>
+          <iyz>3.07967e-06</iyz>
+          <izz>8.11588e-05</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 7">0 0 0 0 -0 0</pose>
+      <!-- Part base_motor_p1_6 -->
+      <visual name="base_motor_p1_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p1_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p1.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p3_6 -->
+      <visual name="base_motor_p3_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.627451 0.627451 0.627451 1</ambient>
+          <diffuse>0.627451 0.627451 0.627451 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p3_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p3.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p5_6 -->
+      <visual name="base_motor_p5_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p5_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p5.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p2_6 -->
+      <visual name="base_motor_p2_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p2_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p2.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p4_6 -->
+      <visual name="base_motor_p4_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.65098 0.619608 0.588235 1</ambient>
+          <diffuse>0.65098 0.619608 0.588235 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p4_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p4.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_p6_6 -->
+      <visual name="base_motor_p6_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.207843 0.207843 0.207843 1</ambient>
+          <diffuse>0.207843 0.207843 0.207843 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_p6_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">-8.22401e-05 0.0327931 -0.0295 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_p6.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <!-- Part base_motor_axle_6 -->
+      <visual name="base_motor_axle_6_visual_mesh_1">
+        <pose relative_to="base_motor_copy_3">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.776471 0.756863 0.737255 1</ambient>
+          <diffuse>0.776471 0.756863 0.737255 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="base_motor_axle_6_collision_mesh_2">
+        <pose relative_to="base_motor_copy_3">0.0231301 0.0232464 -0.0295 1.5708 -0 -0.785398</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/base_motor_axle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Link wheel_6 -->
+    <link name="wheel_6">
+      <inertial>
+        <pose>-1.609e-09 5.822e-09 -0.0125 0 0 0</pose>
+        <mass>0.971481</mass>
+        <inertia>
+          <ixx>0.00341056</ixx>
+          <ixy>-1.24e-10</ixy>
+          <ixz>3.4e-11</ixz>
+          <iyy>0.00341056</iyy>
+          <iyz>3e-12</iyz>
+          <izz>0.00650278</izz>
+        </inertia>
+      </inertial>
+      <pose relative_to="Fastened 13">0 0 0 0 -0 0</pose>
+      <!-- Part wheel_6 -->
+      <visual name="wheel_6_visual_mesh_1">
+        <pose relative_to="wheel_6">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.917647 0.917647 0.917647 1</ambient>
+          <diffuse>0.917647 0.917647 0.917647 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+      </visual>
+      <collision name="wheel_6_collision_mesh_2">
+        <pose relative_to="wheel_6">-0.00131432 -0.0414513 -0.0431359 1.5708 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://R1/assets/wheel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+    <!-- Joint from base_motor_copy_3 to wheel_6 -->
+    <joint name="Fastened 13" type="fixed">
+      <pose relative_to="base_motor_copy_3">0 0 0.022 -3.14159 0 -2.35619</pose>
+      <parent>base_motor_copy_3</parent>
+      <child>wheel_6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from base_link to base_motor_copy_3 -->
+    <joint name="Fastened 7" type="fixed">
+      <pose relative_to="base_link">-0 -0.795124 0.389417 1.5708 -0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>base_motor_copy_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <!-- Joint from side_frame to base_link -->
+    <joint name="Fastened 1" type="fixed">
+      <pose relative_to="side_frame">0.449999 -0.462921 0.489318 3.14159 0 -0</pose>
+      <parent>side_frame</parent>
+      <child>base_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <effort>10</effort>
+          <velocity>10</velocity>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <friction>0.0</friction>
+          <damping>0.0</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <include>
+      <uri>model://robot</uri>
+      <pose>-0.239995 -0.224112 0.576396 0 0 0</pose>
+    </include>
+
+    <joint name="arm_mount_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>robot::connector</child>
+    </joint>
+
+  </model>
+</sdf>

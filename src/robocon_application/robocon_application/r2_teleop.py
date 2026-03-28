@@ -70,30 +70,34 @@ def main():
             v_bl = 0.0 # Back Left
             v_br = 0.0 # Back Right
             
-            torque = 2.0 # Nm
+            torque = 15.0 #
             # Key mappings
             # Key mappings
             if key == 'w':
                 # All Forward
                 # torque = -2.0 # Nm
-                v_fl = v_fr = v_bl = v_br = -torque
+                v_fl = v_fr = torque
+                v_bl = v_br = torque
+                # v_ml = v_mr = torque
                 
             elif key == 's':
                 # All Backward
                 # torque = 3.0 # Nm
-                v_fl = v_fr = v_bl = v_br = torque
+                v_fl = v_fr = -torque  
+                v_bl = v_br = -torque  
+                # v_ml = v_mr = -torque
                 
             elif key == 'a':
                 # Pivot Left (Left side back, Right side fwd)
                 # torque = 3.0
-                v_fr = v_br = -6*torque
-                v_fl = v_bl = 6*torque
+                v_fr = v_br = 3*torque
+                v_fl = v_bl = -3*torque
                 
             elif key == 'd':
                 # Pivot Right (Left side fwd, Right side back)
                 # torque = 3.0
-                v_fr = v_br = 6*torque
-                v_fl = v_bl = -6*torque
+                v_fr = v_br =-3*torque
+                v_fl = v_bl = 3*torque
             
             # elif key == 't':
             #      # Only Mid Forward
@@ -110,17 +114,17 @@ def main():
             
             # Publish to all wheels
             # Create Float64 messages
-            msg_fl = Float64(); msg_fl.data = v_fl
+            msg_fl = Float64(); msg_fl.data = -v_fl
             msg_fr = Float64(); msg_fr.data = v_fr
-            msg_ml = Float64(); msg_ml.data = v_ml
+            msg_ml = Float64(); msg_ml.data = -v_ml
             msg_mr = Float64(); msg_mr.data = v_mr
-            msg_bl = Float64(); msg_bl.data = v_bl
+            msg_bl = Float64(); msg_bl.data = -v_bl
             msg_br = Float64(); msg_br.data = v_br
             
             node.pub_A_front_left.publish(msg_fl)
             node.pub_A_front_right.publish(msg_fr)
-            node.pub_A_mid_left.publish(msg_ml)
-            node.pub_A_mid_right.publish(msg_mr)
+            # node.pub_A_mid_left.publish(msg_ml)
+            # node.pub_A_mid_right.publish(msg_mr)
             node.pub_A_back_left.publish(msg_bl)
             node.pub_A_back_right.publish(msg_br)
             
