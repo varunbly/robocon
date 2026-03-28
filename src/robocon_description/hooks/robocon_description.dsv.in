@@ -1,4 +1,3 @@
-prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;share
 prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;share/robocon_description/models
 prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;share/robocon_description/fake
 prepend-non-duplicate;GZ_SIM_RESOURCE_PATH;share/robocon_description/real
