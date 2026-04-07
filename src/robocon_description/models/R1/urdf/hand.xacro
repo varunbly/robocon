@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- ============================================================ -->
+  <!-- Hand/Arm Manipulator Macro                                    -->
+  <!-- Converted from robot/robot.sdf (onshape-to-robot export)     -->
+  <!--                                                               -->
+  <!-- Kinematic chain (simplified for ROS TF):                      -->
+  <!--   hand_root_link (connector)                                  -->
+  <!--     └─ connector_joint (revolute, joint0)                     -->
+  <!--         └─ arm_base_link                                      -->
+  <!--             ├─ (fixed chain) arm_1_l, arm_1_r, base_motor_h   -->
+  <!--             └─ Revolute_1 (revolute, joint1)                  -->
+  <!--                 └─ arm_link_1 (joining_rod_1 + arm_2)         -->
+  <!--                     └─ Revolute_2 (revolute, joint2)          -->
+  <!--                         └─ arm_link_2 (gear + joining_rod_2)  -->
+  <!--                             └─ arm_link_3 (arm_3_l + arm_3_r) -->
+  <!--                                 ├─ Revolute_3 (revolute, j3)  -->
+  <!--                                 │   └─ arm_link_4 (arm_4)     -->
+  <!--                                 │       └─ end_effector        -->
+  <!--                                 │           ├─ Revolute_4 (j4) -->
+  <!--                                 │           ├─ Slider_1 (grip) -->
+  <!--                                 │           └─ Slider_2 (grip) -->
+  <!--                                 └─ motor_2_assembly (fixed)   -->
+  <!-- ============================================================ -->
+
+  <material name="arm_grey">
+    <color rgba="0.627451 0.627451 0.627451 1"/>
+  </material>
+  <material name="arm_dark">
+    <color rgba="0.207843 0.207843 0.207843 1"/>
+  </material>
+
+  <xacro:macro name="hand_manipulator">
+
+    <!-- ======================================================== -->
+    <!-- Root link of the hand (connector) — attaches to base      -->
+    <!-- ======================================================== -->
+    <link name="hand_root_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.000000001"/>
+        <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9"/>
+      </inertial>
+    </link>
+
+    <!-- ======================================================== -->
+    <!-- Joint 0: connector_joint — base rotation (revolute Z)     -->
+    <!-- ======================================================== -->
+    <joint name="connector_joint" type="revolute">
+      <parent link="hand_root_link"/>
+      <child link="arm_base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14159" upper="3.14159" effort="300" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Arm base_link (turntable platform)                        -->
+    <!-- Note: renamed to arm_base_link to avoid conflict with     -->
+    <!--       the R1 chassis base_link                            -->
+    <!-- ======================================================== -->
+    <link name="arm_base_link">
+      <visual>
+        <origin xyz="0 0 0.03056" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/base_link.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.03056" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/base_link.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0.0183377" rpy="0 0 0"/>
+        <mass value="1.12889"/>
+        <inertia ixx="0.00242769" ixy="0" ixz="0"
+                 iyy="0.00242769" iyz="0"
+                 izz="0.00458701"/>
+      </inertial>
+    </link>
+
+    <!-- Arm shoulder assembly (Mate connector 2 + arm_1_l + arm_1_r + motor holder) -->
+    <!-- These are all rigidly connected, so we combine into one logical link -->
+    <link name="arm_shoulder">
+      <visual>
+        <origin xyz="0 -0.000499997 0" rpy="3.14159 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_1_l.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.000499997 0" rpy="3.14159 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_1_l.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0.038 -0.0568212" rpy="0 0 0"/>
+        <mass value="0.0727815"/>
+        <inertia ixx="7.28387e-05" ixy="0" ixz="0"
+                 iyy="0.000106914" iyz="0"
+                 izz="3.5288e-05"/>
+      </inertial>
+    </link>
+
+    <!-- Fixed joint: arm_base_link → arm_shoulder (Fastened 3 in SDF) -->
+    <joint name="arm_shoulder_joint" type="fixed">
+      <parent link="arm_base_link"/>
+      <child link="arm_shoulder"/>
+      <origin xyz="0 0 0.03056" rpy="3.14159 0 0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Joint 1: Revolute 1 — shoulder rotation                   -->
+    <!-- ======================================================== -->
+    <link name="arm_link_1">
+      <visual>
+        <origin xyz="0 -0.086 -0.001" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/joining_rod_1.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.086 -0.001" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/joining_rod_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.0155207"/>
+        <inertia ixx="1.71672e-05" ixy="0" ixz="0"
+                 iyy="1.71672e-05" iyz="0"
+                 izz="1.24166e-07"/>
+      </inertial>
+    </link>
+
+    <joint name="Revolute 1" type="revolute">
+      <parent link="arm_shoulder"/>
+      <child link="arm_link_1"/>
+      <origin xyz="0 0.0000333175 -0.086" rpy="-1.5708 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14159" upper="3.14159" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Arm link 2 (arm_2 / Mate connector 8)                     -->
+    <!-- Fixed chain: joining_rod_1 → arm_2 (Fastened 4)           -->
+    <!-- ======================================================== -->
+    <link name="arm_link_2">
+      <visual>
+        <origin xyz="0.0000100492 -0.0860201 -0.000500003" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_2.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0000100492 -0.0860201 -0.000500003" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_2.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.000288184 0.146899 0.000134941" rpy="0 0 0"/>
+        <mass value="0.438917"/>
+        <inertia ixx="0.00357355" ixy="5.47325e-06" ixz="2.9186e-07"
+                 iyy="0.000884745" iyz="-4.10493e-06"
+                 izz="0.00284251"/>
+      </inertial>
+    </link>
+
+    <!-- Fastened 4: joining_rod → arm_2 (fixed) -->
+    <joint name="arm_link_2_joint" type="fixed">
+      <parent link="arm_link_1"/>
+      <child link="arm_link_2"/>
+      <!-- Pose from SDF Fastened 4 relative to joining_rod_1 -->
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Joint 2: Revolute 2 — elbow rotation                      -->
+    <!-- ======================================================== -->
+    <link name="arm_link_2b">
+      <visual>
+        <origin xyz="-0.0110082 0.359488 0.00844098" rpy="1.5708 0 0.0349066"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/gear_1.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.0110082 0.359488 0.00844098" rpy="1.5708 0 0.0349066"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/gear_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 -0.0088763" rpy="0 0 0"/>
+        <mass value="0.0606554"/>
+        <inertia ixx="1.98986e-05" ixy="0" ixz="0"
+                 iyy="1.98986e-05" iyz="0"
+                 izz="3.15249e-05"/>
+      </inertial>
+    </link>
+
+    <joint name="Revolute 2" type="revolute">
+      <parent link="arm_link_2"/>
+      <child link="arm_link_2b"/>
+      <origin xyz="-0.000107217 0.2763 0.00370711" rpy="-3.14159 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14159" upper="3.14159" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Arm link 3 (forearm: arm_3_l + arm_3_r)                   -->
+    <!-- Fixed chain from gear → joining_rod_2 → arm_3             -->
+    <!-- ======================================================== -->
+    <link name="arm_link_3">
+      <visual>
+        <origin xyz="0.000499999 -0.363 -0.0205" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_3_l.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000499999 -0.363 -0.0205" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_3_l.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-0.138485 -0.0000903 0.0380018" rpy="0 0 0"/>
+        <mass value="0.157196"/>
+        <inertia ixx="2.18204e-05" ixy="1.37271e-07" ixz="2.384e-08"
+                 iyy="0.00122139" iyz="5.76e-10"
+                 izz="0.00124058"/>
+      </inertial>
+    </link>
+
+    <!-- Fixed chain: gear → joining_rod_2 → arm_3 (simplified) -->
+    <joint name="arm_link_3_joint" type="fixed">
+      <parent link="arm_link_2b"/>
+      <child link="arm_link_3"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Joint 3: Revolute 3 — wrist rotation                      -->
+    <!-- ======================================================== -->
+    <link name="arm_link_4">
+      <visual>
+        <origin xyz="0 -0.086 -0.001" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_4_l.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.086 -0.001" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/arm_4_l.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.05"/>
+        <inertia ixx="1e-05" ixy="0" ixz="0"
+                 iyy="1e-05" iyz="0"
+                 izz="1e-05"/>
+      </inertial>
+    </link>
+
+    <joint name="Revolute 3" type="revolute">
+      <parent link="arm_link_3"/>
+      <child link="arm_link_4"/>
+      <origin xyz="-0.276963 -0.000525296 0.0037071" rpy="3.14159 0 -0.046463"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14159" upper="3.14159" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- End effector assembly                                      -->
+    <!-- ======================================================== -->
+    <link name="end_effector_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/end_effector_1.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/end_effector_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.05"/>
+        <inertia ixx="1e-05" ixy="0" ixz="0"
+                 iyy="1e-05" iyz="0"
+                 izz="1e-05"/>
+      </inertial>
+    </link>
+
+    <!-- Fixed chain: arm_link_4 → end_effector assembly -->
+    <joint name="end_effector_joint" type="fixed">
+      <parent link="arm_link_4"/>
+      <child link="end_effector_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Joint 4: Revolute 4 — end effector rotation               -->
+    <!-- ======================================================== -->
+    <link name="end_effector_tip">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/end_effector_3.stl"/>
+        </geometry>
+        <material name="arm_grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/robot/assets/end_effector_3.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.03"/>
+        <inertia ixx="1e-06" ixy="0" ixz="0"
+                 iyy="1e-06" iyz="0"
+                 izz="1e-06"/>
+      </inertial>
+    </link>
+
+    <joint name="Revolute 4" type="revolute">
+      <parent link="end_effector_link"/>
+      <child link="end_effector_tip"/>
+      <origin xyz="0.00418158 0.031122 0.0297485" rpy="0 0 0.695746"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14159" upper="3.14159" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- ======================================================== -->
+    <!-- Gripper: Slider 1 (right) + Slider 2 (left, mimic)        -->
+    <!-- ======================================================== -->
+
+    <!-- Right gripper finger -->
+    <link name="right_gripper_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 0.04 0.02"/>
+        </geometry>
+        <material name="arm_dark"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 0.04 0.02"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.02"/>
+        <inertia ixx="1e-06" ixy="0" ixz="0"
+                 iyy="1e-06" iyz="0"
+                 izz="1e-06"/>
+      </inertial>
+    </link>
+
+    <joint name="Slider 1" type="prismatic">
+      <parent link="end_effector_tip"/>
+      <child link="right_gripper_link"/>
+      <origin xyz="0.02 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.01280" upper="0.15775" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
+    <!-- Left gripper finger -->
+    <link name="left_gripper_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 0.04 0.02"/>
+        </geometry>
+        <material name="arm_dark"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.01 0.04 0.02"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.02"/>
+        <inertia ixx="1e-06" ixy="0" ixz="0"
+                 iyy="1e-06" iyz="0"
+                 izz="1e-06"/>
+      </inertial>
+    </link>
+
+    <joint name="Slider 2" type="prismatic">
+      <parent link="end_effector_tip"/>
+      <child link="left_gripper_link"/>
+      <origin xyz="-0.02 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.01280" upper="0.15775" effort="30" velocity="100"/>
+      <dynamics damping="0.0" friction="0.0"/>
+      <mimic joint="Revolute 4" multiplier="1.0"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

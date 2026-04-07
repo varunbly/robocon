@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+  R1 Robot — Complete URDF/Xacro Description
+  ============================================
+  Structure (like TurtleBot3 Waffle pattern):
+    robot_R1.urdf.xacro (this file — top-level assembler)
+      ├── base_R1.xacro (chassis + 6 wheels + sensors)
+      └── hand.xacro   (arm manipulator + gripper)
+
+  TF tree (clean, no conflicts):
+    base_link (root — EKF publishes odom → base_link)
+      ├── side_frame
+      ├── wheel_1..6
+      ├── imu_link
+      ├── lidar_link
+      ├── camera_link
+      └── base_link_torso_mount_point
+            └── hand_root_link
+                  └── connector_joint (revolute)
+                        └── arm_base_link
+                              └── Revolute_1..4, Slider_1..2
+-->
+<robot name="robot_R1" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Include the base robot (chassis, wheels, sensors) -->
+  <xacro:include filename="base_R1.xacro" />
+
+  <!-- Include the hand/arm manipulator -->
+  <xacro:include filename="hand.xacro" />
+
+  <!-- Instantiate the base -->
+  <xacro:r1_base />
+
+  <!-- Instantiate the hand manipulator -->
+  <xacro:hand_manipulator />
+
+  <!-- Connect hand to the base via the torso mount point -->
+  <joint name="hand_to_base_joint" type="fixed">
+    <parent link="base_link_torso_mount_point"/>
+    <child link="hand_root_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

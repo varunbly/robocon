@@ -6,6 +6,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetE
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from ros_gz_bridge.actions import RosGzBridge
 from ros_gz_sim.actions import GzServer
 
@@ -75,10 +76,9 @@ def generate_launch_description():
         env=env_vars
     )
 
-    # Robot State Publisher
-    sdf_path = os.path.join(pkg_robocon_description, 'models', 'R2', 'model.sdf')
-    with open(sdf_path, 'r') as infp:
-        robot_desc = infp.read()
+    # Robot State Publisher — using xacro
+    xacro_path = os.path.join(pkg_robocon_description, 'models', 'R1', 'urdf', 'robot_R1.urdf.xacro')
+    robot_desc = ParameterValue(Command(['xacro ', xacro_path]), value_type=str)
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
