@@ -38,7 +38,7 @@
   <joint name="hand_to_base_joint" type="fixed">
     <parent link="base_link_torso_mount_point"/>
     <child link="hand_root_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="3.14159 0 0"/>
   </joint>
 
 </robot>
