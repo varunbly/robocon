@@ -7,7 +7,7 @@ slam_toolbox:
     # Frames and Topics
     odom_frame: odom
     map_frame: map
-    base_frame: base_link
+    base_frame: base_footprint
     scan_topic: /scan
     
     # Solver Parameters

@@ -77,11 +77,12 @@
     </link>
 
     <!-- Wheel joint -->
-    <joint name="${name}_joint" type="fixed">
+    <joint name="${name}_joint" type="continuous">
       <parent link="${motor_name}"/>
       <child link="${name}"/>
       <origin xyz="${wheel_x} ${wheel_y} ${wheel_z}"
               rpy="${wheel_roll} ${wheel_pitch} ${wheel_yaw}"/>
+      <axis xyz="0 0 1"/>
     </joint>
   </xacro:macro>
 
@@ -170,7 +171,8 @@
       <parent link="chassis_link"/>
       <child link="base_link_torso_mount_point"/>
       <!-- Arm is included at this offset in R1 robot.sdf -->
-      <origin xyz="-0.239995 -0.224112 0.576396" rpy="0 0 0"/>
+      <!-- Y and Z negated to compensate for chassis_link's π-rotation around X -->
+      <origin xyz="-0.239995 0.224112 -0.576396" rpy="0 0 0"/>
     </joint>
 
     <!-- ============================================================ -->

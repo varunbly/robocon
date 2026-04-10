@@ -23,10 +23,10 @@
 <robot name="robot_R1" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- Include the base robot (chassis, wheels, sensors) -->
-  <xacro:include filename="base_R1.xacro" />
+  <xacro:include filename="r1_base.xacro" />
 
   <!-- Include the hand/arm manipulator -->
-  <xacro:include filename="hand.xacro" />
+  <xacro:include filename="r1_arm.xacro" />
 
   <!-- Instantiate the base -->
   <xacro:r1_base />

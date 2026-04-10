@@ -77,7 +77,7 @@ def generate_launch_description():
     )
 
     # Robot State Publisher — using xacro
-    xacro_path = os.path.join(pkg_robocon_description, 'models', 'R1', 'urdf', 'robot_R1.urdf.xacro')
+    xacro_path = os.path.join(pkg_robocon_description, 'models', 'R1', 'urdf', 'r1.urdf.xacro')
     robot_desc = ParameterValue(Command(['xacro ', xacro_path]), value_type=str)
 
     robot_state_publisher = Node(
@@ -93,6 +93,18 @@ def generate_launch_description():
         env=env_vars
     )
 
+    # Joint State Publisher — publishes default (zero) states for the arm's
+    # revolute/prismatic joints. Needed because the SDF model uses different
+    # joint names than the URDF, so Gazebo's JointStatePublisher output
+    # doesn't match the URDF joint names expected by robot_state_publisher.
+    joint_state_publisher = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+    )
+
     return LaunchDescription([
         declare_use_sim_time_cmd,
         set_env_vars,
@@ -101,4 +113,5 @@ def generate_launch_description():
         gz_sim,
         bridge,
         robot_state_publisher,
+        joint_state_publisher,
     ])
