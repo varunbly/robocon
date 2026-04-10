@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- ============================================================ -->
+  <!-- R2 Base Macro: chassis, 6 wheels, sensors                    -->
+  <!-- Converted from R2/robot.sdf (onshape-to-robot export)        -->
+  <!-- ============================================================ -->
+
+  <!-- Materials -->
+  <material name="r2_light_blue">
+    <color rgba="0.615686 0.811765 0.929412 1"/>
+  </material>
+  <material name="r2_grey">
+    <color rgba="0.498039 0.498039 0.498039 1"/>
+  </material>
+  <material name="r2_wheel_white">
+    <color rgba="0.917647 0.917647 0.917647 1"/>
+  </material>
+  <material name="r2_orange">
+    <color rgba="0.972549 0.529412 0.00392157 1"/>
+  </material>
+
+  <!-- ============================================================ -->
+  <!-- Wheel assembly macro (motor bracket + wheel, all fixed for   -->
+  <!-- robot_state_publisher — Gazebo handles the actual rotation)   -->
+  <!-- ============================================================ -->
+  <xacro:macro name="r2_wheel_assembly" params="name motor_name
+      motor_x motor_y motor_z motor_roll motor_pitch motor_yaw
+      wheel_x wheel_y wheel_z wheel_roll wheel_pitch wheel_yaw">
+
+    <!-- Motor bracket link (placeholder) -->
+    <link name="${motor_name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.019"/>
+        <inertia ixx="0.0000131" ixy="0" ixz="0"
+                 iyy="0.0000089" iyz="0"
+                 izz="0.0000123"/>
+      </inertial>
+    </link>
+
+    <!-- Motor bracket mount joint -->
+    <joint name="${motor_name}_joint" type="fixed">
+      <parent link="r2_chassis_link"/>
+      <child link="${motor_name}"/>
+      <origin xyz="${motor_x} ${motor_y} ${motor_z}"
+              rpy="${motor_roll} ${motor_pitch} ${motor_yaw}"/>
+    </joint>
+
+    <!-- Wheel link -->
+    <link name="${name}">
+      <visual>
+        <geometry>
+          <cylinder radius="0.046" length="0.015"/>
+        </geometry>
+        <material name="r2_wheel_white"/>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.046" length="0.015"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 -0.0075" rpy="0 0 0"/>
+        <mass value="0.468"/>
+        <inertia ixx="0.00111" ixy="0" ixz="0"
+                 iyy="0.00111" iyz="0"
+                 izz="0.00216"/>
+      </inertial>
+    </link>
+
+    <!-- Wheel joint -->
+    <joint name="${name}_joint" type="continuous">
+      <parent link="${motor_name}"/>
+      <child link="${name}"/>
+      <origin xyz="${wheel_x} ${wheel_y} ${wheel_z}"
+              rpy="${wheel_roll} ${wheel_pitch} ${wheel_yaw}"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- ============================================================ -->
+  <!-- Main R2 Base Macro                                            -->
+  <!-- ============================================================ -->
+  <xacro:macro name="r2_base">
+
+    <!-- ======== ROS Standard Roots ======== -->
+    <link name="base_footprint"/>
+
+    <joint name="base_joint" type="fixed">
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_link"/>
+
+    <!-- Connect base_link to the chassis frame from the CAD.
+         R2's SDF root link is "Mate connector 6" which is
+         the main chassis body. We use a fixed joint to position
+         the CAD geometry relative to the ROS base_link. -->
+    <joint name="r2_chassis_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="r2_chassis_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- ======== R2 Chassis (root body of the CAD model) ======== -->
+    <link name="r2_chassis_link">
+      <visual>
+        <origin xyz="-0.125035 -0.456621 -0.0422535" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/R2/assets/part_1.stl"/>
+        </geometry>
+        <material name="r2_light_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.125035 -0.456621 -0.0422535" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://robocon_description/models/R2/assets/part_1.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="-3.29534e-05 -0.500484 -0.0918481" rpy="0 0 0"/>
+        <mass value="0.697132"/>
+        <inertia ixx="0.00402566" ixy="1.38241e-06" ixz="-6.61642e-07"
+                 iyy="0.0100799" iyz="-1.08249e-05"
+                 izz="0.00624016"/>
+      </inertial>
+    </link>
+
+    <!-- Mount point for R2's arm manipulator -->
+    <link name="r2_arm_mount_point"/>
+    <joint name="r2_arm_mount_joint" type="fixed">
+      <parent link="r2_chassis_link"/>
+      <child link="r2_arm_mount_point"/>
+      <!-- Pose from R2 SDF: arm is included at this offset -->
+      <origin xyz="-0.00146441 -0.10814863 0.21805145" rpy="0 0 -1.5708"/>
+    </joint>
+
+    <!-- ============================================================ -->
+    <!-- 6x Wheel Assemblies                                          -->
+    <!-- R2 has: front_left, front_right, mid_left, mid_right,        -->
+    <!--         back_left, back_right                                -->
+    <!-- Positions derived from R2/robot.sdf Fastened joints          -->
+    <!-- ============================================================ -->
+
+    <!-- Back Right Wheel -->
+    <xacro:r2_wheel_assembly
+      name="back_right_wheel" motor_name="r2_motor_br"
+      motor_x="0.153115" motor_y="0.23681" motor_z="-0.164453"
+      motor_roll="1.5708" motor_pitch="0" motor_yaw="0"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="-1.5708" wheel_pitch="0" wheel_yaw="0"/>
+
+    <!-- Back Left Wheel -->
+    <xacro:r2_wheel_assembly
+      name="back_left_wheel" motor_name="r2_motor_bl"
+      motor_x="0.153115" motor_y="0.23681" motor_z="0.164453"
+      motor_roll="-1.5708" motor_pitch="0" motor_yaw="3.14159"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="1.5708" wheel_pitch="0" wheel_yaw="3.14159"/>
+
+    <!-- Mid Right Wheel -->
+    <xacro:r2_wheel_assembly
+      name="mid_right_wheel" motor_name="r2_motor_mr"
+      motor_x="-0.153221" motor_y="0.23681" motor_z="-0.164453"
+      motor_roll="1.5708" motor_pitch="0" motor_yaw="0"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="-1.5708" wheel_pitch="0" wheel_yaw="0"/>
+
+    <!-- Mid Left Wheel -->
+    <xacro:r2_wheel_assembly
+      name="mid_left_wheel" motor_name="r2_motor_ml"
+      motor_x="-0.153221" motor_y="0.23681" motor_z="0.164453"
+      motor_roll="-1.5708" motor_pitch="0" motor_yaw="3.14159"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="1.5708" wheel_pitch="0" wheel_yaw="3.14159"/>
+
+    <!-- Front Left Wheel -->
+    <xacro:r2_wheel_assembly
+      name="front_left_wheel" motor_name="r2_motor_fl"
+      motor_x="-0.125883" motor_y="0" motor_z="-0.015"
+      motor_roll="0" motor_pitch="0" motor_yaw="-1.5708"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="1.5708" wheel_pitch="0.104909" wheel_yaw="-3.14159"/>
+
+    <!-- Front Right Wheel -->
+    <xacro:r2_wheel_assembly
+      name="front_right_wheel" motor_name="r2_motor_fr"
+      motor_x="0.125883" motor_y="0" motor_z="-0.015"
+      motor_roll="0" motor_pitch="0" motor_yaw="1.5708"
+      wheel_x="0" wheel_y="0" wheel_z="-0.033"
+      wheel_roll="-1.5708" wheel_pitch="0.104909" wheel_yaw="0"/>
+
+    <!-- ============================================================ -->
+    <!-- Sensors (matching what we added to R2's SDF)                  -->
+    <!-- ============================================================ -->
+
+    <!-- IMU -->
+    <link name="imu_link">
+      <visual>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1"/>
+        <inertia ixx="0.000166667" ixy="0" ixz="0"
+                 iyy="0.000166667" iyz="0"
+                 izz="0.000166667"/>
+      </inertial>
+    </link>
+    <joint name="imu_joint" type="fixed">
+      <parent link="r2_chassis_link"/>
+      <child link="imu_link"/>
+      <origin xyz="0.0 0.0 0.01" rpy="0 0 0"/>
+    </joint>
+
+    <!-- LIDAR -->
+    <link name="lidar_link">
+      <visual>
+        <geometry>
+          <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="0.0508" length="0.055"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.125"/>
+        <inertia ixx="0.000112155" ixy="0" ixz="0"
+                 iyy="0.000112155" iyz="0"
+                 izz="0.000161290"/>
+      </inertial>
+    </link>
+    <joint name="lidar_joint" type="fixed">
+      <parent link="r2_chassis_link"/>
+      <child link="lidar_link"/>
+      <origin xyz="0.0 0.0 0.12" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Depth Camera -->
+    <link name="camera_link">
+      <visual>
+        <geometry>
+          <box size="0.015 0.130 0.0222"/>
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.015 0.130 0.0222"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.035"/>
+        <inertia ixx="0.000002094" ixy="0" ixz="0"
+                 iyy="0.000050729" iyz="0"
+                 izz="0.000049948"/>
+      </inertial>
+    </link>
+    <joint name="camera_joint" type="fixed">
+      <parent link="r2_chassis_link"/>
+      <child link="camera_link"/>
+      <origin xyz="0.215 0 0.05" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

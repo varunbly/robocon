@@ -5,175 +5,221 @@
   gz_type_name: "gz.msgs.Clock"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "imu"
-  gz_topic_name: "imu"
+# --- R1 SENSORS ---
+- ros_topic_name: "/r1/imu"
+  gz_topic_name: "/model/R1/imu"
   ros_type_name: "sensor_msgs/msg/Imu"
   gz_type_name: "gz.msgs.IMU"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "/scan"
-  gz_topic_name: "/scan"
+- ros_topic_name: "/r1/scan"
+  gz_topic_name: "/model/R1/scan"
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "gz.msgs.LaserScan"
-  direction: GZ_TO_ROS
+  direction: "GZ_TO_ROS"
 
-- ros_topic_name: "/odom"
-  gz_topic_name: "/odometry"
+- ros_topic_name: "/r1/odom"
+  gz_topic_name: "/model/R1/odometry"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
   direction: "GZ_TO_ROS"
 
-# Topic published by JointStatePublisher plugin
-- ros_topic_name: "/joint_states"
-  gz_topic_name: "/joint_states"
+# --- R2 SENSORS ---
+- ros_topic_name: "/r2/imu"
+  gz_topic_name: "/model/R2/imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "/r2/scan"
+  gz_topic_name: "/model/R2/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "/r2/odom"
+  gz_topic_name: "/model/R2/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: "GZ_TO_ROS"
+
+# --- R1 JOINT STATES ---
+- ros_topic_name: "/r1/joint_states"
+  gz_topic_name: "/r1/joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
   direction: "GZ_TO_ROS"
 
-- ros_topic_name: "car_cmd_vel"
-  gz_topic_name: "/model/simple_car/cmd_vel"
-  ros_type_name: "geometry_msgs/msg/Twist"
-  gz_type_name: "gz.msgs.Twist"
-  direction: ROS_TO_GZ
+# --- R2 JOINT STATES ---
+- ros_topic_name: "/r2/joint_states"
+  gz_topic_name: "/r2/joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: "GZ_TO_ROS"
 
 # R1 Individual Wheel Velocity Control
-- ros_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/front_left_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/front_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/front_right_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/front_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
   
-- ros_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/back_left_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/back_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/back_right_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/back_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/model/R1/joint/mid_left_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/mid_left_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/mid_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/model/R1/joint/mid_right_wheel_joint/cmd_vel"
+- ros_topic_name: "/r1/joint/mid_right_wheel_joint/cmd_vel"
   gz_topic_name: "/model/R1/joint/mid_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-  # --- ARM CONTROL BRIDGES ---
-- ros_topic_name: "/rrr/joint0/cmd_pos"
+  # --- R1 ARM CONTROL BRIDGES ---
+- ros_topic_name: "/r1/rrr/joint0/cmd_pos"
   gz_topic_name: "/rrr/joint0/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/rrr/joint1/cmd_pos"
+- ros_topic_name: "/r1/rrr/joint1/cmd_pos"
   gz_topic_name: "/rrr/joint1/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/rrr/joint2/cmd_pos"
+- ros_topic_name: "/r1/rrr/joint2/cmd_pos"
   gz_topic_name: "/rrr/joint2/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/rrr/joint3/cmd_pos"
+- ros_topic_name: "/r1/rrr/joint3/cmd_pos"
   gz_topic_name: "/rrr/joint3/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/rrr/joint4/cmd_pos"
+- ros_topic_name: "/r1/rrr/joint4/cmd_pos"
   gz_topic_name: "/rrr/joint4/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/rrr/gripper/cmd_pos"
+- ros_topic_name: "/r1/rrr/gripper/cmd_pos"
   gz_topic_name: "/rrr/gripper/cmd_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: "ROS_TO_GZ"
 
-# Individual Wheel Control
-- ros_topic_name: "/R2/cmd_vel"
+# R2 Individual Wheel Velocity Control
+- ros_topic_name: "/r2/cmd_vel"
   gz_topic_name: "/model/R2/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/front_left_wheel/cmd_vel"
+- ros_topic_name: "/r2/front_left_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/front_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/front_right_wheel/cmd_vel"
+- ros_topic_name: "/r2/front_right_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/front_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/mid_left_wheel/cmd_vel"
+- ros_topic_name: "/r2/mid_left_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/mid_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/mid_right_wheel/cmd_vel"
+- ros_topic_name: "/r2/mid_right_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/mid_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/back_left_wheel/cmd_vel"
+- ros_topic_name: "/r2/back_left_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/back_left_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/R2/back_right_wheel/cmd_vel"
+- ros_topic_name: "/r2/back_right_wheel/cmd_vel"
   gz_topic_name: "/model/R2/joint/back_right_wheel_joint/cmd_vel"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: "ROS_TO_GZ"
 
-- ros_topic_name: "/scan/points"
-  gz_topic_name: "/scan/points"
+# --- R1 POINT CLOUDS / CAMERA ---
+- ros_topic_name: "/r1/scan/points"
+  gz_topic_name: "/model/R1/scan/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
-  direction: GZ_TO_ROS
+  direction: "GZ_TO_ROS"
 
-- ros_topic_name: "/depth_camera/camera_info"
-  gz_topic_name: "/depth_camera/camera_info"
+- ros_topic_name: "/r1/depth_camera/camera_info"
+  gz_topic_name: "/model/R1/depth_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  direction: GZ_TO_ROS
+  direction: "GZ_TO_ROS"
 
-- ros_topic_name: "/depth_camera/points"
-  gz_topic_name: "/depth_camera/points"
+- ros_topic_name: "/r1/depth_camera/points"
+  gz_topic_name: "/model/R1/depth_camera/points"
   ros_type_name: "sensor_msgs/msg/PointCloud2"
   gz_type_name: "gz.msgs.PointCloudPacked"
-  direction: GZ_TO_ROS
+  direction: "GZ_TO_ROS"
 
-- ros_topic_name: "/depth_camera/image_raw"
-  gz_topic_name: "/depth_camera/image"
+- ros_topic_name: "/r1/depth_camera/image_raw"
+  gz_topic_name: "/model/R1/depth_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  direction: GZ_TO_ROS
-  
+  direction: "GZ_TO_ROS"
+
+# --- R2 POINT CLOUDS / CAMERA ---
+- ros_topic_name: "/r2/scan/points"
+  gz_topic_name: "/model/R2/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "/r2/depth_camera/camera_info"
+  gz_topic_name: "/model/R2/depth_camera/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "/r2/depth_camera/points"
+  gz_topic_name: "/model/R2/depth_camera/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "/r2/depth_camera/image_raw"
+  gz_topic_name: "/model/R2/depth_camera/image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: "GZ_TO_ROS"

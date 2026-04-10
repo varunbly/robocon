@@ -3,71 +3,20 @@ import os
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-from launch.conditions import IfCondition
-from launch_ros.actions import Node
+from launch_ros.actions import Node, PushRosNamespace
 
 def generate_launch_description():
-    # Get the launch directory
     pkg_robocon_bringup = get_package_share_directory('robocon_bringup')
     pkg_nav2_bringup = get_package_share_directory('nav2_bringup')
 
-    # Create the launch configuration variables
-    slam = LaunchConfiguration('slam')
-    map_yaml_file = LaunchConfiguration('map')
     use_sim_time = LaunchConfiguration('use_sim_time')
+    map_yaml_file = LaunchConfiguration('map')
     params_file = LaunchConfiguration('params_file')
-    autostart = LaunchConfiguration('autostart')
-    use_rviz = LaunchConfiguration('use_rviz')
 
-    # Launch arguments
-    declare_slam_cmd = DeclareLaunchArgument(
-        'slam',
-        default_value='False',
-        description='Whether run a SLAM')
-
-    declare_map_yaml_cmd = DeclareLaunchArgument(
-        'map',
-        default_value=os.path.join(pkg_robocon_bringup, 'maps', 'map.yaml'),
-        description='Full path to map yaml file to load')
-
-    declare_use_sim_time_cmd = DeclareLaunchArgument(
-        'use_sim_time',
-        default_value='True',
-        description='Use simulation (Gazebo) clock if true')
-
-    declare_params_file_cmd = DeclareLaunchArgument(
-        'params_file',
-        default_value=os.path.join(pkg_robocon_bringup, 'config', 'nav2_params.yaml'),
-        description='Full path to the ROS2 parameters file to use for all launched nodes')
-
-    declare_autostart_cmd = DeclareLaunchArgument(
-        'autostart',
-        default_value='True',
-        description='Automatically startup the nav2 stack')
-
-    declare_use_rviz_cmd = DeclareLaunchArgument(
-        'use_rviz',
-        default_value='True',
-        description='Whether to start RVIZ')
-
-    # Robot Localization (EKF)
-    ekf_config_path = os.path.join(pkg_robocon_bringup, 'config', 'ekf.yaml')
-    ekf_cmd = Node(
-        package='robot_localization',
-        executable='ekf_node',
-        name='ekf_filter_node',
-        output='screen',
-        parameters=[
-            ekf_config_path,
-            {'use_sim_time': use_sim_time}
-        ]
-    )
-
-    # Include the simulation launch file
-    # This launches Gazebo, Bridge, and Robot State Publisher
+    # 1. Start the simulation body (R1 and R2 skeleton)
     sim_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_robocon_bringup, 'launch', 'sim.launch.py')
@@ -75,39 +24,68 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # Include the Nav2 bringup launch file
-    nav2_bringup_cmd = IncludeLaunchDescription(
+    # 2. Start the 3D EKFs (Locating robots in height and tilt)
+    localization_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_nav2_bringup, 'launch', 'bringup_launch.py')
+            os.path.join(pkg_robocon_bringup, 'launch', 'localization.launch.py')
         ),
-        launch_arguments={
-            'slam': slam,
-            'map': map_yaml_file,
-            'use_sim_time': use_sim_time,
-            'params_file': params_file,
-            'autostart': autostart,
-            'use_rviz': use_rviz,
-            # If using custom RViz config, uncomment below and add argument
-            # 'rviz_config_file': os.path.join(pkg_robocon_bringup, 'config', 'nav2_view.rviz'), 
-        }.items()
+        launch_arguments={'use_sim_time': use_sim_time}.items()
     )
-    
-    # We might need to override the rviz config to a custom one if the default nav2 one doesn't suit
-    # But for first time setup, default is fine.
 
-    ld = LaunchDescription()
+    # 3. Global Map Server (Shared by both robots)
+    map_server = GroupAction([
+        Node(
+            package='nav2_map_server',
+            executable='map_server',
+            name='map_server',
+            output='screen',
+            parameters=[{'use_sim_time': use_sim_time, 'yaml_filename': map_yaml_file}]
+        ),
+        Node(
+            package='nav2_lifecycle_manager',
+            executable='lifecycle_manager',
+            name='lifecycle_manager_map_server',
+            output='screen',
+            parameters=[{'use_sim_time': use_sim_time, 'autostart': True, 'node_names': ['map_server']}]
+        )
+    ])
 
-    # Declare the launch options
-    ld.add_action(declare_slam_cmd)
-    ld.add_action(declare_map_yaml_cmd)
-    ld.add_action(declare_use_sim_time_cmd)
-    ld.add_action(declare_params_file_cmd)
-    ld.add_action(declare_autostart_cmd)
-    ld.add_action(declare_use_rviz_cmd)
+    # 4. R1 Navigation Stack
+    r1_nav = GroupAction([
+        PushRosNamespace('r1'),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(pkg_nav2_bringup, 'launch', 'navigation_launch.py')),
+            launch_arguments={
+                'use_sim_time': use_sim_time,
+                'params_file': params_file,
+                'use_lifecycle_mgr': 'true',
+                'autostart': 'true'
+            }.items()
+        )
+    ])
 
-    # Add the actions to launch
-    ld.add_action(sim_cmd)
-    ld.add_action(ekf_cmd)
-    ld.add_action(nav2_bringup_cmd)
+    # 5. R2 Navigation Stack
+    r2_nav = GroupAction([
+        PushRosNamespace('r2'),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(pkg_nav2_bringup, 'launch', 'navigation_launch.py')),
+            launch_arguments={
+                'use_sim_time': use_sim_time,
+                'params_file': params_file,
+                'use_lifecycle_mgr': 'true',
+                'autostart': 'true'
+            }.items()
+        )
+    ])
 
-    return ld
+    return LaunchDescription([
+        DeclareLaunchArgument('use_sim_time', default_value='true'),
+        DeclareLaunchArgument('map', default_value=os.path.join(pkg_robocon_bringup, 'maps', 'map.yaml')),
+        DeclareLaunchArgument('params_file', default_value=os.path.join(pkg_robocon_bringup, 'config', 'nav2_params.yaml')),
+        
+        sim_cmd,
+        localization_cmd,
+        map_server,
+        r1_nav,
+        r2_nav
+    ])

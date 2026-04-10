@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+  R2 Robot — Complete URDF/Xacro Description
+  ============================================
+  Structure (same pattern as R1):
+    r2.urdf.xacro (this file — top-level assembler)
+      ├── r2_base.xacro  (chassis + 6 wheels + sensors)
+      └── r2_arm.xacro   (arm manipulator + gripper — reuses R1's arm)
+
+  TF tree (clean, no conflicts with R1 when namespaced):
+    base_footprint (root — EKF publishes odom → base_footprint)
+      └── base_link
+            └── r2_chassis_link
+                  ├── back_right_wheel, back_left_wheel
+                  ├── mid_right_wheel, mid_left_wheel
+                  ├── front_left_wheel, front_right_wheel
+                  ├── imu_link
+                  ├── lidar_link
+                  ├── camera_link
+                  └── r2_arm_mount_point
+                        └── hand_root_link
+                              └── (same arm chain as R1)
+-->
+<robot name="robot_R2" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Include the base robot (chassis, wheels, sensors) -->
+  <xacro:include filename="r2_base.xacro" />
+
+  <!-- Include the hand/arm manipulator (reuses the SAME arm as R1) -->
+  <xacro:include filename="$(find robocon_description)/models/R1/urdf/r1_arm.xacro" />
+
+  <!-- Instantiate the base -->
+  <xacro:r2_base />
+
+  <!-- Instantiate the hand manipulator -->
+  <xacro:hand_manipulator />
+
+  <!-- Connect hand to the base via the arm mount point -->
+  <joint name="hand_to_base_joint" type="fixed">
+    <parent link="r2_arm_mount_point"/>
+    <child link="hand_root_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

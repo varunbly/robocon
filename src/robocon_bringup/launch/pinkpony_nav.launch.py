@@ -11,7 +11,6 @@ from ros_gz_sim.actions import GzServer
 
 def generate_launch_description():
     pkg_robocon_bringup = get_package_share_directory('robocon_bringup')
-    pkg_slam_toolbox = get_package_share_directory('slam_toolbox')
     pkg_robocon_description = get_package_share_directory('robocon_description')
     
     # use_sim_time = LaunchConfigAsBool('use_sim_time')
@@ -43,16 +42,32 @@ def generate_launch_description():
         ]
     )
 
-    # 3. Start SLAM (mapping)
-    slam_params_file = os.path.join(pkg_robocon_bringup, 'config', 'slam_params.yaml')
-    slam_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_slam_toolbox, 'launch', 'online_async_launch.py')
-        ),
-        launch_arguments={                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-            'use_sim_time': use_sim_time,
-            'slam_params_file': slam_params_file,
-        }.items()
+    # 3. Start Cartographer SLAM [NEW]
+    # Configuration directory should be the config folder in your bringup package
+    cartographer_config_dir = os.path.join(pkg_robocon_bringup, 'config')
+    cartographer_config_basename = 'r1_lds_2d.lua'
+
+    cartographer_cmd = Node(
+        package='cartographer_ros',
+        executable='cartographer_node',
+        name='cartographer_node',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+        arguments=[
+            '-configuration_directory', cartographer_config_dir,
+            '-configuration_basename', cartographer_config_basename
+        ],
+        remappings=[('/imu', '/imu')]
+    )
+
+    # 3b. Start Occupancy Grid Node (Converts Cartographer submaps to a /map topic)
+    occupancy_grid_cmd = Node(
+        package='cartographer_ros',
+        executable='cartographer_occupancy_grid_node',
+        name='cartographer_occupancy_grid_node',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
+        arguments=['-resolution', '0.05', '-publish_period_sec', '1.0']
     )
 
     # 4. Start Kinematics Node (The Glue Code) [NEW ADDITION]
@@ -82,7 +97,7 @@ def generate_launch_description():
     append_path('SDF_PATH', resource_path)
     append_path('GAZEBO_MODEL_PATH', resource_path)
 
-    rviz_config_path = os.path.join(pkg_robocon_bringup, 'config', 'rrr.rviz')
+    rviz_config_path = os.path.join(pkg_robocon_bringup, 'config', 'r1_nav.rviz')
     rviz_cmd = Node(
         package='rviz2',
         executable='rviz2',
@@ -97,7 +112,8 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(sim_cmd)
     ld.add_action(ekf_cmd)
-    ld.add_action(slam_cmd)
+    ld.add_action(cartographer_cmd)
+    ld.add_action(occupancy_grid_cmd)
     ld.add_action(kinematics_cmd) 
     ld.add_action(rviz_cmd)
 
